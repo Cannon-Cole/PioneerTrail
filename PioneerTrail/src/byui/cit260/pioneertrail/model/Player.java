@@ -16,52 +16,32 @@ import java.util.Objects;
 public class Player implements Serializable {
     private String name;
     private int health;
-    
+    private String ailmentType;
+    private boolean afflicted;
+    private boolean alive;
+    private double maxWeight;
     private ArrayList<Game> games = new ArrayList<Game>();
 
     public Player() {
     }
 
-    public ArrayList<Game> getGames() {
-        return games;
-    }
-
-    public void setGames(ArrayList<Game> games) {
-        this.games = games;
-    }
-
-    
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-        
+    @Override
+    public String toString() {
+        return "Player{" + "name=" + name + ", health=" + health + ", ailmentType=" + ailmentType + ", afflicted=" + afflicted + ", alive=" + alive + ", maxWeight=" + maxWeight + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + this.health;
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + this.health;
+        hash = 59 * hash + Objects.hashCode(this.ailmentType);
+        hash = 59 * hash + (this.afflicted ? 1 : 0);
+        hash = 59 * hash + (this.alive ? 1 : 0);
+        hash = 59 * hash + (int) (Double.doubleToLongBits(this.maxWeight) ^ (Double.doubleToLongBits(this.maxWeight) >>> 32));
         return hash;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", health=" + health + '}';
-    }
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -77,12 +57,76 @@ public class Player implements Serializable {
         if (this.health != other.health) {
             return false;
         }
+        if (this.afflicted != other.afflicted) {
+            return false;
+        }
+        if (this.alive != other.alive) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.maxWeight) != Double.doubleToLongBits(other.maxWeight)) {
+            return false;
+        }
         if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.ailmentType, other.ailmentType)) {
             return false;
         }
         return true;
     }
     
     
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public String getAilmentType() {
+        return ailmentType;
+    }
+
+    public void setAilmentType(String ailmentType) {
+        this.ailmentType = ailmentType;
+    }
+
+    public boolean isAfflicted() {
+        return afflicted;
+    }
+
+    public void setAfflicted(boolean afflicted) {
+        this.afflicted = afflicted;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public double getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(double maxWeight) {
+        this.maxWeight = maxWeight;
+    }
+
+  public ArrayList<Game> getGames() {
+        return games;
+    }
     
 }
