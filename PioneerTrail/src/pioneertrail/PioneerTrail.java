@@ -22,6 +22,8 @@ public class PioneerTrail {
        
        playerOne.setName("Jim John");
        playerOne.setHealth(1);
+       playerOne.setAilmentType("Broken Bone");
+       playerOne.setMaxWeight(300);
        System.out.println(playerOne.toString());
        
         
