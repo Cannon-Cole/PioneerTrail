@@ -27,7 +27,7 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", health=" + health + ", ailmentType=" + ailmentType + ", afflicted=" + afflicted + ", alive=" + alive + ", maxWeight=" + maxWeight + '}';
+        return "Player{" + "name=" + name + ", health=" + health + ", ailmentType=" + ailmentType + ", afflicted=" + afflicted + ", alive=" + alive + ", maxWeight=" + maxWeight + ", games=" + games + '}';
     }
 
     @Override
