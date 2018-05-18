@@ -22,6 +22,7 @@ public class PioneerTrail {
        
        playerOne.setName("Jim John");
        playerOne.setHealth(1);
+       System.out.println(playerOne.toString());
        
         
         // TODO code application logic here
