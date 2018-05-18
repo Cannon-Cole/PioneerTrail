@@ -5,6 +5,8 @@
  */
 package pioneertrail;
 
+import byui.cit260.pioneertrail.model.Player;
+
 /**
  *
  * @author 2bigshot
@@ -15,6 +17,13 @@ public class PioneerTrail {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+       Player playerOne = new Player();
+       
+       playerOne.setName("Jim John");
+       playerOne.setHealth(1);
+       
+        
         // TODO code application logic here
     }
     
