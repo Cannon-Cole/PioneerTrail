@@ -16,8 +16,8 @@ public enum Actor {
 Father("Brigham", "healthy", false, true, 100, new Point(1,1)), 
 Mother("Sarah", "healthy", false, true, 75, new Point(1,1)), 
 Brother("Hyrum", "healthy", false, true, 100, new Point(1,1)), 
-Sister("Anna", "healthy", false, true, 75, new Point(1,1)), 
-Brother("Martin", "healthy", false, true, 50, new Point(1,1)), 
+Sister("Anna", "healthy", false, true, 75, new Point(1,1)),
+Brother("Martin", "healthy", false, true, 50, new Point(1,1)); 
         
 }
 
