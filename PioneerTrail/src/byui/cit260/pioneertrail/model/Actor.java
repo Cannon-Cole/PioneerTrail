@@ -12,7 +12,7 @@ import java.awt.Point;
  * @author aimeejorgensen
  */
 public enum Actor {
-    
+     
 Father("Brigham", new Point(1,1)), 
 Mother("Sarah", new Point(1,1)), 
 Child1("Hyrum", new Point(1,1)), 
