@@ -7,7 +7,9 @@ package pioneertrail;
 
 import byui.cit260.pioneertrail.model.Actor;
 import byui.cit260.pioneertrail.model.Game;
+import byui.cit260.pioneertrail.model.Map;
 import byui.cit260.pioneertrail.model.Player;
+import byui.cit260.pioneertrail.model.Location;
 
 /**
  *
@@ -29,9 +31,12 @@ public class PioneerTrail {
         //create instances
         Player playerOne = new Player();
         Game gameOne = new Game();
+        Location locationOne = new Location();
+        Map mapOne = new Map();
+        
         
         //Testing for Player class
-        playerOne.setName("Jim John");
+        playerOne.setName("William Jackson");
         playerOne.setHealth(1);
         playerOne.setAilmentType("Broken Bone");
         playerOne.setMaxWeight(300);
@@ -48,7 +53,17 @@ public class PioneerTrail {
         System.out.println(Actor.Child1.toString());
         System.out.println(Actor.Child2.toString());
         System.out.println(Actor.Child3.toString());
-
+        
+        //Testing for Map class
+        mapOne.setCurrentRow(1);
+        mapOne.setCurrentColumn(1);
+        System.out.println(mapOne.toString());
+        
+        //Testing for Location class
+        locationOne.setCurrentRow(1);
+        locationOne.setCurrentColumn(1);
+        locationOne.setVisted(true);
+        System.out.println(locationOne.toString());
 }
     
 }
