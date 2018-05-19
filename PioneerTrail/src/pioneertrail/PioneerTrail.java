@@ -10,6 +10,8 @@ import byui.cit260.pioneertrail.model.Game;
 import byui.cit260.pioneertrail.model.Inventory;
 import byui.cit260.pioneertrail.model.Player;
 import byui.cit260.pioneertrail.model.Scene;
+import byui.cit260.pioneertrail.model.Map;
+import byui.cit260.pioneertrail.model.Location;
 
 /**
  *
@@ -79,5 +81,16 @@ public class PioneerTrail {
         System.out.println(Actor.Mother.toString());
         System.out.println(Actor.Child1.toString());
         System.out.println(Actor.Child2.toString());
+        
+         //Testing for Location class
+        locationOne.setCurrentRow(5);
+        locationOne.setCurrentColumn(6);
+        locationOne.setVisited(true);
+        System.out.println(locationOne.toString());
+        
+         //Testing for Map class
+        mapOne.setCurrentRow(1);
+        mapOne.setCurrentColumn(1);
+        System.out.println(mapOne.toString());
     }
 }
