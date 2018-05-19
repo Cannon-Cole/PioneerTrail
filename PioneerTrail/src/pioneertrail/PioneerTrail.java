@@ -13,7 +13,7 @@ import byui.cit260.pioneertrail.model.Scene;
 
 /**
  *
- * @author 2bigshot
+ * @author Aimee, Cole, Derek
  */
 public class PioneerTrail {
 
@@ -31,6 +31,10 @@ public class PioneerTrail {
         Scene sceneTest = new Scene();
         Inventory coleInventory = new Inventory();
         
+        String[] items = {"ammo","wheels","food"};
+        double[] resourceAmount = {10.5, 3.4, 1};
+        String[] resources = {"food","herbs"};
+        
         sceneTest.setDescription("Description Test");
         sceneTest.setSymbol("!@#$%^&*");
         sceneTest.setName("Wonderful Place");
@@ -41,14 +45,14 @@ public class PioneerTrail {
         sceneTest.setMessage("This is a test message");
         sceneTest.setPrices(5.55);
         sceneTest.setVisited(false);
+        sceneTest.setItemsAvailable(items);
+        sceneTest.setResourceAmount(resourceAmount);
+        sceneTest.setItemsAvailable(resources);
         sceneTest.setInventory(coleInventory);
   
-        System.out.println(sceneTest.toString());
-        
-                
+        System.out.println(sceneTest.toString());          
     }
-   
-    
+
     static void teamTest(){
        
         //create instances

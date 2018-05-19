@@ -9,7 +9,7 @@ import java.awt.Point;
 
 /**
  *
- * @author aimeejorgensen
+ * @author Aimee, Cole, Derek
  */
 public enum Actor {
      

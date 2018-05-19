@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author aimeejorgensen
+ * @author Aimee, Cole, Derek
  */
 public class Game implements Serializable{
    private int numberOfPioneers;

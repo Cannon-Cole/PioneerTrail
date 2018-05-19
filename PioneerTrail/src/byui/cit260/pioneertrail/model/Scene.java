@@ -20,11 +20,11 @@ public class Scene {
     private String name;
     private int illness;
     private double mortalityRate;
-    private String[] itemsAvailable = {"ammo","wheels","food"};
+    private String itemsAvailable[];
     private boolean difficultTerrain;
     private boolean broken;
-    private double[] resourceAmount = {10.5};
-    private String resources[] = {"food","herbs"};
+    private double resourceAmount[];
+    private String resources[];
     private String message;
     private double prices;
     private boolean visited;
@@ -125,10 +125,7 @@ public class Scene {
         }
         return true;
     }
-            
-            
-            
-
+                   
     public String getDescription() {
         return description;
     }
@@ -255,8 +252,5 @@ public class Scene {
 
     public void setActor(Actor actor) {
         this.actor = actor;
-    }
-
-    
-            
+    }           
 }

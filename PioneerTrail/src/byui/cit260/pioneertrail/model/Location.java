@@ -7,7 +7,7 @@ package byui.cit260.pioneertrail.model;
 
 /**
  *
- * @author 2bigshot
+ * @author Aimee
  */
 public class Location {
     
