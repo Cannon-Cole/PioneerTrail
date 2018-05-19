@@ -22,9 +22,9 @@ public class PioneerTrail {
      */
     public static void main(String[] args) {
        
-        //teamTest();
+        teamTest();
+        System.out.println("Cole's Tests =======================================");
         coleTest();
-
     }
     
     static void coleTest(){
@@ -49,7 +49,7 @@ public class PioneerTrail {
     }
    
     
-   /* static void teamTest(){
+    static void teamTest(){
        
         //create instances
         Player playerOne = new Player();
@@ -73,5 +73,4 @@ public class PioneerTrail {
         System.out.println(Actor.Child1.toString());
         System.out.println(Actor.Child2.toString());
     }
-*/
 }
