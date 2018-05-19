@@ -7,8 +7,8 @@ package byui.cit260.pioneertrail.model;
 
 /**
  *
- * @author Aimee
+ * @author Derek
  */
-public class Location {
+public class Inventory {
     
 }

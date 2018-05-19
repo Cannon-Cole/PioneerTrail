@@ -7,13 +7,13 @@ package pioneertrail;
 
 import byui.cit260.pioneertrail.model.Actor;
 import byui.cit260.pioneertrail.model.Game;
-import byui.cit260.pioneertrail.model.Map;
+import byui.cit260.pioneertrail.model.Inventory;
 import byui.cit260.pioneertrail.model.Player;
-import byui.cit260.pioneertrail.model.Location;
+import byui.cit260.pioneertrail.model.Scene;
 
 /**
  *
- * @author 2bigshot
+ * @author Aimee, Cole, Derek
  */
 public class PioneerTrail {
 
@@ -23,9 +23,36 @@ public class PioneerTrail {
     public static void main(String[] args) {
        
         teamTest();
-
+        System.out.println("Cole's Tests =======================================");
+        coleTest();
     }
     
+    static void coleTest(){
+        Scene sceneTest = new Scene();
+        Inventory coleInventory = new Inventory();
+        
+        String[] items = {"ammo","wheels","food"};
+        double[] resourceAmount = {10.5, 3.4, 1};
+        String[] resources = {"food","herbs"};
+        
+        sceneTest.setDescription("Description Test");
+        sceneTest.setSymbol("!@#$%^&*");
+        sceneTest.setName("Wonderful Place");
+        sceneTest.setIllness(1);
+        sceneTest.setMortalityRate(.3);
+        sceneTest.setDifficultTerrain(false);
+        sceneTest.setBroken(false);
+        sceneTest.setMessage("This is a test message");
+        sceneTest.setPrices(5.55);
+        sceneTest.setVisited(false);
+        sceneTest.setItemsAvailable(items);
+        sceneTest.setResourceAmount(resourceAmount);
+        sceneTest.setItemsAvailable(resources);
+        sceneTest.setInventory(coleInventory);
+  
+        System.out.println(sceneTest.toString());          
+    }
+
     static void teamTest(){
        
         //create instances
@@ -52,18 +79,5 @@ public class PioneerTrail {
         System.out.println(Actor.Mother.toString());
         System.out.println(Actor.Child1.toString());
         System.out.println(Actor.Child2.toString());
-        System.out.println(Actor.Child3.toString());
-        
-        //Testing for Map class
-        mapOne.setCurrentRow(1);
-        mapOne.setCurrentColumn(1);
-        System.out.println(mapOne.toString());
-        
-        //Testing for Location class
-        locationOne.setCurrentRow(1);
-        locationOne.setCurrentColumn(1);
-        locationOne.setVisted(true);
-        System.out.println(locationOne.toString());
-}
-    
+    }
 }
