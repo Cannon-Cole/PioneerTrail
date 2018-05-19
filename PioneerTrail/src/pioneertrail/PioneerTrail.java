@@ -27,6 +27,7 @@ public class PioneerTrail {
         teamTest();
         System.out.println("Cole's Tests =======================================");
         coleTest();
+        derekTest();
     }
     
     static void coleTest(){
@@ -54,13 +55,24 @@ public class PioneerTrail {
   
         System.out.println(sceneTest.toString());          
     }
+    
+    static void derekTest() {
+        Inventory inventoryTest = new Inventory();
+        inventoryTest.setName("Wood");
+        inventoryTest.setType("Resource");
+        inventoryTest.setWeight(12.5);
+        inventoryTest.setPrice(5.00);
+        inventoryTest.setQuantity(10);
+        
+        System.out.println("Derek's Tests ==================================");
+        System.out.println(inventoryTest.toString());
+    }
 
     static void teamTest(){
        
         //create instances
         Player playerOne = new Player();
         Game gameOne = new Game();
-        Location locationOne = new Location();
         Map mapOne = new Map();
         
         
@@ -83,10 +95,11 @@ public class PioneerTrail {
         System.out.println(Actor.Child2.toString());
         
          //Testing for Location class
-        locationOne.setCurrentRow(5);
-        locationOne.setCurrentColumn(6);
-        locationOne.setVisited(true);
-        System.out.println(locationOne.toString());
+        //Location.java file is empty, commenting out so it can build
+        //locationOne.setCurrentRow(5);
+        //locationOne.setCurrentColumn(6);
+        //locationOne.setVisited(true);
+        //System.out.println(locationOne.toString());
         
          //Testing for Map class
         mapOne.setCurrentRow(1);
