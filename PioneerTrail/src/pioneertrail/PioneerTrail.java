@@ -27,6 +27,8 @@ public class PioneerTrail {
         teamTest();
         System.out.println("Cole's Tests =======================================");
         coleTest();
+        derekTest();
+        aimeeTest();
     }
     
     static void coleTest(){
@@ -54,14 +56,25 @@ public class PioneerTrail {
   
         System.out.println(sceneTest.toString());          
     }
+    
+    static void derekTest() {
+        Inventory inventoryTest = new Inventory();
+        inventoryTest.setName("Wood");
+        inventoryTest.setType("Resource");
+        inventoryTest.setWeight(12.5);
+        inventoryTest.setPrice(5.00);
+        inventoryTest.setQuantity(10);
+        
+        System.out.println("Derek's Tests ==================================");
+        System.out.println(inventoryTest.toString());
+    }
 
     static void teamTest(){
        
         //create instances
         Player playerOne = new Player();
         Game gameOne = new Game();
-        Location locationOne = new Location();
-        Map mapOne = new Map();
+        
         
         
         //Testing for Player class
@@ -83,14 +96,23 @@ public class PioneerTrail {
         System.out.println(Actor.Child2.toString());
         
          //Testing for Location class
+        
+    }
+    
+    static void aimeeTest(){
+     Location locationOne = new Location();
         locationOne.setCurrentRow(5);
         locationOne.setCurrentColumn(6);
         locationOne.setVisited(true);
         System.out.println(locationOne.toString());
         
          //Testing for Map class
+        Map mapOne = new Map();
         mapOne.setCurrentRow(1);
         mapOne.setCurrentColumn(1);
-        System.out.println(mapOne.toString());
+        mapOne.setTotalRows(5);
+        mapOne.setTotalColumns(5);
+        System.out.println(mapOne.toString());   
     }
+    
 }

@@ -6,6 +6,7 @@
 package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -15,7 +16,11 @@ public class Map implements Serializable{
 
 private int currentRow;
 private int currentColumn;
-    
+private int totalRows;
+private int totalColumns;
+private Location location;  //this will eventually be an array
+private Location currentLocation;
+
 public Map() {
     }    
     
@@ -35,10 +40,90 @@ public Map() {
         this.currentColumn = rowOne;
     }
 
+    public int getTotalRows() {
+        return totalRows;
+    }
+
+    public void setTotalRows(int totalRows) {
+        this.totalRows = totalRows;
+    }
+
+    public int getTotalColumns() {
+        return totalColumns;
+    }
+
+    public void setTotalColumns(int totalColumns) {
+        this.totalColumns = totalColumns;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + this.currentRow;
+        hash = 97 * hash + this.currentColumn;
+        hash = 97 * hash + this.totalRows;
+        hash = 97 * hash + this.totalColumns;
+        hash = 97 * hash + Objects.hashCode(this.location);
+        hash = 97 * hash + Objects.hashCode(this.currentLocation);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (this.currentRow != other.currentRow) {
+            return false;
+        }
+        if (this.currentColumn != other.currentColumn) {
+            return false;
+        }
+        if (this.totalRows != other.totalRows) {
+            return false;
+        }
+        if (this.totalColumns != other.totalColumns) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public String toString() {
-        return "Map{" + "Current Row=" + currentRow + ", Current Column=" + currentColumn + '}';
+        return "Map{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", totalRows=" + totalRows + ", totalColumns=" + totalColumns + ", location=" + location + ", currentLocation=" + currentLocation + '}';
     }
+    
+    
+   
 }
 
 
