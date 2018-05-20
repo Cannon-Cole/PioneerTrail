@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author Derek
  */
-public class Inventory implements Serializable{
+public class Inventory implements Serializable {
     
     private String name;
     private String type;
