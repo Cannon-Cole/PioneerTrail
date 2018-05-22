@@ -29,7 +29,6 @@ public class Scene {
     private double prices;
     private boolean visited;
     
-    private ArrayList<Location> locations = new ArrayList<Location>();
     private Inventory inventory;
     private Actor actor;
 
@@ -38,7 +37,7 @@ public class Scene {
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", symbol=" + symbol + ", name=" + name + ", illness=" + illness + ", mortalityRate=" + mortalityRate + ", itemsAvailable=" + itemsAvailable + ", difficultTerrain=" + difficultTerrain + ", broken=" + broken + ", resourceAmount=" + resourceAmount + ", resources=" + resources + ", message=" + message + ", prices=" + prices + ", visited=" + visited + ", locations=" + locations + ", inventory=" + inventory + ", actor=" + actor + '}';
+        return "Scene{" + "description=" + description + ", symbol=" + symbol + ", name=" + name + ", illness=" + illness + ", mortalityRate=" + mortalityRate + ", itemsAvailable=" + itemsAvailable + ", difficultTerrain=" + difficultTerrain + ", broken=" + broken + ", resourceAmount=" + resourceAmount + ", resources=" + resources + ", message=" + message + ", prices=" + prices + ", visited=" + visited + ", inventory=" + inventory + ", actor=" + actor + '}';
     }
     
     @Override
@@ -57,7 +56,6 @@ public class Scene {
         hash = 97 * hash + Objects.hashCode(this.message);
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.prices) ^ (Double.doubleToLongBits(this.prices) >>> 32));
         hash = 97 * hash + (this.visited ? 1 : 0);
-        hash = 97 * hash + Objects.hashCode(this.locations);
         hash = 97 * hash + Objects.hashCode(this.inventory);
         hash = 97 * hash + Objects.hashCode(this.actor);
         return hash;
@@ -112,9 +110,6 @@ public class Scene {
             return false;
         }
         if (!Arrays.deepEquals(this.resources, other.resources)) {
-            return false;
-        }
-        if (!Objects.equals(this.locations, other.locations)) {
             return false;
         }
         if (!Objects.equals(this.inventory, other.inventory)) {
@@ -228,14 +223,6 @@ public class Scene {
 
     public void setVisited(boolean visited) {
         this.visited = visited;
-    }
-
-    public ArrayList<Location> getLocations() {
-        return locations;
-    }
-
-    public void setLocations(ArrayList<Location> locations) {
-        this.locations = locations;
     }
 
     public Inventory getInventory() {
