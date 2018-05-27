@@ -25,13 +25,13 @@ public class PioneerTrail {
     public static void main(String[] args) {
        
         teamTest();
+        System.out.println("Cole's Tests =======================================");
         coleTest();
         derekTest();
         aimeeTest();
     }
     
     static void coleTest(){
-        System.out.println("Cole's Tests =======================================");
         Scene sceneTest = new Scene();
         Inventory coleInventory = new Inventory();
         
@@ -65,7 +65,7 @@ public class PioneerTrail {
         inventoryTest.setPrice(5.00);
         inventoryTest.setQuantity(10);
         
-        System.out.println("Derek's Tests =======================================");
+        System.out.println("Derek's Tests ==================================");
         System.out.println(inventoryTest.toString());
     }
 
@@ -95,13 +95,12 @@ public class PioneerTrail {
         System.out.println(Actor.Child1.toString());
         System.out.println(Actor.Child2.toString());
         
-         //Testing for Location class
+         
         
     }
-    
+        //Testing for Location class
     static void aimeeTest(){
-        System.out.println("Aimee's Tests =======================================");
-        Location locationOne = new Location();
+     Location locationOne = new Location();
         locationOne.setCurrentRow(5);
         locationOne.setCurrentColumn(6);
         locationOne.setVisited(true);
@@ -117,3 +116,4 @@ public class PioneerTrail {
     }
     
 }
+
