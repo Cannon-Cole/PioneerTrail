@@ -10,8 +10,10 @@ package byui.cit260.pioneertrail.control;
  * @author aimeejorgensen
  */
 public class ActorControl {
-    
-   //method signature here
-
+   
+    public static illnessHeal(food, mortality, medicine) {
+        
+    }
+ 
     
 }
