@@ -22,7 +22,7 @@ public class ActorControlTest {
      */
     @Test
     public void testIllnessHeal() {
-        System.out.println("illnessHealPass");
+        System.out.println("illnessHealValid");
         double foodAmount = 100.0;
         double mortalityRate = 75;
         double medicineAmount = 1;
