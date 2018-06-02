@@ -10,5 +10,25 @@ package byui.cit260.pioneertrail.control;
  * @author aimeejorgensen
  */
 public class LocationControl {
-    
+
+    public static int overComeObstacles(double foodAmount, int peopleAlive, int hasProperGear) {
+
+        if (foodAmount <= 0 || foodAmount > 500) {
+            return -1;
+        }
+
+        if (peopleAlive < 2 || peopleAlive > 5) {
+            return -2;
+        }
+
+        double overcame = (foodAmount / peopleAlive) * hasProperGear;
+
+        if (overcame >= 5) {
+            return 1;
+        }
+
+        else {
+            return 0;
+        }
+    }
 }
