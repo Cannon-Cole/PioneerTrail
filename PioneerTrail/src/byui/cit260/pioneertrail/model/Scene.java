@@ -14,7 +14,7 @@ import java.util.Objects;
  * @author Cole
  */
 public class Scene {
-    
+
     private String description;
     private String symbol;
     private String name;
@@ -28,7 +28,7 @@ public class Scene {
     private String message;
     private double prices;
     private boolean visited;
-    
+
     private Inventory inventory;
     private Actor actor;
 
@@ -39,7 +39,7 @@ public class Scene {
     public String toString() {
         return "Scene{" + "description=" + description + ", symbol=" + symbol + ", name=" + name + ", illness=" + illness + ", mortalityRate=" + mortalityRate + ", itemsAvailable=" + itemsAvailable + ", difficultTerrain=" + difficultTerrain + ", broken=" + broken + ", resourceAmount=" + resourceAmount + ", resources=" + resources + ", message=" + message + ", prices=" + prices + ", visited=" + visited + ", inventory=" + inventory + ", actor=" + actor + '}';
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 3;
@@ -120,7 +120,7 @@ public class Scene {
         }
         return true;
     }
-                   
+
     public String getDescription() {
         return description;
     }
@@ -239,5 +239,5 @@ public class Scene {
 
     public void setActor(Actor actor) {
         this.actor = actor;
-    }           
+    }
 }

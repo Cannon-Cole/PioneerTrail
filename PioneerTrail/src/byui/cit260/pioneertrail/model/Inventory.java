@@ -14,7 +14,7 @@ import java.util.Objects;
  * @author Derek
  */
 public class Inventory implements Serializable {
-    
+
     private String name;
     private String type;
     private double weight;
@@ -22,7 +22,7 @@ public class Inventory implements Serializable {
     private int quantity;
     private double foodAmount;
     private double medicineAmount;
-    
+
     public Inventory() {
     }
 
@@ -71,11 +71,11 @@ public class Inventory implements Serializable {
         }
         return true;
     }
-    
+
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -111,8 +111,8 @@ public class Inventory implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
-      public double getFoodAmount() {
+
+    public double getFoodAmount() {
         return foodAmount;
     }
 

@@ -12,18 +12,18 @@ import java.util.Objects;
  *
  * @author aimeejorgensen
  */
-public class Map implements Serializable{
+public class Map implements Serializable {
 
-private int currentRow;
-private int currentColumn;
-private int totalRows;
-private int totalColumns;
-private Location location;  //this will eventually be an array
-private Location currentLocation;
+    private int currentRow;
+    private int currentColumn;
+    private int totalRows;
+    private int totalColumns;
+    private Location location;  //this will eventually be an array
+    private Location currentLocation;
 
-public Map() {
-    }    
-    
+    public Map() {
+    }
+
     public int getCurrentRow() {
         return currentRow;
     }
@@ -31,7 +31,7 @@ public Map() {
     public void setCurrentRow(int rowOne) {
         this.currentRow = rowOne;
     }
-    
+
     public int getCurrentColumn() {
         return currentColumn;
     }
@@ -121,9 +121,5 @@ public Map() {
     public String toString() {
         return "Map{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", totalRows=" + totalRows + ", totalColumns=" + totalColumns + ", location=" + location + ", currentLocation=" + currentLocation + '}';
     }
-    
-    
-   
+
 }
-
-

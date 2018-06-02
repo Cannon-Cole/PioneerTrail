@@ -14,6 +14,7 @@ import java.util.Objects;
  * @author Aimee, Cole, Derek
  */
 public class Player implements Serializable {
+
     private String name;
     private int health;
     private String ailmentType;
@@ -74,8 +75,6 @@ public class Player implements Serializable {
         }
         return true;
     }
-    
-    
 
     public String getName() {
         return name;
@@ -125,8 +124,7 @@ public class Player implements Serializable {
         this.maxWeight = maxWeight;
     }
 
-  public ArrayList<Game> getGames() {
+    public ArrayList<Game> getGames() {
         return games;
     }
-    
 }

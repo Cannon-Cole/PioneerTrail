@@ -12,16 +12,16 @@ import java.util.Objects;
  *
  * @author Aimee
  */
-public class Location implements Serializable{
-    
+public class Location implements Serializable {
+
     private int currentRow;
     private int currentColumn;
     private boolean visited;
     private Scene scene;
-    
- public Location() {
-    }    
-    
+
+    public Location() {
+    }
+
     public int getCurrentRow() {
         return currentRow;
     }
@@ -29,7 +29,7 @@ public class Location implements Serializable{
     public void setCurrentRow(int rowOne) {
         this.currentRow = rowOne;
     }
-    
+
     public int getCurrentColumn() {
         return currentColumn;
     }
@@ -37,7 +37,7 @@ public class Location implements Serializable{
     public void setCurrentColumn(int rowOne) {
         this.currentColumn = rowOne;
     }
-    
+
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
@@ -92,4 +92,4 @@ public class Location implements Serializable{
         return "Location{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", visited=" + visited + ", scene=" + scene + '}';
     }
 
-}   
+}

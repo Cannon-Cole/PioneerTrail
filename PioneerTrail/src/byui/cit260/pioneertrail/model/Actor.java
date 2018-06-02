@@ -12,22 +12,22 @@ import java.awt.Point;
  * @author Aimee, Cole, Derek
  */
 public enum Actor {
-     
-Father("Brigham", new Point(1,1)), 
-Mother("Sarah", new Point(1,1)), 
-Child1("Hyrum", new Point(1,1)), 
-Child2("Anna", new Point(1,1)),
-Child3("Martin", new Point(1,1)); 
+
+    Father("Brigham", new Point(1, 1)),
+    Mother("Sarah", new Point(1, 1)),
+    Child1("Hyrum", new Point(1, 1)),
+    Child2("Anna", new Point(1, 1)),
+    Child3("Martin", new Point(1, 1));
 
     private String name;
     private Point coordinates;
 
- Actor(String name, Point coordinates) {
-   
-    this.name = name;
-    this.coordinates = coordinates;
+    Actor(String name, Point coordinates) {
 
-}
+        this.name = name;
+        this.coordinates = coordinates;
+
+    }
 
     @Override
     public String toString() {

@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author Cole
  */
 public class ActorControlTest {
-    
+
     public ActorControlTest() {
     }
 
@@ -29,15 +29,7 @@ public class ActorControlTest {
         double expResult = 1.63;
         double result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
-        
-        System.out.println("illnessHeal");
-        foodAmount = 100.0;
-        mortalityRate = 75.0;
-        medicineAmount = 1;
-        expResult = 1.63;
-        result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
-        assertEquals(expResult, result, 0.1);
-   
+
         System.out.println("illnessHealInvalid - first test");
         foodAmount = 501.0;
         mortalityRate = 100.0;
@@ -53,7 +45,7 @@ public class ActorControlTest {
         expResult = 1.63;
         result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
-        
+
         System.out.println("illnessHealInvalid - third test");
         foodAmount = 150.0;
         mortalityRate = 50.0;
@@ -84,7 +76,6 @@ public class ActorControlTest {
         medicineAmount = 1;
         expResult = 5.3;
         result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
-        assertEquals(expResult, result, 0.1); 
+        assertEquals(expResult, result, 0.1);
     }
-    
 }

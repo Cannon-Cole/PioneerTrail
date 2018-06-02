@@ -11,12 +11,13 @@ import java.io.Serializable;
  *
  * @author Aimee, Cole, Derek
  */
-public class Game implements Serializable{
-   private int numberOfPioneers;
-   private int timeOfYear;
-   private int mortalityRate;
-   private Player player;
-   
+public class Game implements Serializable {
+
+    private int numberOfPioneers;
+    private int timeOfYear;
+    private int mortalityRate;
+    private Player player;
+
     public Game() {
     }
 
@@ -32,7 +33,7 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "numberOfPioneers=" + numberOfPioneers + ", timeOfYear=" + timeOfYear + '}';
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -54,14 +55,14 @@ public class Game implements Serializable{
         return true;
     }
 
-   public Player getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
     public void setPlayer(Player player) {
         this.player = player;
     }
-   
+
     public int getNumberOfPioneers() {
         return numberOfPioneers;
     }

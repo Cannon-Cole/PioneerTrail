@@ -10,5 +10,5 @@ package byui.cit260.pioneertrail.control;
  * @author Cole
  */
 public class InventoryControl {
-    
+
 }
