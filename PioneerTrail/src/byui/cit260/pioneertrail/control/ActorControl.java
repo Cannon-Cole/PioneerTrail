@@ -11,7 +11,7 @@ package byui.cit260.pioneertrail.control;
  */
 public class ActorControl {
    
-    public static double illnessHeal(food, mortality, medicine) {
+    public static double illnessHeal(double foodAmount, double mortalityRate, double medicineAmount) {
     /*    
         if {(food is <= 0 || > 500)
 	RETURN -1 //food invalid
@@ -31,38 +31,36 @@ IF liveOrDie >= 0.5
 ELSE
 	RETURN 0 //dies  //int
 
-    */    
-    }
- 
+    */
+    double healChance = 0;
     
-}
+    
+    if (foodAmount <= 0 || foodAmount > 500) {
+        return -1;
+    }
 
-if (food is <= 0 || food > 500) { // food is negative?
-return -1;
-}
-
-if (mortality < 75 || mortality > 125) {
+    if (mortalityRate < 75 || mortalityRate > 125) {
 	return -2;
-}
+    }
 
-if (medicine < 0) {
+    if (medicineAmount < 0) {
 	return -3 ;
-}
+    }
 
-if (medicine > 0) {
-	medicineChance = .3;
-liveOrDie = foodAmount/mortalityRate + medicineChance;
-}
+    if (medicineAmount > 0) {
+	healChance = .3;
+        }
 
-if (liveOrDie >= 0.5) {
+    double liveOrDie = foodAmount/mortalityRate + healChance;
+
+
+    if (liveOrDie >= 0.5) {
 	return liveOrDie;
-}
- 
-    double foodAmount = assign;
-    double mortalityRate = assign;
-    double medicineChance = assign;
+    }
 
-else {
+    else {
 	return 0;
-}
+    }
+    
+    }
 }
