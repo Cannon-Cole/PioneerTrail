@@ -20,8 +20,8 @@ public class Inventory implements Serializable {
     private double weight;
     private double price;
     private int quantity;
-    
-    private ArrayList<Inventory> contents = new ArrayList<Inventory>();
+    private double foodAmount;
+    private double medicineAmount;
     
     public Inventory() {
     }
@@ -110,6 +110,22 @@ public class Inventory implements Serializable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+    
+      public double getFoodAmount() {
+        return foodAmount;
+    }
+
+    public void setFoodAmount(double foodAmount) {
+        this.foodAmount = foodAmount;
+    }
+
+    public double getMedicineAmount() {
+        return medicineAmount;
+    }
+
+    public void setMedicineAmount(double medicineAmount) {
+        this.medicineAmount = medicineAmount;
     }
 
 }

@@ -14,35 +14,10 @@ import java.io.Serializable;
 public class Game implements Serializable{
    private int numberOfPioneers;
    private int timeOfYear;
-
+   private int mortalityRate;
    private Player player;
-    public Game() {
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
    
-    
-
-    public int getNumberOfPioneers() {
-        return numberOfPioneers;
-    }
-
-    public void setNumberOfPioneers(int numberOfPioneers) {
-        this.numberOfPioneers = numberOfPioneers;
-    }
-
-    public int getTimeOfYear() {
-        return timeOfYear;
-    }
-
-    public void setTimeOfYear(int timeOfYear) {
-        this.timeOfYear = timeOfYear;
+    public Game() {
     }
 
     @Override
@@ -57,8 +32,6 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "numberOfPioneers=" + numberOfPioneers + ", timeOfYear=" + timeOfYear + '}';
     }
-
-    
     
     @Override
     public boolean equals(Object obj) {
@@ -81,6 +54,35 @@ public class Game implements Serializable{
         return true;
     }
 
+   public Player getPlayer() {
+        return player;
+    }
 
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
    
+    public int getNumberOfPioneers() {
+        return numberOfPioneers;
+    }
+
+    public void setNumberOfPioneers(int numberOfPioneers) {
+        this.numberOfPioneers = numberOfPioneers;
+    }
+
+    public int getTimeOfYear() {
+        return timeOfYear;
+    }
+
+    public void setTimeOfYear(int timeOfYear) {
+        this.timeOfYear = timeOfYear;
+    }
+
+    public int getMortalityRate() {
+        return mortalityRate;
+    }
+
+    public void setMortalityRate(int mortalityRate) {
+        this.mortalityRate = mortalityRate;
+    }
 }
