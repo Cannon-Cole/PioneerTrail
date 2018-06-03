@@ -5,8 +5,12 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
 /**
  *
@@ -15,6 +19,22 @@ import static org.junit.Assert.*;
 public class LocationControlTest {
 
     public LocationControlTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+    }
+
+    @Before
+    public void setUp() throws Exception {
+    }
+
+    @After
+    public void tearDown() throws Exception {
     }
 
     /**
@@ -77,5 +97,82 @@ public class LocationControlTest {
         expResult = 0;
         result = LocationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of checkAfterHuntWeight method, of class LocationControl.
+     */
+    @Test
+    public void testCheckAfterHuntWeight() {
+        System.out.println("checkAfterHuntWeightValid");
+        int estimateResources = 100;
+        int gatherResources =75;
+        int reduceFoodSupply = 10;
+        int expResult = 185;
+        int result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        assertEquals(expResult, result);
+   
+    }
+
+           System.out.println("checkAfterHuntWeightInvalid - first test");
+        int estimateResources = 501;
+        int gatherResources =75;
+        int reduceFoodSupply = 10;
+        int expResult = -1;
+        int result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        assertEquals(expResult, result);
+   
+    }
+       System.out.println("checkAfterHuntWeightInvalid - second test");
+        int estimateResources = 100;
+        int gatherResources =200;
+        int reduceFoodSupply = 10;
+        int expResult = -2;
+        int result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        assertEquals(expResult, result);
+   
+    }
+
+       System.out.println("checkAfterHuntWeightInvalid - third test";
+        int estimateResources = 100;
+        int gatherResources =75;
+        int reduceFoodSupply = 35;
+        int expResult = -3;
+        int result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        assertEquals(expResult, result);
+   
+    }
+
+
+    /*
+        
+       
+   
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /**
+     * Test of checkAfterHuntSuccess method, of class LocationControl.
+     */
+    @Test
+    public void testCheckAfterHuntSuccess() {
+        System.out.println("checkAfterHuntSuccess");
+        boolean estimateResources = false;
+        boolean gatherResources = false;
+        boolean reduceFoodSupply = false;
+        boolean expResult = false;
+        boolean result = LocationControl.checkAfterHuntSuccess(estimateResources, gatherResources, reduceFoodSupply);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 }
