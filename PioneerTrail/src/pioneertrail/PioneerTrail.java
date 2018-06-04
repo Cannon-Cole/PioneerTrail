@@ -5,13 +5,13 @@
  */
 package pioneertrail;
 
-import byui.cit260.pioneertrail.model.Actor;
-import byui.cit260.pioneertrail.model.Game;
-import byui.cit260.pioneertrail.model.Inventory;
-import byui.cit260.pioneertrail.model.Player;
-import byui.cit260.pioneertrail.model.Scene;
-import byui.cit260.pioneertrail.model.Map;
-import byui.cit260.pioneertrail.model.Location;
+import byui.cit260.pioneertrail.model.ActorModel;
+import byui.cit260.pioneertrail.model.GameModel;
+import byui.cit260.pioneertrail.model.InventoryModel;
+import byui.cit260.pioneertrail.model.PlayerModel;
+import byui.cit260.pioneertrail.model.SceneModel;
+import byui.cit260.pioneertrail.model.MapModel;
+import byui.cit260.pioneertrail.model.LocationModel;
 
 /**
  *
@@ -32,8 +32,8 @@ public class PioneerTrail {
     }
     
     static void coleTest(){
-        Scene sceneTest = new Scene();
-        Inventory coleInventory = new Inventory();
+        SceneModel sceneTest = new SceneModel();
+        InventoryModel coleInventory = new InventoryModel();
         
         String[] items = {"ammo","wheels","food"};
         double[] resourceAmount = {10.5, 3.4, 1};
@@ -58,7 +58,7 @@ public class PioneerTrail {
     }
     
     static void derekTest() {
-        Inventory inventoryTest = new Inventory();
+        InventoryModel inventoryTest = new InventoryModel();
         inventoryTest.setName("Wood");
         inventoryTest.setType("Resource");
         inventoryTest.setWeight(12.5);
@@ -72,42 +72,42 @@ public class PioneerTrail {
     static void teamTest(){
        
         //create instances
-        Player playerOne = new Player();
-        Game gameOne = new Game();
+        PlayerModel playerOne = new PlayerModel();
+        GameModel gameOne = new GameModel();
         
         
         
-        //Testing for Player class
+        //Testing for PlayerModel class
         playerOne.setName("William Jackson");
         playerOne.setHealth(1);
         playerOne.setAilmentType("Broken Bone");
         playerOne.setMaxWeight(300);
         System.out.println(playerOne.toString());
          
-        //Testing for Game class
+        //Testing for GameModel class
         gameOne.setNumberOfPioneers(5);
         gameOne.setTimeOfYear(6);
         System.out.println(gameOne.toString());
        
-        //Testing for Actor Enum
-        System.out.println(Actor.Father.toString());
-        System.out.println(Actor.Mother.toString());
-        System.out.println(Actor.Child1.toString());
-        System.out.println(Actor.Child2.toString());
+        //Testing for ActorModel Enum
+        System.out.println(ActorModel.Father.toString());
+        System.out.println(ActorModel.Mother.toString());
+        System.out.println(ActorModel.Child1.toString());
+        System.out.println(ActorModel.Child2.toString());
         
          
         
     }
-        //Testing for Location class
+        //Testing for LocationModel class
     static void aimeeTest(){
-     Location locationOne = new Location();
+     LocationModel locationOne = new LocationModel();
         locationOne.setCurrentRow(5);
         locationOne.setCurrentColumn(6);
         locationOne.setVisited(true);
         System.out.println(locationOne.toString());
         
-         //Testing for Map class
-        Map mapOne = new Map();
+         //Testing for MapModel class
+        MapModel mapOne = new MapModel();
         mapOne.setCurrentRow(1);
         mapOne.setCurrentColumn(1);
         mapOne.setTotalRows(5);
