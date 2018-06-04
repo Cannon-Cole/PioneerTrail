@@ -5,10 +5,91 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.model.InventoryModel;
+import byui.cit260.pioneertrail.model.GameModel;
+
 /**
  *
  * @author aimeejorgensen
  */
 public class GameControl {
+
+    public static int repairWagon(GameModel game, InventoryModel inventory) {
+
+        int wagonHealth = game.getWagonHealth();
+        int wagonStrength = game.getWagonStrength();
+        boolean hasHammer = inventory.getHasHammer();
+        int hammerDurability = inventory.getHammerDurability();
+        int spareWheels = inventory.getSpareWheels();
+        
+        if (wagonHealth < 0 || wagonHealth > 20) {
+            return -1; //health invalid
+        }
+
+        if (wagonStrength < 0 || wagonStrength > 20) {
+            return -2; //strength invalid
+        }
+
+        if (hasHammer == true) {
+            if (hammerDurability < 1 || hammerDurability > 20) {
+                return -3; //hammer invalid
+            }
+        }
+
+        //end of error checking
+        
+        int returnVal = 0;
+
+        if (hasHammer == false) {
+            if (spareWheels > 0) {
+                wagonHealth = wagonHealth + 5;
+                wagonStrength = wagonStrength + 10;
+                spareWheels--;
+                returnVal = 1; //use spare wheel
+            } else {
+                wagonHealth = wagonHealth + 5;
+                wagonStrength = wagonStrength - 5;
+                returnVal = 4; //use random stone
+            }
+        }
+        
+        if (hasHammer == true) {
+            wagonHealth = wagonHealth + 5;
+            wagonStrength = (hammerDurability / 4) + (wagonHealth / 4) + wagonStrength;
+            //bonus if hammer is newer, bonus if wagon is healthy
+            //sum of bonuses tops off at ten (bonus from a fresh wheel)
+            hammerDurability--;
+            if (hammerDurability > 0) {
+                returnVal = 2; //hammer used
+            } else {
+                hasHammer = false;
+                returnVal = 3; //hammer broken
+            }
+        }
+
+        if (wagonHealth > 20) {
+            wagonHealth = 20;
+        }
+        
+        if (wagonHealth < 0) {
+            wagonHealth = 0;
+        }
+        
+        if (wagonStrength > 20) {
+            wagonStrength = 20;
+        }
+        
+        if (wagonStrength < 0) {
+            wagonStrength = 0;
+        }
+        
+        game.setWagonHealth(wagonHealth);
+        game.setWagonStrength(wagonStrength);
+        inventory.setHasHammer(hasHammer);
+        inventory.setHammerDurability(hammerDurability);
+        
+        //if returnVal is still zero here, something was missed
+        return returnVal;
+    }
 
 }
