@@ -116,7 +116,7 @@ public class LocationControlTest {
         int reduceFoodSupply = 10;
         
         //create instance of LocationControl Class
-        LocationControl instance = new LocationControl();
+//        LocationControl instance = new LocationControl();
         
         //expected output return value:
         int expResult = 165;
@@ -124,12 +124,12 @@ public class LocationControlTest {
         System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," + reduceFoodSupply + ",");
         
         //call function to run test
-        int result = instance.checkAfterHuntWeight.(estimateResources, gatherResources, reduceFoodSupply);
+        int result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
         
         System.out.println("afterHuntWeight(" + result);
          
         //compare expected return value to actual return value
-        assertEquals(expResult, result, 165);
+        assertEquals(expResult, result);
    
     
 
@@ -137,60 +137,102 @@ public class LocationControlTest {
         estimateResources = 501;
         gatherResources =75;
         reduceFoodSupply = 10;
-        expResult = 586;
-        result = instance.checkafterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        expResult = -1;
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
    
-        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," - reduceFoodSupply + ",");
+        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," + reduceFoodSupply + ")");
         
-        int result = instance.checkAfterHuntWeight.(estimateResources, gatherResources, reduceFoodSupply);
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
         
-        System.out.println("afterHuntWeight(" + result);
+        System.out.println("afterHuntWeight = " + result);
         
-        assertEquals(expResult, result, 586);
+        assertEquals(expResult, result);
          
         
-        
-        
+          
         System.out.println("\tTest 3");
         estimateResources = 100;
         gatherResources =200;
         reduceFoodSupply = 10;
-        expResult = 310;
-        result = instance.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        expResult = -2;
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+   
+        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," + reduceFoodSupply + ")");
         
-        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," - reduceFoodSupply + ",");
-        
-        int result = instance.checkAfterHuntWeight.(estimateResources, gatherResources, reduceFoodSupply);
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
         
         System.out.println("afterHuntWeight(" + result);
         
-        assertEquals(expResult, result, 310);
+        assertEquals(expResult, result);
         
         
-   
-    
 
         System.out.println("\tTest 4");
         estimateResources = 100;
         gatherResources =75;
         reduceFoodSupply = 35;
-        expResult = 210;
-        result = instance.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
-        assertEquals(expResult, result, 210);
+        expResult = -3;
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+   
+        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," + reduceFoodSupply + ")");
+        
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        
+        System.out.println("afterHuntWeight(" + result);
+        
+        assertEquals(expResult, result);
+    
+    
+        System.out.println("\tTest 5");
+        estimateResources = 0;
+        gatherResources =75;
+        reduceFoodSupply = 10;
+        expResult = 80;
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+   
+        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," + reduceFoodSupply + ")");
+        
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        
+        System.out.println("afterHuntWeight(" + result);
+        
+        assertEquals(expResult, result);
+        
+        
+        
+        System.out.println("\tTest 6");
+        estimateResources = 100;
+        gatherResources =150;
+        reduceFoodSupply = 10;
+        expResult = 260;
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+   
+        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," + reduceFoodSupply + ")");
+        
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        
+        System.out.println("afterHuntWeight(" + result);
+        
+        assertEquals(expResult, result);
+        
+        
+        System.out.println("\tTest 7");
+        estimateResources =100;
+        gatherResources =75;
+        reduceFoodSupply = 30;
+        expResult = 205;
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+   
+        System.out.println("checkAfterHuntWeight = (" + estimateResources + "," + gatherResources + "," + reduceFoodSupply + ")");
+        
+        result = LocationControl.checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+        
+        System.out.println("afterHuntWeight(" + result);
+        
+        assertEquals(expResult, result);
     /*
      * Test of checkAfterHuntSuccess method, of class LocationControl.
      */
-    
-    @Test
-    public void testCheckAfterHuntSuccess() {
-        System.out.println("checkAfterHuntSuccess");
-        boolean estimateResources = true;
-        boolean gatherResources = true;
-        boolean reduceFoodSupply = true;
-        boolean expResult = true;
-        result = LocationControl.checkAfterHuntSuccess(estimateResources, gatherResources, reduceFoodSupply);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+   
     }
-}
+    }
