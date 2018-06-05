@@ -7,7 +7,7 @@ package byui.cit260.pioneertrail.control;
 
 /**
  *
- * @author aimeejorgensen
+ * @author Cole, Derek, Aimee
  */
 public class ActorControl {
 

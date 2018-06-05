@@ -35,7 +35,7 @@ public class LocationControl {
         }
     }
     
-    public int checkAfterHuntWeight(int estimateResources, int gatherResources, int reduceFoodSupply) {
+    public static int checkAfterHuntWeight(int estimateResources, int gatherResources, int reduceFoodSupply) {
         
         
         int afterHuntWeight = (estimateResources + gatherResources - reduceFoodSupply);
