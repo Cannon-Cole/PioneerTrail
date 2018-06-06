@@ -30,16 +30,16 @@ public class GameControl {
             return -2; //strength invalid
         }
 
-        if (hasHammer == true) {
-            if (hammerDurability < 1 || hammerDurability > 20) {
+        if ((hasHammer == true) && (hammerDurability < 1 || hammerDurability > 20)) {
                 return -3; //hammer invalid
-            }
         }
 
         //end of error checking
         
         int returnVal = 0;
 
+        //todo: ask player which procedure to use. replace a wheel, or use the hammer?
+        
         if (hasHammer == false) {
             if (spareWheels > 0) {
                 wagonHealth = wagonHealth + 5;
