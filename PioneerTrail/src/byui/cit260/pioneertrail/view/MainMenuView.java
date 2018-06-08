@@ -11,4 +11,7 @@ package byui.cit260.pioneertrail.view;
  */
 public class MainMenuView {
     
+   public void displayMainMenuView(){
+       System.out.println("*** displayMainMenuView called ***");
+   }
 }
