@@ -17,26 +17,10 @@ public class StartProgramView {
     //translate statement below into java
 //    displayStartProgramView() {
 //        endOfView = false
-//        DO inputs = getInputs()
+//        DO inputs = getInputs()  //calls the getImput method
 //        IF no inputs were entered OR the first input is Q RETURN
 //        ENDIF endOfView = doAction(inputs)
 //        WHILE endOfView 
 //    != true
-//}
-//    (my attempt at the algorithm -  Aimee)
-    
-//    public void displayStartProgramView(boolean) {
-//        boolean endOfView = false;
-    
-//        do {
-//            inputs = getInputs(name);
-//    while (name == null || name == 0); 
-//    System.out.println ("Invalid name");
-//           RETURN
-//        ENDIF endOfView = doAction(inputs)
-//        WHILE endOfView 
-
-//!= true
-//}
-    
+//   
 }
