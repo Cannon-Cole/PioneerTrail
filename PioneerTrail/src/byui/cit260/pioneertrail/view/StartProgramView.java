@@ -11,7 +11,8 @@ package byui.cit260.pioneertrail.view;
  */
 public class StartProgramView {
 
-    public StartProgramView() { //constructor
+    public StartProgramView() {
+//constructor
     }
 
     //translate statement below into java
@@ -22,5 +23,40 @@ public class StartProgramView {
 //        ENDIF endOfView = doAction(inputs)
 //        WHILE endOfView 
 //    != true
-//   
+//  
+    public void displayStartProgramView() {
+
+        boolean endOfView = false;
+
+        do {
+            String[] inputs = this.getInputs();
+
+            if (inputs == null) {
+                return;
+            }
+
+            else if ("Q".equals(inputs[0])) {
+                return;
+            }
+
+            endOfView = doAction(inputs);
+
+        }
+        while (endOfView = false);
+    }
+
+    private String[] getInputs() {
+        System.out.println("*** getInputs() caled ***");
+        String[] inputs = new String[1];
+        inputs[0] = "testInput";
+
+        return inputs;
+    }
+
+    private boolean doAction(String[] inputs) {
+        System.out.println("*** doAction() caled ***");
+        System.out.println("inputs = " + inputs[0]);
+        return true;
+    }
+
 }
