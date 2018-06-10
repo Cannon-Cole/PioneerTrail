@@ -45,16 +45,15 @@ public class MainMenuView {
                     "\n  L: Load existing game" +
                     "\n  H: Get help on how to play the game" +
                     "\n  E: Exit");
-            inputs[0] = reader.nextLine();
-
-            inputs[0] = inputs[0].trim().toUpperCase();
+            
+            inputs[0] = reader.nextLine().trim();
 
             if (inputs[0].length() < 1) {
                 System.out.println("You must enter a non-blank value");
                 continue;
             }
             
-            switch(inputs[0]) {
+            switch(inputs[0].toUpperCase()) {
             case "N":
                 System.out.println("input is N - New Game");
                 break;
