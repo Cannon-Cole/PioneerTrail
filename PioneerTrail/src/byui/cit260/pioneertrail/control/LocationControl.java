@@ -10,7 +10,7 @@ import static java.lang.Boolean.FALSE;
 
 /**
  *
- * @author Cole, Derek, 
+ * @author Cole, Derek,
  */
 public class LocationControl {
 
@@ -28,52 +28,39 @@ public class LocationControl {
 
         if (overcame >= 5) {
             return 1;
-        }
-
-        else {
+        } else {
             return 0;
         }
     }
-    
+
     public static int checkAfterHuntWeight(int estimateResources, int gatherResources, int reduceFoodSupply) {
-        
-        
+
         int afterHuntWeight = (estimateResources + gatherResources - reduceFoodSupply);
-   
-        
-        if (estimateResources <= 0 || estimateResources > 500) {
-	return -1;
-        }
-        
-        if (gatherResources < 5 || gatherResources > 150) {
-	return -2;
-        }
-        
-        if (reduceFoodSupply < 0 || reduceFoodSupply > 30) {
-	return -3;
-        }
-        
-        else {
-        return afterHuntWeight;
-        }
-    } 
-    
-    public static boolean checkAfterHuntSuccess(int estimateResources, int gatherResources, int reduceFoodSupply){
-        
-        int afterHuntWeight = (estimateResources + gatherResources - reduceFoodSupply);
-   
-        
-        if (afterHuntWeight >= 0.5 & afterHuntWeight <= 500) {
-	return true;
+
+        if (estimateResources < 0 || estimateResources > 500) {
+            return -1;
         }
 
-        if (afterHuntWeight <=0) {
-	return false;
+        if (gatherResources < 5 || gatherResources > 150) {
+            return -2;
         }
-    
-        else {
-	return false;
+
+        if (reduceFoodSupply < 0 || reduceFoodSupply > 30) {
+            return -3;
+        } else {
+            return afterHuntWeight;
         }
+    }
+
+    public static boolean checkAfterHuntSuccess(int estimateResources, int gatherResources, int reduceFoodSupply) {
+
+        int afterHuntWeight = checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
+
+        if (afterHuntWeight >= 0 && afterHuntWeight <= 500) {
+            return true;
+        }
+
+        return false;
     }
 }
 

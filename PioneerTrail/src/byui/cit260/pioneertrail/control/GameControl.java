@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
+import byui.cit260.pioneertrail.model.PlayerModel;
 
 /**
  *
@@ -91,5 +92,23 @@ public class GameControl {
         //if returnVal is still zero here, something was missed
         return returnVal;
     }
+public static PlayerModel savePlayer(String name) {
+    System.out.println("***savePlayer() called ***");
+    
+    if (name == null || name.length() < 1)
+        return null;
+    else { 
+         PlayerModel player = new PlayerModel();
+         
+         player.setName(name);
+         
+         return new PlayerModel();
+    }
+     
+    
+            
+            
 
+}
+    
 }
