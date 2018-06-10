@@ -6,6 +6,7 @@
 package pioneertrail;
 
 import byui.cit260.pioneertrail.view.StartProgramView;
+import byui.cit260.pioneertrail.model.GameModel;
 
 /**
  *
@@ -17,6 +18,8 @@ public class PioneerTrail {
 
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
+        
+        GameModel.setPlayer(player); //save the player
 
     }
 }
