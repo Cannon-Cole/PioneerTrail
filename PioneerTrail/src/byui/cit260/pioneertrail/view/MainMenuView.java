@@ -15,9 +15,10 @@ public class MainMenuView {
     
     public void displayMainMenuView(){
     
-    boolean endOfView = false;
+        boolean endOfView = false;
     
         do {
+            
             String[] inputs = this.getInputs();
 
             if (inputs == null) {
@@ -27,9 +28,8 @@ public class MainMenuView {
             }
 
             endOfView = doAction(inputs);
-
-        }
-        while (endOfView = false);
+            
+        } while (endOfView == false);
     
    }
 
@@ -41,8 +41,10 @@ public class MainMenuView {
         
         while (valid == false) {
 
-            System.out.println("  N: Start new game" +
+            System.out.println("\nMAIN MENU" +
+                    "\n  N: Start new game" +
                     "\n  L: Load existing game" +
+                    "\n  R: Restart existing game" +
                     "\n  H: Get help on how to play the game" +
                     "\n  E: Exit");
             
@@ -53,24 +55,6 @@ public class MainMenuView {
                 continue;
             }
             
-            switch(inputs[0].toUpperCase()) {
-            case "N":
-                System.out.println("input is N - New Game");
-                break;
-            case "L":
-                System.out.println("input is L - Load Game");
-                break;
-            case "H":
-                System.out.println("input is H - Get Help");
-                break;
-            case "E":
-                System.out.println("input is E - Exit");
-                break;
-            default:
-                System.out.println("Invalid input");
-                continue;
-            }
-            
             valid = true;
         }
         
@@ -78,9 +62,43 @@ public class MainMenuView {
     }
 
     private boolean doAction(String[] inputs) {
-        System.out.println("*** MainMenuView - doAction() called ***");
-        return true;
+        
+        switch(inputs[0].toUpperCase()) {
+        case "N":
+            startNewGame();
+            break;
+        case "L":
+            loadGame();
+            break;
+        case "R":
+            restartGame();
+            break;
+        case "H":
+            getHelp();
+            break;
+        case "E":
+        case "Q":
+            return true;
+        default:
+            System.out.println("Invalid input");
+        }
+        
+        return false;
     }
-   
-   
+    
+    private void startNewGame() {
+        System.out.println("New Game");
+    }
+    
+    private void loadGame() {
+        System.out.println("Load Game");
+    }
+    
+    private void restartGame() {
+        System.out.println("Restart Game");
+    }
+    
+    private void getHelp() {
+        System.out.println("Get Help");
+    }
 }
