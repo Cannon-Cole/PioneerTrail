@@ -5,6 +5,9 @@
  */
 package byui.cit260.pioneertrail.view;
 
+import pioneertrail.PioneerTrail;
+import byui.cit260.pioneertrail.control.GameControl;
+
 import java.util.Scanner;
 
 /**
@@ -67,9 +70,6 @@ public class MainMenuView {
         case "N":
             startNewGame();
             break;
-        case "L":
-            loadGame();
-            break;
         case "R":
             restartGame();
             break;
@@ -87,15 +87,16 @@ public class MainMenuView {
     }
     
     private void startNewGame() {
-        System.out.println("New Game");
+        GameControl.createNewGame(PioneerTrail.getPlayer());
+        
+        GameMainView gameMainView = new GameMainView();
+        gameMainView.displayGameViewMenu();
     }
-    
-    private void loadGame() {
-        System.out.println("Load Game");
-    }
-    
+        
     private void restartGame() {
-        System.out.println("Restart Game");
+        //Start existing game? I thought this was "restart" game
+        StartExistingGameView startExistingGameView = new StartExistingGameView();
+        startExistingGameView.displayStartExistingGameView();        
     }
     
     private void getHelp() {

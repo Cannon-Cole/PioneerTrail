@@ -92,23 +92,24 @@ public class GameControl {
         //if returnVal is still zero here, something was missed
         return returnVal;
     }
-public static PlayerModel savePlayer(String name) {
-    System.out.println("***savePlayer() called ***");
     
-    if (name == null || name.length() < 1)
-        return null;
-    else { 
-         PlayerModel player = new PlayerModel();
-         
-         player.setName(name);
-         
-         return new PlayerModel();
-    }
-     
-    
-            
-            
+    public static PlayerModel savePlayer(String name) {
+        System.out.println("***savePlayer() called ***");
 
-}
+        if (name == null || name.length() < 1) {
+            return null;
+        } else { 
+             PlayerModel player = new PlayerModel();
+
+             player.setName(name);
+
+             return new PlayerModel();
+        }
+    
+    }
+    
+    public static void createNewGame(PlayerModel player) {
+        System.out.println("*** GameControl - createNewGame() called ***");
+    }
     
 }
