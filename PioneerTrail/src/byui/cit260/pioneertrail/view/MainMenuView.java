@@ -47,14 +47,13 @@ public class MainMenuView {
             System.out.println("\nMAIN MENU" +
                     "\n  N: Start new game" +
                     "\n  L: Load existing game" +
-                    "\n  R: Restart existing game" +
                     "\n  H: Get help on how to play the game" +
                     "\n  E: Exit");
             
             inputs[0] = reader.nextLine().trim();
 
             if (inputs[0].length() < 1) {
-                System.out.println("You must enter a non-blank value");
+                System.out.println("You must specify a value");
                 continue;
             }
             
@@ -94,12 +93,14 @@ public class MainMenuView {
     }
         
     private void restartGame() {
-        //Start existing game? I thought this was "restart" game
+        //Start existing game? The method's called "restart" game
+        //why not just call it "load"
         StartExistingGameView startExistingGameView = new StartExistingGameView();
         startExistingGameView.displayStartExistingGameView();        
     }
     
     private void getHelp() {
-        System.out.println("Get Help");
+        HelpViewMenu helpViewMenu = new HelpViewMenu();
+        helpViewMenu.displayHelpMenuView();
     }
 }
