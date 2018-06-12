@@ -93,7 +93,7 @@ public class GameControl {
         return returnVal;
     }
     
-    public static PlayerModel savePlayer(String name) {
+    public PlayerModel savePlayer(String name) {
         System.out.println("***savePlayer() called ***");
 
         if (name == null || name.length() < 1) {

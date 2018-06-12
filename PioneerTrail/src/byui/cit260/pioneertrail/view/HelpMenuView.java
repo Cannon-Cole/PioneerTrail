@@ -53,7 +53,7 @@ public class HelpMenuView {
                     "\n  H: How to Hunt" 
                     
                     +  
-                    "\n  Q: Quit Menu" );
+                    "\n  E: Exit Help Menu" );
             
             inputs[0] = reader.nextLine().trim();
 
@@ -86,7 +86,7 @@ public class HelpMenuView {
             displayHowToHunt();
             break;
             
-        case "Q":
+        case "E":
             return true;
         default:
             System.out.println("Invalid Selection");
