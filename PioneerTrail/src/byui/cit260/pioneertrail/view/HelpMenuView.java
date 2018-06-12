@@ -34,35 +34,8 @@ public class HelpMenuView {
         } while (endOfView == false);
     
    }
-    
-    
-    private boolean doAction(String[] inputs) {
-        
-        switch(inputs[0].toUpperCase()) {
-        case "G": 
-            displayGoalGame();
-            break;
-            
-        case "M":
-            System.out.println("Placeholder for how to move");
-            displayHowToMove();
-            break;
-            
-        case "H":
-            System.out.println("Placeholder for how to hunt");
-            displayHowToHunt();
-            break;
-            
-        case "Q":
-            return true;
-        default:
-            System.out.println("Invalid Selection");
-        }
-        
-        return false;
-    }
-    
-     private String[] getInputs() {
+   
+         private String[] getInputs() {
         
         Scanner reader = new Scanner(System.in);
         String[] inputs = new String[1];
@@ -94,6 +67,35 @@ public class HelpMenuView {
         
         return inputs;
     }
+    
+    private boolean doAction(String[] inputs) {
+        
+        switch(inputs[0].toUpperCase()) {
+        case "G": 
+            System.out.println("Placeholder for goal of game");
+            displayGoalGame();
+            break;
+            
+        case "M":
+            System.out.println("Placeholder for how to move");
+            displayHowToMove();
+            break;
+            
+        case "H":
+            System.out.println("Placeholder for how to hunt");
+            displayHowToHunt();
+            break;
+            
+        case "Q":
+            return true;
+        default:
+            System.out.println("Invalid Selection");
+        }
+        
+        return false;
+    }
+    
+
 
     private void displayGoalGame() {
         System.out.println("The goal of the game is for your wagon party to make"
