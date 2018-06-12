@@ -42,7 +42,7 @@ public class StartProgramView {
                 return;
             }
 
-            else if ("Q".equals(inputs[0].toUpperCase())) {
+            else if ("E".equals(inputs[0].toUpperCase())) {
                 return;
             }
 
@@ -62,7 +62,7 @@ public class StartProgramView {
         boolean valid = false;
         while (valid == false) {
 
-            System.out.println("Enter your name: (Q to quit.)");
+            System.out.println("Enter your name: (E to exit.)");
             inputs[0] = reader.nextLine();
 
             inputs[0] = inputs[0].trim();
