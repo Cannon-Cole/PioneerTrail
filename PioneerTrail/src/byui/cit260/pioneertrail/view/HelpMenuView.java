@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class HelpMenuView {
     
     public void displayHelpMenuView() {
-        System.out.println("*** HELP MENU ***");
+        System.out.println("====================================================");
     
         boolean endOfView = false;
     
@@ -43,7 +43,7 @@ public class HelpMenuView {
         
         while (valid == false) {
 
-            System.out.println("\n =====HELP MENU=====" +
+            System.out.println("\n ******** HELP MENU ********" +
                     "\n  G: The Goal of the Game" 
 //                 
                     +
@@ -98,20 +98,18 @@ public class HelpMenuView {
 
 
     private void displayGoalGame() {
-        System.out.println("The goal of the game is for your wagon party to make"
-                + "\n it across the plains to Zion, with 2 or more family members");
+        System.out.println("*The goal of the game is for your wagon party to make it across the plains to Zion,"
+                + "\n with 2 or more family members.");
     }
 
     private void displayHowToMove() {
-        System.out.println("Move your player by entering the coordinates of on"
-                    + "\n the map at each turn, for example, 0,1 would indicate row one"
-                    + "\n square 2, which would move your player to square 2");
+        System.out.println("* Move your player by entering the coordinates on the map at each turn, \n for example, (0,1) would indicate ROW 1, COLUMN 2, which would move your player to square 2.");
          
     }
 
     private void displayHowToHunt() {
-        System.out.println("If you wish to hunt for food, enter A for arrow,"
-                + "\n G for gun, or T for trap.");
+        System.out.println("* If you wish to hunt for food, enter \"A\" for shoot arrow,"
+                + "\n\"G\" for shoot gun, or \"T\" for use a trap.");
     }
                 
 }
