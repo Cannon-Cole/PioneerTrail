@@ -46,7 +46,7 @@ public class MainMenuView {
 
             System.out.println("\nMAIN MENU" +
                     "\n  N: Start new game" +
-                    "\n  L: Load existing game" +
+                    "\n  R: Restart game" +
                     "\n  H: Get help on how to play the game" +
                     "\n  E: Exit");
             
