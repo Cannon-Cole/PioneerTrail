@@ -11,10 +11,10 @@ import java.util.Scanner;
  *
  * @author Aimee
  */
-public class HelpViewMenu {
+public class HelpMenuView {
     
     public void displayHelpMenuView() {
-        System.out.println("*** HelpViewMenu - displayHelpMenuView() called ***");
+        System.out.println("*** HELP MENU ***");
     
         boolean endOfView = false;
     
@@ -40,14 +40,19 @@ public class HelpViewMenu {
         
         switch(inputs[0].toUpperCase()) {
         case "G": 
-            System.out.println("Placeholder for the goal of the game");
+            displayGoalGame();
             break;
+            
         case "M":
             System.out.println("Placeholder for how to move");
+            displayHowToMove();
             break;
+            
         case "H":
             System.out.println("Placeholder for how to hunt");
+            displayHowToHunt();
             break;
+            
         case "Q":
             return true;
         default:
@@ -65,10 +70,16 @@ public class HelpViewMenu {
         
         while (valid == false) {
 
-            System.out.println("\n Help Menu" +
-                    "\n  G: What is the goal of the game?" +
-                    "\n  M: How to move" +
-                    "\n  H: How to hunt" +
+            System.out.println("\n =====HELP MENU=====" +
+                    "\n  G: The Goal of the Game" 
+//                 
+                    +
+                    "\n  M: How to Move"
+               
+                    +
+                    "\n  H: How to Hunt" 
+                    
+                    +  
                     "\n  Q: Quit Menu" );
             
             inputs[0] = reader.nextLine().trim();
@@ -83,5 +94,22 @@ public class HelpViewMenu {
         
         return inputs;
     }
-        
+
+    private void displayGoalGame() {
+        System.out.println("The goal of the game is for your wagon party to make"
+                + "\n it across the plains to Zion, with 2 or more family members");
+    }
+
+    private void displayHowToMove() {
+        System.out.println("Move your player by entering the coordinates of on"
+                    + "\n the map at each turn, for example, 0,1 would indicate row one"
+                    + "\n square 2, which would move your player to square 2");
+         
+    }
+
+    private void displayHowToHunt() {
+        System.out.println("If you wish to hunt for food, enter A for arrow,"
+                + "\n G for gun, or + T for trap");
+    }
+                
 }

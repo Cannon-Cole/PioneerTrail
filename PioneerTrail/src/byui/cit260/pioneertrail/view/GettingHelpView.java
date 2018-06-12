@@ -10,5 +10,9 @@ package byui.cit260.pioneertrail.view;
  * @author aimeejorgensen
  */
 public class GettingHelpView {
+   
+    public static void displayHelpMenu() {
+        System.out.println("*** HelpMenuView - displayHelpMenu() called ***");
+    }    
     
 }

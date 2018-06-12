@@ -8,7 +8,7 @@ package pioneertrail;
 import byui.cit260.pioneertrail.view.StartProgramView;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
-import byui.cit260.pioneertrail.view.HelpViewMenu;
+import byui.cit260.pioneertrail.view.HelpMenuView;
 
 /**
  *
