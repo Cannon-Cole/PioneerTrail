@@ -72,17 +72,17 @@ public class HelpMenuView {
         
         switch(inputs[0].toUpperCase()) {
         case "G": 
-            System.out.println("Placeholder for goal of game");
+            System.out.println("");
             displayGoalGame();
             break;
             
         case "M":
-            System.out.println("Placeholder for how to move");
+            System.out.println("");
             displayHowToMove();
             break;
             
         case "H":
-            System.out.println("Placeholder for how to hunt");
+            System.out.println("");
             displayHowToHunt();
             break;
             
@@ -111,7 +111,7 @@ public class HelpMenuView {
 
     private void displayHowToHunt() {
         System.out.println("If you wish to hunt for food, enter A for arrow,"
-                + "\n G for gun, or + T for trap");
+                + "\n G for gun, or T for trap.");
     }
                 
 }
