@@ -6,7 +6,6 @@
 package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.GameControl;
-import byui.cit260.pioneertrail.control.PlayerControl;
 import byui.cit260.pioneertrail.model.PlayerModel;
 import java.util.Scanner;
 
