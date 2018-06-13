@@ -96,7 +96,7 @@ public class MainMenuView {
         //Start existing game? The method's called "restart" game
         //why not just call it "load"
         StartExistingGameView startExistingGameView = new StartExistingGameView();
-        startExistingGameView.displayStartExistingGameView();        
+        /*startExistingGameView.displayStartExistingGameView();*/        
     }
     
     private void getHelp() {
