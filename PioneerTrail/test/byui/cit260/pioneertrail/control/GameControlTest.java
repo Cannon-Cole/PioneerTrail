@@ -7,7 +7,10 @@ package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
+import byui.cit260.pioneertrail.control.GameControl;
+import byui.cit260.pioneertrail.view.RepairWagonView;
 import java.util.Set;
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,9 +45,11 @@ public class GameControlTest {
 
     @Test
     public void testRepairWagon() {
-    
+        
+        GameControl gameControl = new GameControl();
         GameModel game = new GameModel();
         InventoryModel inventory = new InventoryModel();
+        RepairWagonView repairWagonView = new RepairWagonView();
         
         game.setWagonHealth(15);
         game.setWagonStrength(10);
@@ -52,7 +57,7 @@ public class GameControlTest {
         inventory.setHammerDurability(12);
         inventory.setSpareWheels(0);
         int expResult = 2;
-        int result = GameControl.repairWagon(game, inventory);
+        int result = repairWagonView.repairWagonView(gameControl, game, inventory);
         System.out.println("repairWagon - valid (1): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -62,7 +67,7 @@ public class GameControlTest {
         inventory.setHammerDurability(10);
         inventory.setSpareWheels(0);
         expResult = -1;
-        result = GameControl.repairWagon(game, inventory);
+        result = repairWagonView.repairWagonView(gameControl, game, inventory);
         System.out.println("repairWagon - invalid (2): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
     
@@ -72,7 +77,7 @@ public class GameControlTest {
         inventory.setHammerDurability(10);
         inventory.setSpareWheels(0);
         expResult = -2;
-        result = GameControl.repairWagon(game, inventory);
+        result = repairWagonView.repairWagonView(gameControl, game, inventory);
         System.out.println("repairWagon - invalid (3): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -82,7 +87,7 @@ public class GameControlTest {
         inventory.setHammerDurability(0);
         inventory.setSpareWheels(0);
         expResult = -3;
-        result = GameControl.repairWagon(game, inventory);
+        result = repairWagonView.repairWagonView(gameControl, game, inventory);
         System.out.println("repairWagon - invalid (4): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -92,7 +97,7 @@ public class GameControlTest {
         inventory.setHammerDurability(0);
         inventory.setSpareWheels(1);
         expResult = 1;
-        result = GameControl.repairWagon(game, inventory);
+        result = repairWagonView.repairWagonView(gameControl, game, inventory);
         System.out.println("repairWagon - boundary (5): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -102,7 +107,7 @@ public class GameControlTest {
         inventory.setHammerDurability(1);
         inventory.setSpareWheels(0);
         expResult = 3;
-        result = GameControl.repairWagon(game, inventory);
+        result = repairWagonView.repairWagonView(gameControl, game, inventory);
         System.out.println("repairWagon - boundary (6): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -112,7 +117,7 @@ public class GameControlTest {
         inventory.setHammerDurability(0);
         inventory.setSpareWheels(0);
         expResult = 4;
-        result = GameControl.repairWagon(game, inventory);
+        result = repairWagonView.repairWagonView(gameControl, game, inventory);
         System.out.println("repairWagon - boundary (7): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
     }

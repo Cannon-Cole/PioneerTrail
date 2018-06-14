@@ -10,6 +10,10 @@ import byui.cit260.pioneertrail.control.GameControl;
 import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.control.LocationControl;
 import byui.cit260.pioneertrail.control.MapControl;
+
+import byui.cit260.pioneertrail.model.GameModel;
+import byui.cit260.pioneertrail.model.InventoryModel;
+
 import java.util.Scanner;
 
 /**
@@ -55,7 +59,7 @@ public class GameMainView {
                 + "\n  L: Explore a location"
                 + "\n  M: Move to new location"
                 + "\n  E: Estimate the resources needed"
-                + "\n  B: Repair Wagons"
+                + "\n  B: Repair Wagon"
                 + "\n  C: Utilize tools"
                 + "\n  D: Deal with illness"
                 + "\n  H: Hunt for Resources"
@@ -83,7 +87,12 @@ public class GameMainView {
         GameControl gameControl = new GameControl();
         LocationControl locationControl = new LocationControl();
         ActorControl actorControl = new ActorControl();
+        
+        InventoryModel inventoryModel = new InventoryModel();
+        GameModel gameModel = new GameModel();
+        
         HelpMenuView helpMenuView = new HelpMenuView();
+        RepairWagonView repairWagonView = new RepairWagonView();
         
         switch (inputs[0].toUpperCase()) {
             case "V":
@@ -105,8 +114,7 @@ public class GameMainView {
                 inventoryControl.estimateResources();
                 break;
             case "B":
-                //Change this to actual repairWagon when more is implemented
-                gameControl.repairWagonTemp();
+                repairWagonView.repairWagonView(gameControl, gameModel, inventoryModel);
                 break;
             case "C":
                 gameControl.utilizeTools();
