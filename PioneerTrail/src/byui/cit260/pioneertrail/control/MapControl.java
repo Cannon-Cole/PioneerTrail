@@ -11,4 +11,7 @@ package byui.cit260.pioneertrail.control;
  */
 public class MapControl {
 
+    public void displayMap() {
+        System.out.println("*** displayMap() called ***");
+    }
 }

@@ -27,7 +27,8 @@ public class LocationControl {
 
         if (overcame >= 5) {
             return 1;
-        } else {
+        }
+        else {
             return 0;
         }
     }
@@ -46,7 +47,8 @@ public class LocationControl {
 
         if (reduceFoodSupply < 0 || reduceFoodSupply > 30) {
             return -3;
-        } else {
+        }
+        else {
             return afterHuntWeight;
         }
     }
@@ -61,6 +63,17 @@ public class LocationControl {
 
         return false;
     }
+
+    public void exploreLocation() {
+
+        System.out.println("*** exploreLocation() called ***");
+    }
+    
+    public void huntForResources() {
+
+        System.out.println("*** huntForResources() called ***");
+    }
+
 }
 
 /*public static double illnessHeal(double foodAmount, double mortalityRate, double medicineAmount) {
@@ -95,4 +108,4 @@ public class LocationControl {
 
     }
 }
-*/
+ */

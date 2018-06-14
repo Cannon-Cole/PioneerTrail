@@ -42,4 +42,10 @@ public class ActorControl {
         }
 
     }
+
+    public void moveActor() {
+
+        System.out.println("*** moveactor() called ***");
+    }
+
 }

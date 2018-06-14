@@ -112,4 +112,24 @@ public class GameControl {
         System.out.println("*** GameControl - createNewGame() called ***");
     }
     
+    public static void saveGame() {
+        System.out.println("*** saveGame() called ***");
+    }
+    
+    public void purchaseSupplies() {
+        System.out.println("*** purchaseSupplies() called ***");
+    }
+    
+    public void repairWagonTemp() {
+        System.out.println("*** repairWagonTemp() called ***");
+    }
+    
+    public void utilizeTools() {
+        System.out.println("*** utilizeTools() called ***");
+    }
+    
+    public void dealWithIllness() {
+        System.out.println("*** dealWithIllness() called ***");
+    }
+    
 }
