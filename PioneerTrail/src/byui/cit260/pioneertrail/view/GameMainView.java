@@ -10,8 +10,6 @@ import byui.cit260.pioneertrail.control.GameControl;
 import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.control.LocationControl;
 import byui.cit260.pioneertrail.control.MapControl;
-import byui.cit260.pioneertrail.model.ActorModel;
-import byui.cit260.pioneertrail.model.InventoryModel;
 import java.util.Scanner;
 
 /**
