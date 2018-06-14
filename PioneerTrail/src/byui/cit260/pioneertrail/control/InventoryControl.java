@@ -22,7 +22,7 @@ public class InventoryControl {
     public void removeFoodForOverComeObstacle(InventoryModel inventory, int foodEntered, boolean removeAll) {
 
         if (removeAll) {
-            inventory.setFoodAmount((int) (foodEntered * 0.65));
+            inventory.setFoodAmount((int) (inventory.getFoodAmount() - (foodEntered * 0.65)));
         }
         else {
             inventory.setFoodAmount(inventory.getFoodAmount() - foodEntered);
