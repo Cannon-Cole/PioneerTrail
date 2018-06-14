@@ -68,7 +68,7 @@ public class LocationControl {
 
         System.out.println("*** exploreLocation() called ***");
     }
-    
+
     public void huntForResources() {
 
         System.out.println("*** huntForResources() called ***");

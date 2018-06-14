@@ -57,7 +57,7 @@ public class GameMainView {
                 + "\n  E: Estimate the resources needed"
                 + "\n  B: Repair Wagons"
                 + "\n  C: Utilize tools"
-                + "\n  D: Deal with Sickness"
+                + "\n  D: Deal with illness"
                 + "\n  H: Hunt for Resources"
                 + "\n  S: Save game"
                 + "\n  ?: Help"

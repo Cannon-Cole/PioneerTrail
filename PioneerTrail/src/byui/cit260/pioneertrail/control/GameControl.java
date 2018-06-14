@@ -112,7 +112,7 @@ public class GameControl {
         System.out.println("*** GameControl - createNewGame() called ***");
     }
     
-    public static void saveGame() {
+    public void saveGame() {
         System.out.println("*** saveGame() called ***");
     }
     
