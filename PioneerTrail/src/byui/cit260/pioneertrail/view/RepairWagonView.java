@@ -19,7 +19,7 @@ public class RepairWagonView {
     private int chosenAction = 0;
     private int[] availableActions = new int[4];
     
-    public int repairWagonView(GameControl gameControl, GameModel gameModel, InventoryModel inventoryModel) {
+    public void repairWagonView(GameControl gameControl, GameModel gameModel, InventoryModel inventoryModel) {
         
         availableActions = gameControl.repairWagonCheck(gameModel, inventoryModel);
         
@@ -35,7 +35,7 @@ public class RepairWagonView {
         
         if (availableActions[3] != 0) {
             //todo: error handling
-            return -1;
+            return;
         }
         
         if (availableActions[0] == 1) {
@@ -78,10 +78,10 @@ public class RepairWagonView {
             String[] inputs = this.getInputs(promptString);
             
             if (inputs == null) {
-                return 0;
+                return;
             }
             else if ("B".equals(inputs[0].toUpperCase())) {
-                return 0;
+                return;
             }
             
             endOfView = doAction(inputs);
@@ -108,13 +108,8 @@ public class RepairWagonView {
             }
             
             System.out.println(feedbackString);
-
-            if (chosenAction != 0)
-                endOfView = true;
             
         } while (endOfView == false);
-        
-        return feedback;
         
     }
 
@@ -147,6 +142,7 @@ public class RepairWagonView {
         case "W":
             if (availableActions[0] == 1) {
                 chosenAction = 1;
+                return true;
             } else {
                 System.out.println("Invalid input");
             }
@@ -154,13 +150,14 @@ public class RepairWagonView {
         case "H":
             if (availableActions[1] == 1) {
                 chosenAction = 2;
+                return true;
             } else {
                 System.out.println("Invalid input");
             }
             break;
         case "F":
             chosenAction = 4;
-            break;
+            return true;
         case "B":
             return true;
         default:
