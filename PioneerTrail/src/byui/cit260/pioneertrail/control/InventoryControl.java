@@ -5,10 +5,32 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.model.InventoryModel;
+
 /**
  *
  * @author Cole
  */
 public class InventoryControl {
 
+    public int getFoodAmountForOverComeObstacleDisplay(InventoryModel inventory) {
+
+        return inventory.getFoodAmount();
+
+    }
+
+    public void removeFoodForOverComeObstacle(InventoryModel inventory, int foodEntered, boolean removeAll) {
+
+        if (removeAll) {
+            inventory.setFoodAmount((int) (foodEntered * 0.65));
+        }
+        else {
+            inventory.setFoodAmount(inventory.getFoodAmount() - foodEntered);
+        }
+    }
+
+    public int getFoodAmountForView(InventoryModel inventory) {
+
+        return inventory.getFoodAmount();
+    }
 }

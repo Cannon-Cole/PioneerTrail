@@ -6,7 +6,6 @@
 package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -20,7 +19,7 @@ public class InventoryModel implements Serializable {
     private double weight;
     private double price;
     private int quantity;
-    private double foodAmount;
+    private int foodAmount;
     private double medicineAmount;
     private boolean hasHammer;
     private int hammerDurability;
@@ -117,11 +116,11 @@ public class InventoryModel implements Serializable {
         this.quantity = quantity;
     }
 
-    public double getFoodAmount() {
+    public int getFoodAmount() {
         return foodAmount;
     }
 
-    public void setFoodAmount(double foodAmount) {
+    public void setFoodAmount(int foodAmount) {
         this.foodAmount = foodAmount;
     }
 

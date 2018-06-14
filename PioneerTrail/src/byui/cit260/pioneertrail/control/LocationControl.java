@@ -5,8 +5,7 @@
  */
 package byui.cit260.pioneertrail.control;
 
-import static java.lang.Boolean.TRUE;
-import static java.lang.Boolean.FALSE;
+import byui.cit260.pioneertrail.model.InventoryModel;
 
 /**
  *
@@ -14,7 +13,7 @@ import static java.lang.Boolean.FALSE;
  */
 public class LocationControl {
 
-    public static int overComeObstacle(double foodAmount, int peopleAlive, int hasProperGear) {
+    public int overComeObstacle(int foodAmount, int peopleAlive, int hasProperGear) {
 
         if (foodAmount <= 0 || foodAmount > 500) {
             return -1;
@@ -24,7 +23,7 @@ public class LocationControl {
             return -2;
         }
 
-        double overcame = (foodAmount / peopleAlive) * hasProperGear;
+        int overcame = (foodAmount / peopleAlive) * hasProperGear;
 
         if (overcame >= 5) {
             return 1;
