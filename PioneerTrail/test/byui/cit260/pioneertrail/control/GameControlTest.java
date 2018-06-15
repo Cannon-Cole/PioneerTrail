@@ -8,7 +8,6 @@ package byui.cit260.pioneertrail.control;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.control.GameControl;
-import byui.cit260.pioneertrail.view.RepairWagonView;
 import java.util.Set;
 import java.util.Scanner;
 import org.junit.After;
@@ -42,8 +41,6 @@ public class GameControlTest {
     @After
     public void tearDown() {
     }
-
-    /* tests broken until I can make them accept feedback
     
     @Test
     public void testRepairWagon() {
@@ -51,15 +48,15 @@ public class GameControlTest {
         GameControl gameControl = new GameControl();
         GameModel game = new GameModel();
         InventoryModel inventory = new InventoryModel();
-        RepairWagonView repairWagonView = new RepairWagonView();
         
         game.setWagonHealth(15);
         game.setWagonStrength(10);
         inventory.setHasHammer(true);
         inventory.setHammerDurability(12);
         inventory.setSpareWheels(0);
+        int action = 2;
         int expResult = 2;
-        int result = repairWagonView.repairWagonView(gameControl, game, inventory);
+        int result = gameControl.repairWagonApply(game, inventory, action);
         System.out.println("repairWagon - valid (1): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -68,8 +65,9 @@ public class GameControlTest {
         inventory.setHasHammer(true);
         inventory.setHammerDurability(10);
         inventory.setSpareWheels(0);
+        action = 2;
         expResult = -1;
-        result = repairWagonView.repairWagonView(gameControl, game, inventory);
+        result = gameControl.repairWagonApply(game, inventory, action);
         System.out.println("repairWagon - invalid (2): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
     
@@ -78,8 +76,9 @@ public class GameControlTest {
         inventory.setHasHammer(true);
         inventory.setHammerDurability(10);
         inventory.setSpareWheels(0);
+        action = 2;
         expResult = -2;
-        result = repairWagonView.repairWagonView(gameControl, game, inventory);
+        result = gameControl.repairWagonApply(game, inventory, action);
         System.out.println("repairWagon - invalid (3): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -88,8 +87,9 @@ public class GameControlTest {
         inventory.setHasHammer(true);
         inventory.setHammerDurability(0);
         inventory.setSpareWheels(0);
+        action = 2;
         expResult = -3;
-        result = repairWagonView.repairWagonView(gameControl, game, inventory);
+        result = gameControl.repairWagonApply(game, inventory, action);
         System.out.println("repairWagon - invalid (4): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -98,8 +98,9 @@ public class GameControlTest {
         inventory.setHasHammer(false);
         inventory.setHammerDurability(0);
         inventory.setSpareWheels(1);
+        action = 1;
         expResult = 1;
-        result = repairWagonView.repairWagonView(gameControl, game, inventory);
+        result = gameControl.repairWagonApply(game, inventory, action);
         System.out.println("repairWagon - boundary (5): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -108,8 +109,9 @@ public class GameControlTest {
         inventory.setHasHammer(true);
         inventory.setHammerDurability(1);
         inventory.setSpareWheels(0);
+        action = 2;
         expResult = 3;
-        result = repairWagonView.repairWagonView(gameControl, game, inventory);
+        result = gameControl.repairWagonApply(game, inventory, action);
         System.out.println("repairWagon - boundary (6): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
         
@@ -118,12 +120,11 @@ public class GameControlTest {
         inventory.setHasHammer(false);
         inventory.setHammerDurability(0);
         inventory.setSpareWheels(0);
+        action = 4;
         expResult = 4;
-        result = repairWagonView.repairWagonView(gameControl, game, inventory);
+        result = gameControl.repairWagonApply(game, inventory, action);
         System.out.println("repairWagon - boundary (7): " + result + ", " + expResult);
         assertEquals(expResult, result, 0);
     }
-    
-    */
     
 }

@@ -22,6 +22,10 @@ import java.util.Scanner;
  */
 public class GameMainView {
 
+    int throwawayInt = 0;
+    double throwawayDouble = 0;
+    //functions return values, need to assign to something lest it cause errors
+    
     public void displayMainMenuView() {
 
         boolean endOfView = false;
@@ -93,6 +97,7 @@ public class GameMainView {
         
         HelpMenuView helpMenuView = new HelpMenuView();
         RepairWagonView repairWagonView = new RepairWagonView();
+        IllnessHealView illnessHealView = new IllnessHealView();
         
         switch (inputs[0].toUpperCase()) {
             case "V":
@@ -114,13 +119,18 @@ public class GameMainView {
                 inventoryControl.estimateResources();
                 break;
             case "B":
-                repairWagonView.repairWagonView(gameControl, gameModel, inventoryModel);
+                throwawayInt = repairWagonView.displayRepairWagonView(gameControl, gameModel, inventoryModel);
                 break;
             case "C":
                 gameControl.utilizeTools();
                 break;
             case "D":
-                gameControl.dealWithIllness();
+                //temp values
+                //restructure old code to take object instead of values?
+                double healTempFoodAmount = 150;
+                double healTempMortalityRate = 90;
+                double healTempMedicineAmount = 1;
+                throwawayDouble = illnessHealView.displayIllnessHealView(actorControl, healTempFoodAmount, healTempMortalityRate, healTempMedicineAmount);
                 break;
             case "H":
                 locationControl.huntForResources();

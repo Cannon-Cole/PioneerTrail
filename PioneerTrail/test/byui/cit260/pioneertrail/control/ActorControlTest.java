@@ -27,7 +27,7 @@ public class ActorControlTest {
         double mortalityRate = 75.0;
         double medicineAmount = 1;
         double expResult = 1.63;
-        double result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
+        double result = ActorControl.illnessHealApply(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
 
         System.out.println("illnessHealInvalid - first test");
@@ -35,7 +35,7 @@ public class ActorControlTest {
         mortalityRate = 100.0;
         medicineAmount = 0;
         expResult = -1;
-        result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
+        result = ActorControl.illnessHealApply(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
 
         System.out.println("illnessHealInvalid - second test");
@@ -43,7 +43,7 @@ public class ActorControlTest {
         mortalityRate = 75.0;
         medicineAmount = 1;
         expResult = 1.63;
-        result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
+        result = ActorControl.illnessHealApply(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
 
         System.out.println("illnessHealInvalid - third test");
@@ -51,7 +51,7 @@ public class ActorControlTest {
         mortalityRate = 50.0;
         medicineAmount = 0;
         expResult = -2;
-        result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
+        result = ActorControl.illnessHealApply(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
 
         System.out.println("illnessHealBoundary - first test");
@@ -59,7 +59,7 @@ public class ActorControlTest {
         mortalityRate = 75.0;
         medicineAmount = 0;
         expResult = 2.66;
-        result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
+        result = ActorControl.illnessHealApply(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
 
         System.out.println("illnessHealBoundary - second test");
@@ -67,7 +67,7 @@ public class ActorControlTest {
         mortalityRate = 125.0;
         medicineAmount = 0;
         expResult = 1.8;
-        result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
+        result = ActorControl.illnessHealApply(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
 
         System.out.println("illnessHealBoundary - third test");
@@ -75,7 +75,7 @@ public class ActorControlTest {
         mortalityRate = 100.0;
         medicineAmount = 1;
         expResult = 5.3;
-        result = ActorControl.illnessHeal(foodAmount, mortalityRate, medicineAmount);
+        result = ActorControl.illnessHealApply(foodAmount, mortalityRate, medicineAmount);
         assertEquals(expResult, result, 0.1);
     }
 }

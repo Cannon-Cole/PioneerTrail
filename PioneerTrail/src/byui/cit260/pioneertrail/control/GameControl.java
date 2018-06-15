@@ -11,7 +11,7 @@ import byui.cit260.pioneertrail.model.PlayerModel;
 
 /**
  *
- * @author aimeejorgensen
+ * @author Aimee, Derek
  */
 public class GameControl {
 
@@ -34,21 +34,17 @@ public class GameControl {
         
         returnArray[3] = 0;
         
-        if (wagonHealth < 0 || wagonHealth > 20) {
+        if (wagonHealth < 0 || wagonHealth > 20)
             returnArray[3] = 1; //health invalid
-        }
 
-        if (wagonStrength < 0 || wagonStrength > 20) {
+        if (wagonStrength < 0 || wagonStrength > 20)
             returnArray[3] = 2; //strength invalid
-        }
 
-        if ((hasHammer == true) && (hammerDurability < 1 || hammerDurability > 20)) {
+        if ((hasHammer == true) && (hammerDurability < 1 || hammerDurability > 20))
             returnArray[3] = 3; //hammer invalid
-        }
         
-        if (returnArray[3] != 0) {
+        if (returnArray[3] != 0)
             return returnArray;
-        }
 
         //end of error checking
 
@@ -81,6 +77,15 @@ public class GameControl {
 
         int returnVal = 0;
 
+        if (wagonHealth < 0 || wagonHealth > 20)
+            return -1; //health invalid
+
+        if (wagonStrength < 0 || wagonStrength > 20)
+            return -2; //strength invalid
+
+        if ((hasHammer == true) && (hammerDurability < 1 || hammerDurability > 20))
+            return -3; //hammer invalid
+        
         /* action options
         0 - do nothing
         1 - use spare wheel
@@ -172,9 +177,5 @@ public class GameControl {
     public void utilizeTools() {
         System.out.println("*** utilizeTools() called ***");
     }
-    
-    public void dealWithIllness() {
-        System.out.println("*** dealWithIllness() called ***");
-    }
-    
+
 }

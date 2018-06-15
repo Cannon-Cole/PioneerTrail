@@ -6,6 +6,7 @@
 package byui.cit260.pioneertrail.view;
 
 import pioneertrail.PioneerTrail;
+import byui.cit260.pioneertrail.control.ActorControl;
 import byui.cit260.pioneertrail.control.GameControl;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
@@ -49,13 +50,16 @@ public class MainMenuView {
 
         while (valid == false) {
 
-            System.out.println("\nMAIN MENU"
+            System.out.println(
+                  "\nMAIN MENU"
                 + "\n  N: Start new game"
                 + "\n  R: Restart game"
                 + "\n  H: Get help on how to play the game"
                 + "\n  C: Test Cole's overcomeObstacleView"
-                + "\n  D: Test Derek's repairWagonView"
-                + "\n  E: Exit");
+                + "\n  W: Test Derek's repairWagonView"
+                + "\n  I: Test Derek's healIllnessView"
+                + "\n  E: Exit"
+            );
 
             inputs[0] = reader.nextLine().trim();
 
@@ -89,7 +93,7 @@ public class MainMenuView {
                 overComeObstacleView overCome = new overComeObstacleView();
                 overCome.display(inventory);
                 return true;
-            case "D":
+            case "W":
                 //can't get proper tests to work, test cases can't accept input it seems
                 GameControl gameControlDTest = new GameControl();
                 GameModel gameDTest = new GameModel();
@@ -99,8 +103,18 @@ public class MainMenuView {
                 gameDTest.setWagonStrength(10);
                 inventoryDTest.setHasHammer(false);
                 inventoryDTest.setHammerDurability(0);
-                inventoryDTest.setSpareWheels(0);
-                repairWagonViewDTest.repairWagonView(gameControlDTest, gameDTest, inventoryDTest);
+                inventoryDTest.setSpareWheels(1);
+                int throwawayInt = repairWagonViewDTest.displayRepairWagonView(gameControlDTest, gameDTest, inventoryDTest);
+                break;
+            case "I":
+                //temp values
+                //restructure old code to take object instead of values?
+                ActorControl actorControlDTest = new ActorControl();
+                IllnessHealView illnessHealViewDTest = new IllnessHealView();
+                double healTempFoodAmount = 100;
+                double healTempMortalityRate = 85;
+                double healTempMedicineAmount = 1;
+                double throwawayDouble = illnessHealViewDTest.displayIllnessHealView(actorControlDTest, healTempFoodAmount, healTempMortalityRate, healTempMedicineAmount);
                 break;
             case "E":
             case "Q":

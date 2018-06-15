@@ -17,14 +17,11 @@ import java.util.Scanner;
 public class RepairWagonView {
     
     private int chosenAction = 0;
-    private int[] availableActions = new int[4];
+    private int[] availableActions = new int[3];
     
-    public void repairWagonView(GameControl gameControl, GameModel gameModel, InventoryModel inventoryModel) {
+    public int displayRepairWagonView(GameControl gameControl, GameModel gameModel, InventoryModel inventoryModel) {
         
         availableActions = gameControl.repairWagonCheck(gameModel, inventoryModel);
-        
-        System.out.println("Repairing Wagon:");
-        String promptString = new String();
         
         /* array indexes
         0 - 0/1 is wheel available
@@ -33,10 +30,12 @@ public class RepairWagonView {
         3 - errors, if found
         */
         
-        if (availableActions[3] != 0) {
+        if (availableActions[3] != 0)
+            return -1;
             //todo: error handling
-            return;
-        }
+        
+        System.out.println("Repairing Wagon:");
+        String promptString = new String();
         
         if (availableActions[0] == 1) {
             promptString = promptString + "\n  W: You have a spare wheel. That would be the safest way to fix this.";
@@ -66,7 +65,7 @@ public class RepairWagonView {
                     + "\n     Fix the wagon with whatever you can find. Maybe this stone will do.";
         }
         
-        promptString = promptString + "\n  B: Go Back";
+        promptString = promptString + "\n  E: Exit to previous menu";
         
         chosenAction = 0;
         
@@ -78,10 +77,10 @@ public class RepairWagonView {
             String[] inputs = this.getInputs(promptString);
             
             if (inputs == null) {
-                return;
+                return -1;
             }
-            else if ("B".equals(inputs[0].toUpperCase())) {
-                return;
+            else if ("E".equals(inputs[0].toUpperCase())) {
+                return -1;
             }
             
             endOfView = doAction(inputs);
@@ -111,6 +110,7 @@ public class RepairWagonView {
             
         } while (endOfView == false);
         
+        return feedback;
     }
 
     private String[] getInputs(String promptString) {
@@ -158,7 +158,8 @@ public class RepairWagonView {
         case "F":
             chosenAction = 4;
             return true;
-        case "B":
+        case "E":
+        case "Q":
             return true;
         default:
             System.out.println("Invalid input");
