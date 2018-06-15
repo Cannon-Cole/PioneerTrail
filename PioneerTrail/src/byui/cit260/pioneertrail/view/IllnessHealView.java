@@ -133,16 +133,16 @@ private int chosenAction;
 
     private boolean doAction(String[] inputs) {
         
-        switch (inputs[0].toUpperCase()) {
-        case "Y":
+        String theInput = inputs[0].toUpperCase();
+        if (theInput.contentEquals("Y")) {
             chosenAction = 1;
             return true;
-        case "N":
+        } else if (theInput.contentEquals("N")) {
             chosenAction = 2;
             return true;
-        case "E":
+        }  else if (theInput.contentEquals("E")) {
             return true;
-        default:
+        } else {
             System.out.println("Invalid input");
         }
 
