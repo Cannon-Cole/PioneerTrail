@@ -48,7 +48,7 @@ public class OverComeObstacleView {
 
         while (valid == false) {
 
-            System.out.println("\n Rough terrain encountered. It takes more food to overcome rough terrain. You have " + foodAmount + " food. How much are you willing to use?");
+            System.out.println("\n Rough terrain encountered. It takes more food to overcome rough terrain. You have " + foodAmount + " food. How much will you ration for this obstacle?");
 
             inputs[0] = reader.nextLine().trim();
 

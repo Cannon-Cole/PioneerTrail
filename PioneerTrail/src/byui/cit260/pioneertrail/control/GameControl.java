@@ -144,7 +144,7 @@ public class GameControl {
     }
     
     public PlayerModel savePlayer(String name) {
-        System.out.println("***savePlayer() called ***");
+        System.out.println("*** savePlayer() called ***");
 
         if (name == null || name.length() < 1) {
             return null;
