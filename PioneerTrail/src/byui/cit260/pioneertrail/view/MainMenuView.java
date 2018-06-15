@@ -10,7 +10,6 @@ import byui.cit260.pioneertrail.control.ActorControl;
 import byui.cit260.pioneertrail.control.GameControl;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
-import byui.cit260.pioneertrail.view.RepairWagonView;
 
 import java.util.Scanner;
 
@@ -90,7 +89,7 @@ public class MainMenuView {
                 InventoryModel inventory = new InventoryModel();
                 //View only speaks to model for the test. It will be removed in actual version
                 inventory.setFoodAmount(500);
-                overComeObstacleView overCome = new overComeObstacleView();
+                OverComeObstacleView overCome = new OverComeObstacleView();
                 overCome.display(inventory);
                 return true;
             case "W":

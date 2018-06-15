@@ -81,6 +81,7 @@ public class StartProgramView {
         GameControl gameControl = new GameControl();
 
         String playersName = inputs[0];
+        
         PlayerModel player = gameControl.savePlayer(playersName);
 
         if (player == null) {
