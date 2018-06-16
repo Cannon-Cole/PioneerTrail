@@ -47,7 +47,7 @@ public class HelpMenuView {
 
             System.out.println("\n ******** HELP MENU ********"
                 + "\n  G: The Goal of the Game"
-//                 
+                
                 + "\n  M: How to Move"
 
                 + "\n  H: How to Hunt"
