@@ -48,7 +48,7 @@ public class LocationControlTest {
         System.out.println("overComeObstacleValid");
         int foodAmount = 100;
         int peopleAlive = 5;
-        int hasProperGear = 1;
+        boolean hasProperGear = true;
         int expResult = 1;
         int result = locationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);
@@ -56,7 +56,7 @@ public class LocationControlTest {
         System.out.println("overComeObstacleInvalid - first test");
         foodAmount = 501;
         peopleAlive = 5;
-        hasProperGear = 0;
+        hasProperGear = false;
         expResult = -1;
         result = locationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);
@@ -64,7 +64,7 @@ public class LocationControlTest {
         System.out.println("overComeObstacleInvalid - second test");
         foodAmount = -1;
         peopleAlive = 3;
-        hasProperGear = 0;
+        hasProperGear = false;
         expResult = -1;
         result = locationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);
@@ -72,7 +72,7 @@ public class LocationControlTest {
         System.out.println("overComeObstacleInvalid - third test");
         foodAmount = 150;
         peopleAlive = 1;
-        hasProperGear = 1;
+        hasProperGear = true;
         expResult = -2;
         result = locationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);
@@ -80,7 +80,7 @@ public class LocationControlTest {
         System.out.println("overComeObstacleBoundary - first test");
         foodAmount = 200;
         peopleAlive = 5;
-        hasProperGear = 1;
+        hasProperGear = true;
         expResult = 1;
         result = locationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);
@@ -88,7 +88,7 @@ public class LocationControlTest {
         System.out.println("overComeObstacleBoundary - second test");
         foodAmount = 500;
         peopleAlive = 2;
-        hasProperGear = 1;
+        hasProperGear = true;
         expResult = 1;
         result = locationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);
@@ -96,7 +96,7 @@ public class LocationControlTest {
         System.out.println("overComeObstacleBoundary - third test");
         foodAmount = 500;
         peopleAlive = 3;
-        hasProperGear = 0;
+        hasProperGear = true;
         expResult = 0;
         result = locationControl.overComeObstacle(foodAmount, peopleAlive, hasProperGear);
         assertEquals(expResult, result);

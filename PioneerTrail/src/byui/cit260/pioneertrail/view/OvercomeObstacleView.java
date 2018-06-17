@@ -75,7 +75,7 @@ public class OvercomeObstacleView {
         InventoryControl inventoryControl = new InventoryControl();
         LocationControl locationControl = new LocationControl();
 
-        int overcame = locationControl.overComeObstacle(inputs, 5, 1);
+        int overcame = locationControl.overComeObstacle(inputs, 5, true);
 
         if (overcame == 1) {
             inventoryControl.removeFoodForOverComeObstacle(inventory, inputs, true);
