@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author Cole
  */
-public class OverComeObstacleView {
+public class OvercomeObstacleView {
 
     public void display(InventoryModel inventory) {
 

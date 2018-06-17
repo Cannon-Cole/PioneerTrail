@@ -89,7 +89,7 @@ public class MainMenuView {
                 InventoryModel inventory = new InventoryModel();
                 //View only speaks to model for the test. It will be removed in actual version
                 inventory.setFoodAmount(500);
-                OverComeObstacleView overCome = new OverComeObstacleView();
+                OvercomeObstacleView overCome = new OvercomeObstacleView();
                 overCome.display(inventory);
                 return true;
             case "W":

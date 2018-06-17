@@ -5,8 +5,6 @@
  */
 package byui.cit260.pioneertrail.control;
 
-import byui.cit260.pioneertrail.model.InventoryModel;
-
 /**
  *
  * @author Cole, Derek,
