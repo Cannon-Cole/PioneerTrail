@@ -9,10 +9,12 @@ package byui.cit260.pioneertrail.view;
  *
  * @author Derek
  */
+
 public class StartExistingGameView {
     
-    public static void displayStartExistingGameView() {
-        System.out.println("*** StartExistingGameView - displayStartExistingGameView() called ***");
-    }
+//    delete this view
+//    public static void displayStartExistingGameView() {
+//        System.out.println("*** StartExistingGameView - displayStartExistingGameView() called ***");
+//    }
     
 }

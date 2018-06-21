@@ -16,21 +16,22 @@ import java.util.Scanner;
  */
 public class OvercomeObstacleView {
 
-    public void display(InventoryModel inventory) {
-
-        InventoryControl inventoryControl = new InventoryControl();
-
-        int inputs = this.getInputs(inventory);
-
-        boolean overCame = doAction(inputs, inventory);
-
-        if (overCame) {
-            System.out.println("Your family has crossed the rough terrain unscathed. You have " + inventoryControl.getFoodAmountForView(inventory) + " food left.");
-        }
-        else {
-            System.out.println("One of your family members has died. You have " + inventoryControl.getFoodAmountForView(inventory) + " food left.");
-        }
-    }
+//    delete this view
+//    public void display(InventoryModel inventory) {
+//
+//        InventoryControl inventoryControl = new InventoryControl();
+//
+//        int inputs = this.getInputs(inventory);
+//
+//        boolean overCame = doAction(inputs, inventory);
+//
+//        if (overCame) {
+//            System.out.println("Your family has crossed the rough terrain unscathed. You have " + inventoryControl.getFoodAmountForView(inventory) + " food left.");
+//        }
+//        else {
+//            System.out.println("One of your family members has died. You have " + inventoryControl.getFoodAmountForView(inventory) + " food left.");
+//        }
+//    }
 
     private int getInputs(InventoryModel inventory) {
 

@@ -19,38 +19,39 @@ public class StartProgramView {
 //constructor
     }
 
-    public void displayStartProgramView() {
-        System.out.println("******************************************************************************************************************\n"
-            + "* This is the game of Pioneer Trail./n"
-            + "* In this game you will make a trek west to flee from religious persecution.\n"
-            + "* You have heard of a place called Zion in the mountains that offers the freedom you desire.\n"
-            + "* Your family is composed of both parents and three children.\n"
-            + "* Before starting your journey of 1,500 miles you must buy items necessary for the trip.\n"
-            + "* Plan carefully so that you will have neough.\n"
-            + "* There will be adversity such as deaths, illness, snake bites, broken wagons, adverse weather.\n"
-            + "* If you see an animal you can hunt it if you have weapons.\n"
-            + "* You can repair your wagon if you have the tools when you stop\n"
-            + "* To win you must reach Zion with at least two family members.\n"
-            + "******************************************************************************************************************\n");
-
-        boolean endOfView = false;
-
-        do {
-            String[] inputs = this.getInputs();
-
-            if (inputs == null) {
-                return;
-            }
-
-            else if ("E".equals(inputs[0].toUpperCase())) {
-                return;
-            }
-
-            endOfView = doAction(inputs);
-
-        }
-        while (endOfView = false);
-    }
+//    delete this view
+//    public void displayStartProgramView() {
+//        System.out.println("******************************************************************************************************************\n"
+//            + "* This is the game of Pioneer Trail./n"
+//            + "* In this game you will make a trek west to flee from religious persecution.\n"
+//            + "* You have heard of a place called Zion in the mountains that offers the freedom you desire.\n"
+//            + "* Your family is composed of both parents and three children.\n"
+//            + "* Before starting your journey of 1,500 miles you must buy items necessary for the trip.\n"
+//            + "* Plan carefully so that you will have neough.\n"
+//            + "* There will be adversity such as deaths, illness, snake bites, broken wagons, adverse weather.\n"
+//            + "* If you see an animal you can hunt it if you have weapons.\n"
+//            + "* You can repair your wagon if you have the tools when you stop\n"
+//            + "* To win you must reach Zion with at least two family members.\n"
+//            + "******************************************************************************************************************\n");
+//
+//        boolean endOfView = false;
+//
+//        do {
+//            String[] inputs = this.getInputs();
+//
+//            if (inputs == null) {
+//                return;
+//            }
+//
+//            else if ("E".equals(inputs[0].toUpperCase())) {
+//                return;
+//            }
+//
+//            endOfView = doAction(inputs);
+//
+//        }
+//        while (endOfView = false);
+//    }
 
     private String[] getInputs() {
         //Gets input for main menu

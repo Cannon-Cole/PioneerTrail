@@ -18,28 +18,28 @@ import java.util.Scanner;
  * @author aimeejorgensen
  */
 public class MainMenuView {
-
-    public void displayMainMenuView() {
-
-        boolean endOfView = false;
-
-        do {
-
-            String[] inputs = this.getInputs();
-
-            if (inputs == null) {
-                return;
-            }
-            else if ("E".equals(inputs[0].toUpperCase())) {
-                return;
-            }
-
-            endOfView = doAction(inputs);
-
-        }
-        while (endOfView == false);
-
-    }
+//    delete this view
+//    public void displayMainMenuView() {
+//
+//        boolean endOfView = false;
+//
+//        do {
+//
+//            String[] inputs = this.getInputs();
+//
+//            if (inputs == null) {
+//                return;
+//            }
+//            else if ("E".equals(inputs[0].toUpperCase())) {
+//                return;
+//            }
+//
+//            endOfView = doAction(inputs);
+//
+//        }
+//        while (endOfView == false);
+//
+//    }
 
     private String[] getInputs() {
 

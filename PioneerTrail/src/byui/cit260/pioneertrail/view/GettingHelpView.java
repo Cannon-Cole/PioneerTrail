@@ -11,8 +11,9 @@ package byui.cit260.pioneertrail.view;
  */
 public class GettingHelpView {
    
-    public void displayHelpMenu() {
-        System.out.println("*** HelpMenuView - displayHelpMenu() called ***");
-    }    
-    
-}
+//    delete this view
+//    public void displayHelpMenu() {
+//        System.out.println("*** HelpMenuView - displayHelpMenu() called ***");
+//    }    
+//    
+//}
