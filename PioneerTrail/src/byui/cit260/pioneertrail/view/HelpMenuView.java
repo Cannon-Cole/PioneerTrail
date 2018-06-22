@@ -11,31 +11,41 @@ import java.util.Scanner;
  *
  * @author Aimee
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
+      
+    private String style;
 
-    public void displayHelpMenuView() {
-        System.out.println("====================================================");
-
-        boolean endOfView = false;
-
-        do {
-
-            String[] inputs = this.getInputs();
-
-            if (inputs == null) {
-                return;
-
-            }
-            else if ("Q".equals(inputs[0].toUpperCase())) {
-                return;
-            }
-
-            endOfView = doAction(inputs);
-
-        }
-        while (endOfView == false);
-
+    int throwawayInt = 0;
+    double throwawayDouble = 0;
+    //functions return values, need to assign to something lest it cause errors
+    
+//    delete this view
+    HelpMenuView() {
+        super();
     }
+//    public void displayHelpMenuView() {
+//        System.out.println("====================================================");
+//
+//        boolean endOfView = false;
+//
+//        do {
+//
+//            String[] inputs = this.getInputs();
+//
+//            if (inputs == null) {
+//                return;
+//
+//            }
+//            else if ("Q".equals(inputs[0].toUpperCase())) {
+//                return;
+//            }
+//
+//            endOfView = doAction(inputs);
+//
+//        }
+//        while (endOfView == false);
+//
+//    }
 //delete this view
 //    private String[] getInputs() {
 //

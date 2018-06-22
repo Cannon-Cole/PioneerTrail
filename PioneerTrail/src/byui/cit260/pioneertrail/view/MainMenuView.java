@@ -17,7 +17,18 @@ import java.util.Scanner;
  *
  * @author aimeejorgensen
  */
-public class MainMenuView {
+public class MainMenuView extends View{
+    
+    private String style;
+
+    int throwawayInt = 0;
+    double throwawayDouble = 0;
+    //functions return values, need to assign to something lest it cause errors
+    
+//    delete this view
+    MainMenuView() {
+        super();
+    }
 //    delete this view
 //    public void displayMainMenuView() {
 //

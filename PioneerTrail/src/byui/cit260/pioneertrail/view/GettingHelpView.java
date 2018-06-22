@@ -9,7 +9,22 @@ package byui.cit260.pioneertrail.view;
  *
  * @author aimeejorgensen
  */
-public class GettingHelpView {
+public class GettingHelpView extends View{
+    
+    
+    private String style;
+
+    int throwawayInt = 0;
+    double throwawayDouble = 0;
+    //functions return values, need to assign to something lest it cause errors
+    
+//    delete this view
+    GettingHelpView() {
+        super();
+        
+    }
+    
+}
    
 //    delete this view
 //    public void displayHelpMenu() {
@@ -17,3 +32,4 @@ public class GettingHelpView {
 //    }    
 //    
 //}
+

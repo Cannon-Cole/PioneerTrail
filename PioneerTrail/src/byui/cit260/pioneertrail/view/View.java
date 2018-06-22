@@ -36,7 +36,10 @@ public class View {
 
         return inputs;
     }
-
+    
+    void setInputs() {            
+    }
+            
     public void display() {
 
         boolean endOfView = false;
@@ -60,9 +63,11 @@ public class View {
     }
 
     private boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Display something to the user"); 
+        return false;
+     
     }
 
-    
+
 }
 
