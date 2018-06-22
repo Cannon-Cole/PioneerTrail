@@ -26,10 +26,6 @@ public class MainMenuView extends View{
     //functions return values, need to assign to something lest it cause errors
     
 //    delete this view
-    MainMenuView() {
-        super();
-    }
-//    delete this view
 //    public void displayMainMenuView() {
 //
 //        boolean endOfView = false;

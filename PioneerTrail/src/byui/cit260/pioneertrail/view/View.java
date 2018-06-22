@@ -11,8 +11,11 @@ import java.util.Scanner;
  *
  * @author aimeejorgensen
  */
-public class View {
-  
+public abstract class View implements ViewInterface {
+
+    public View() {
+    }
+
     private String[] getInputs() {
 
         Scanner reader = new Scanner(System.in);
@@ -22,7 +25,6 @@ public class View {
         while (valid == false) {
 
             System.out.println("\n view Super Class");
-              
 
             inputs[0] = reader.nextLine().trim();
 
@@ -37,9 +39,7 @@ public class View {
         return inputs;
     }
     
-    void setInputs() {            
-    }
-            
+    @Override
     public void display() {
 
         boolean endOfView = false;
@@ -61,13 +61,35 @@ public class View {
         while (endOfView == false);
 
     }
+    
+    @Override
+    public String getInput(String promptMessage)
+    {
+        Scanner reader = new Scanner(System.in);
+        String[] inputs = new String[1];
+        boolean valid = false;
 
-    private boolean doAction(String[] inputs) {
-        System.out.println("Display something to the user"); 
-        return false;
-     
+        while (valid == false) {
+
+            System.out.println(promptMessage);
+
+            inputs[0] = reader.nextLine().trim();
+
+            if (inputs[0].length() < 1) {
+                System.out.println("You must specify a value");
+                continue;
+            }
+
+            valid = true;
+        }
+
+        return inputs[0];
     }
 
+    private boolean doAction(String[] inputs) {
+        System.out.println("Display something to the user");
+        return false;
+
+    }
 
 }
-
