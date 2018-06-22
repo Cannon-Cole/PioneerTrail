@@ -13,10 +13,18 @@ import java.util.Scanner;
  *
  * @author aimeejorgensen
  */
-public class StartProgramView {
+    public class StartProgramView extends View {
+    
+    private String style;
 
-    public StartProgramView() {
-//constructor
+    int throwawayInt = 0;
+    double throwawayDouble = 0;
+    //functions return values, need to assign to something lest it cause errors
+    
+//    delete this view
+    StartProgramView() {
+        super();
+        
     }
 
 //    delete this view
