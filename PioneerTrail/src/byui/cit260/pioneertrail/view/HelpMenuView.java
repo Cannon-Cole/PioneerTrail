@@ -11,18 +11,9 @@ import java.util.Scanner;
  *
  * @author Aimee
  */
-public class HelpMenuView extends View{
-      
-    private String style;
+public class HelpMenuView extends View {
 
-    int throwawayInt = 0;
-    double throwawayDouble = 0;
     //functions return values, need to assign to something lest it cause errors
-    
-//    delete this view
-    HelpMenuView() {
-        super();
-    }
 //    public void displayHelpMenuView() {
 //        System.out.println("====================================================");
 //
@@ -47,37 +38,23 @@ public class HelpMenuView extends View{
 //
 //    }
 //delete this view
-//    private String[] getInputs() {
-//
-//        Scanner reader = new Scanner(System.in);
-//        String[] inputs = new String[1];
-//        boolean valid = false;
-//
-//        while (valid == false) {
-//
-//            System.out.println("\n ******** HELP MENU ********"
-//                + "\n  G: The Goal of the Game"
-//                
-//                + "\n  M: How to Move"
-//
-//                + "\n  H: How to Hunt"
-//
-//                + "\n  E: Exit Help Menu");
-//
-//            inputs[0] = reader.nextLine().trim();
-//
-//            if (inputs[0].length() < 1) {
-//                System.out.println("You must specify a value");
-//                continue;
-//            }
-//
-//            valid = true;
-//        }
-//
-//        return inputs;
-//    }
+//    String[] inputs = new String[1];
+    @Override
+    public String[] getInputs() {
 
-    private boolean doAction(String[] inputs) {
+        String[] inputs = new String[1];
+
+        String choice = this.getInput("What do you need help with?");
+
+        inputs[0] = choice;
+
+        this.doAction(inputs);
+
+        return inputs;
+    }
+
+    @Override
+    public boolean doAction(String[] inputs) {
 
         switch (inputs[0].toUpperCase()) {
             case "G":

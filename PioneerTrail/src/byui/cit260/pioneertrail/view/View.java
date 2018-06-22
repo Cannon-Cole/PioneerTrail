@@ -13,10 +13,17 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
 
+    protected String displayMessage;
+    
     public View() {
     }
+    
+    public View(String message){
+    this.displayMessage = message;
+}
 
-    private String[] getInputs() {
+    @Override
+    public String[] getInputs() {
 
         Scanner reader = new Scanner(System.in);
         String[] inputs = new String[1];
@@ -84,12 +91,6 @@ public abstract class View implements ViewInterface {
         }
 
         return inputs[0];
-    }
-
-    private boolean doAction(String[] inputs) {
-        System.out.println("Display something to the user");
-        return false;
-
     }
 
 }

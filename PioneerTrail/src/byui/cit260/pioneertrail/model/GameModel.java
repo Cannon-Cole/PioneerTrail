@@ -19,6 +19,7 @@ public class GameModel implements Serializable {
     private int wagonHealth;
     private int wagonStrength;
     private PlayerModel player;
+    private InventoryModel inventory;
 
     public GameModel() {
     }
@@ -104,5 +105,15 @@ public class GameModel implements Serializable {
     public void setWagonStrength(int wagonStrength) {
         this.wagonStrength = wagonStrength;
     }
+
+    public InventoryModel getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryModel inventory) {
+        this.inventory = inventory;
+    }
+    
+    
     
 }

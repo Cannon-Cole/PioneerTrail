@@ -13,9 +13,8 @@ import java.util.Scanner;
  *
  * @author Derek
  */
-public class IllnessHealView {
+public class IllnessHealView extends View{
     
-private int chosenAction;
 //    delete this view
 //    public double displayIllnessHealView(ActorControl actorControl, double foodAmount, double mortalityRate, double medicineAmount) {
 //        
@@ -108,30 +107,25 @@ private int chosenAction;
 //        return returnVal;
 //    }
 //    
-    private String[] getInputs(String promptString) {
 
-        Scanner reader = new Scanner(System.in);
-        String[] inputs = new String[1];
-        boolean valid = false;
+   @Override
+     public String[] getInputs () {
+
+         String[] inputs = new String[1];
+         
+         String choice = this.getInput("\nYou need to make a decision.");
+         
+         inputs[0] = choice;
+         
+         this.doAction(inputs);
+ 
+         return inputs;
+     }
+         
+   @Override
+    public boolean doAction(String[] inputs) {
         
-        while (valid == false) {
-
-            System.out.println(promptString);
-
-            inputs[0] = reader.nextLine().trim();
-
-            if (inputs[0].length() < 1) {
-                System.out.println("You need to make a decision");
-                continue;
-            }
-
-            valid = true;
-        }
-
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+        int chosenAction;
         
         String theInput = inputs[0].toUpperCase();
         if (theInput.contentEquals("Y")) {

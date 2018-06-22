@@ -5,19 +5,12 @@
  */
 package byui.cit260.pioneertrail.view;
 
-import byui.cit260.pioneertrail.control.GameControl;
-import byui.cit260.pioneertrail.model.GameModel;
-import byui.cit260.pioneertrail.model.InventoryModel;
-import java.util.Scanner;
 
 /**
  *
  * @author Derek
  */
-public class RepairWagonView {
-    
-    private int chosenAction = 0;
-    private int[] availableActions = new int[3];
+public class RepairWagonView extends View{
     
 //    delete this view
 //    public int displayRepairWagonView(GameControl gameControl, GameModel gameModel, InventoryModel inventoryModel) {
@@ -114,30 +107,25 @@ public class RepairWagonView {
 //        return feedback;
 //    }
 
-    private String[] getInputs(String promptString) {
+    @Override
+     public String[] getInputs () {
 
-        Scanner reader = new Scanner(System.in);
-        String[] inputs = new String[1];
-        boolean valid = false;
+         String[] inputs = new String[1];
+         
+         String choice = this.getInput("\nYou didn't specify an action.");
+         
+         inputs[0] = choice;
+         
+         this.doAction(inputs);
+ 
+         return inputs;
+     }
+     
+     @Override
+    public boolean doAction(String[] inputs) {
         
-        while (valid == false) {
-
-            System.out.println(promptString);
-
-            inputs[0] = reader.nextLine().trim();
-
-            if (inputs[0].length() < 1) {
-                System.out.println("You didn't specify an action");
-                continue;
-            }
-
-            valid = true;
-        }
-
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs) {
+        int availableActions[] = null;
+        int chosenAction;
         
         switch (inputs[0].toUpperCase()) {
         case "W":

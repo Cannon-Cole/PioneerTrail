@@ -7,7 +7,6 @@ package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.GameControl;
 import byui.cit260.pioneertrail.model.PlayerModel;
-import java.util.Scanner;
 
 /**
  *
@@ -15,17 +14,8 @@ import java.util.Scanner;
  */
     public class StartProgramView extends View {
     
-    private String style;
-
-    int throwawayInt = 0;
-    double throwawayDouble = 0;
     //functions return values, need to assign to something lest it cause errors
     
-//    delete this view
-    StartProgramView() {
-        super();
-        
-    }
 
 //    delete this view
 //    public void displayStartProgramView() {
@@ -61,32 +51,21 @@ import java.util.Scanner;
 //        while (endOfView = false);
 //    }
 
-    private String[] getInputs() {
-        //Gets input for main menu
-
-        Scanner reader = new Scanner(System.in);
+    @Override
+    public String[] getInputs() {
 
         String[] inputs = new String[1];
-
-        boolean valid = false;
-        while (valid == false) {
-
-            System.out.println("Enter your name: (E to exit.)");
-            inputs[0] = reader.nextLine();
-
-            inputs[0] = inputs[0].trim();
-
-            if (inputs[0].length() < 1) {
-                System.out.println("You must enter a non-blank value");
-                continue;
-            }
-
-            valid = true;
-        }
+        
+        String playersName = this.getInput("\nPlease enter your name: ");
+        inputs[0] = playersName;
+        
+        this.doAction(inputs);
+        
         return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         GameControl gameControl = new GameControl();
 
         String playersName = inputs[0];
@@ -104,7 +83,7 @@ import java.util.Scanner;
             + "==================================================================");
 
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
 
         return true;
     }

@@ -21,7 +21,7 @@ public class PioneerTrail {
     public static void main(String[] args) {
 
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
          
         PioneerTrail.setPlayer(player); //save the player
         
