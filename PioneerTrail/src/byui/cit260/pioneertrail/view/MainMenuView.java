@@ -15,11 +15,9 @@ import byui.cit260.pioneertrail.model.InventoryModel;
  *
  * @author aimeejorgensen
  */
-public class MainMenuView extends View{
-    
+public class MainMenuView extends View {
 
     //functions return values, need to assign to something lest it cause errors
-    
 //    delete this view
 //    public void displayMainMenuView() {
 //
@@ -42,26 +40,25 @@ public class MainMenuView extends View{
 //        while (endOfView == false);
 //
 //    }
-@Override
+    @Override
     public String[] getInputs() {
 
-         String[] inputs = new String[1];
-        
-        String choice = this.getInput("\nMAIN MENU"                 
-            + "\n  N: Start new game"                 
-            + "\n  R: Restart game"                
-            + "\n  H: Get help on how to play the game"             
-            + "\n  C: Test Cole's overcomeObstacleView"             
-            + "\n  W: Test Derek's repairWagonView"                
-            + "\n  I: Test Derek's healIllnessView"                
+        String[] inputs = new String[1];
+
+        String choice = this.getInput("\nMAIN MENU"
+            + "\n  N: Start new game"
+            + "\n  R: Restart game"
+            + "\n  H: Get help on how to play the game"
+            + "\n  C: Test Cole's overcomeObstacleView"
+            + "\n  W: Test Derek's repairWagonView"
+            + "\n  I: Test Derek's healIllnessView"
             + "\n  E: Exit");
         inputs[0] = choice;
-        
-        this.doAction(inputs);
-        
+
         return inputs;
     }
 
+    @Override
     public boolean doAction(String[] inputs) {
 
         switch (inputs[0].toUpperCase()) {
@@ -118,7 +115,7 @@ public class MainMenuView extends View{
         GameControl.createNewGame(PioneerTrail.getPlayer());
 
         GameMainView gameMainView = new GameMainView();
-        
+
         gameMainView.display();
     }
 

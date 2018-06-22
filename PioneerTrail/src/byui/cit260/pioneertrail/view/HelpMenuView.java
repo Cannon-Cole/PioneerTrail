@@ -5,8 +5,6 @@
  */
 package byui.cit260.pioneertrail.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Aimee
@@ -44,11 +42,13 @@ public class HelpMenuView extends View {
 
         String[] inputs = new String[1];
 
-        String choice = this.getInput("What do you need help with?");
+        String choice = this.getInput("What do you need help with?"
+            + "\n  G: Goal of the game"                 
+            + "\n  M: How to move"                
+            + "\n  H: How to hunt"                            
+            + "\n  E: Exit");
 
         inputs[0] = choice;
-
-        this.doAction(inputs);
 
         return inputs;
     }

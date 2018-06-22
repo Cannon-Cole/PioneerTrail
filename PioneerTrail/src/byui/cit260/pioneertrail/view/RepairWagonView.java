@@ -115,8 +115,6 @@ public class RepairWagonView extends View{
          String choice = this.getInput("\nYou didn't specify an action.");
          
          inputs[0] = choice;
-         
-         this.doAction(inputs);
  
          return inputs;
      }

@@ -116,8 +116,6 @@ public class IllnessHealView extends View{
          String choice = this.getInput("\nYou need to make a decision.");
          
          inputs[0] = choice;
-         
-         this.doAction(inputs);
  
          return inputs;
      }

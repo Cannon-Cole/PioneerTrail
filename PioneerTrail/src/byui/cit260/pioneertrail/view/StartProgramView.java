@@ -12,11 +12,9 @@ import byui.cit260.pioneertrail.model.PlayerModel;
  *
  * @author aimeejorgensen
  */
-    public class StartProgramView extends View {
-    
-    //functions return values, need to assign to something lest it cause errors
-    
+public class StartProgramView extends View {
 
+    //functions return values, need to assign to something lest it cause errors
 //    delete this view
 //    public void displayStartProgramView() {
 //        System.out.println("******************************************************************************************************************\n"
@@ -50,17 +48,26 @@ import byui.cit260.pioneertrail.model.PlayerModel;
 //        }
 //        while (endOfView = false);
 //    }
-
     @Override
     public String[] getInputs() {
 
         String[] inputs = new String[1];
-        
-        String playersName = this.getInput("\nPlease enter your name: ");
+
+        String playersName = this.getInput("\"******************************************************************************************************************\n"
+            + "* This is the game of Pioneer Trail.\n"
+            + "* In this game you will make a trek west to flee from religious persecution.\n"
+            + "* You have heard of a place called Zion in the mountains that offers the freedom you desire.\n"
+            + "* Your family is composed of both parents and three children.\n"
+            + "* Before starting your journey of 1,500 miles you must buy items necessary for the trip.\n"
+            + "* Plan carefully so that you will have neough.\n"
+            + "* There will be adversity such as deaths, illness, snake bites, broken wagons, adverse weather.\n"
+            + "* If you see an animal you can hunt it if you have weapons.\n"
+            + "* You can repair your wagon if you have the tools when you stop\n"
+            + "* To win you must reach Zion with at least two family members.\n"
+            + "******************************************************************************************************************\n"
+            + "\nPlease enter your name: ");
         inputs[0] = playersName;
-        
-        this.doAction(inputs);
-        
+
         return inputs;
     }
 
@@ -69,7 +76,7 @@ import byui.cit260.pioneertrail.model.PlayerModel;
         GameControl gameControl = new GameControl();
 
         String playersName = inputs[0];
-        
+
         PlayerModel player = gameControl.savePlayer(playersName);
 
         if (player == null) {

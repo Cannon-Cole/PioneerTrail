@@ -64,9 +64,7 @@ public class GameMainView extends View {
                  + "\n  Q: Quit");
          
          inputs[0] = choice;
-         
-         this.doAction(inputs);
- 
+
          return inputs;
          
      }
@@ -123,7 +121,6 @@ public class GameMainView extends View {
                  break;
              case "P":
                  gameControl.purchaseSupplies();
-                System.out.println("run");
                  break;
              case "L":
                  locationControl.exploreLocation();
@@ -141,12 +138,9 @@ public class GameMainView extends View {
                  gameControl.utilizeTools();
                  break;
              case "D":
-                  //temp values
-                  //restructure old code to take object instead of values?
                  double healTempFoodAmount = 150;
                  double healTempMortalityRate = 90;
                  double healTempMedicineAmount = 1;
-                 //throwawayDouble = illnessHealView.displayIllnessHealView(actorControl, healTempFoodAmount, healTempMortalityRate, healTempMedicineAmount);
                  break;
              case "H":
                  locationControl.huntForResources();
@@ -163,7 +157,7 @@ public class GameMainView extends View {
                  System.out.println("Invalid input");
          }
  
-         return true;
+         return false;
      }
 
 }

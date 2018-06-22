@@ -31,7 +31,7 @@ public abstract class View implements ViewInterface {
 
         while (valid == false) {
 
-            System.out.println("\n view Super Class");
+            System.out.println("\n View Super Class");
 
             inputs[0] = reader.nextLine().trim();
 
@@ -74,6 +74,7 @@ public abstract class View implements ViewInterface {
     {
         Scanner reader = new Scanner(System.in);
         String[] inputs = new String[1];
+        
         boolean valid = false;
 
         while (valid == false) {

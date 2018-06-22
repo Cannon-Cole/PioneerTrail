@@ -46,7 +46,6 @@ public class OvercomeObstacleView extends View {
 
         inputs[0] = choice;
 
-        this.doAction(inputs);
 
         return inputs;
 
