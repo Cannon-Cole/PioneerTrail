@@ -14,8 +14,6 @@ import byui.cit260.pioneertrail.control.MapControl;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Derek
@@ -111,13 +109,14 @@ public class GameMainView extends View {
          HelpMenuView helpMenuView = new HelpMenuView();
          RepairWagonView repairWagonView = new RepairWagonView();
          IllnessHealView illnessHealView = new IllnessHealView();
+         InventoryView inventoryView = new InventoryView();
          
          switch (inputs[0].toUpperCase()) {
              case "V":
                  mapControl.displayMap();
                  break;
              case "I":
-                 inventoryControl.displayInventory();
+                 inventoryView.display();
                  break;
              case "P":
                  gameControl.purchaseSupplies();

@@ -6,10 +6,7 @@
 package byui.cit260.pioneertrail.view;
 
 import pioneertrail.PioneerTrail;
-import byui.cit260.pioneertrail.control.ActorControl;
 import byui.cit260.pioneertrail.control.GameControl;
-import byui.cit260.pioneertrail.model.GameModel;
-import byui.cit260.pioneertrail.model.InventoryModel;
 
 /**
  *
@@ -49,9 +46,10 @@ public class MainMenuView extends View {
             + "\n  N: Start new game"
             + "\n  R: Restart game"
             + "\n  H: Get help on how to play the game"
+            /*
             + "\n  C: Test Cole's overcomeObstacleView"
             + "\n  W: Test Derek's repairWagonView"
-            + "\n  I: Test Derek's healIllnessView"
+            + "\n  I: Test Derek's healIllnessView"*/
             + "\n  E: Exit");
         inputs[0] = choice;
 
@@ -70,7 +68,7 @@ public class MainMenuView extends View {
                 break;
             case "H":
                 getHelp();
-                break;
+                break;/*
             case "C":
                 InventoryModel inventory = new InventoryModel();
                 //View only speaks to model for the test. It will be removed in actual version
@@ -100,7 +98,7 @@ public class MainMenuView extends View {
                 double healTempMortalityRate = 85;
                 double healTempMedicineAmount = 1;
                 //double throwawayDouble = illnessHealViewDTest.displayIllnessHealView(actorControlDTest, healTempFoodAmount, healTempMortalityRate, healTempMedicineAmount);
-                break;
+                break;*/
             case "E":
             case "Q":
                 return true;

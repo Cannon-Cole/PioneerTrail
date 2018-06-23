@@ -34,10 +34,6 @@ public class InventoryControl {
         return inventory.getFoodAmount();
     }
 
-    public void displayInventory() {
-        System.out.println("*** displayInventory() called ***");
-    }
-
     public void estimateResources() {
         System.out.println("*** estimateResources() called ***");
     }

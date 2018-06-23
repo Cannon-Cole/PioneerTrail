@@ -152,8 +152,9 @@ public class GameControl {
              PlayerModel player = new PlayerModel();
 
              player.setName(name);
-
-             return new PlayerModel();
+             
+             //Cole changed to this from return new playermodel
+             return player;
         }
     
     }

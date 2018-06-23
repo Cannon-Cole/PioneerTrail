@@ -22,7 +22,7 @@ public class PlayerModel implements Serializable {
     private boolean alive;
     private double maxWeight;
     private ArrayList<GameModel> games = new ArrayList<GameModel>();
-
+    
     public PlayerModel() {
     }
 

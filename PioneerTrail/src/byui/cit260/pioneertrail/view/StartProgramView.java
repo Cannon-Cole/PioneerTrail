@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.GameControl;
 import byui.cit260.pioneertrail.model.PlayerModel;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -77,22 +78,22 @@ public class StartProgramView extends View {
 
         String playersName = inputs[0];
 
-        PlayerModel player = gameControl.savePlayer(playersName);
+        PioneerTrail.setPlayer(gameControl.savePlayer(playersName));
 
-        if (player == null) {
+        if (PioneerTrail.getPlayer() == null) {
             System.out.println("Could not create the player. " + playersName + "Enter a different name.");
             return false;
         }
 
         System.out.println("==================================================================\n"
-            + "Welcome to the game " + playersName
+            + "Welcome to the game " + PioneerTrail.getPlayer().getName()
             + "\nWe hope you have a lot of fun!\n"
             + "==================================================================");
 
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
 
-        return true;
+        return false;
     }
 
 }

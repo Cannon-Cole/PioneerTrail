@@ -19,7 +19,7 @@ public class GameModel implements Serializable {
     private int wagonHealth;
     private int wagonStrength;
     private PlayerModel player;
-    private InventoryModel inventory;
+    private InventoryModel inventory = new InventoryModel();
 
     public GameModel() {
     }
