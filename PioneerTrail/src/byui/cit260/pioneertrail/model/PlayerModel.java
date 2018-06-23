@@ -24,6 +24,8 @@ public class PlayerModel implements Serializable {
     private ArrayList<GameModel> games = new ArrayList<GameModel>();
     
     public PlayerModel() {
+        
+        games.add(new GameModel());
     }
 
     @Override

@@ -16,9 +16,7 @@ public class InventoryView extends View {
     @Override
     public String[] getInputs() {
      
-        //InventoryModel inventory = PioneerTrail.getPlayer().getGames().get(0).getInventory();
-
-        InventoryModel inventory = new InventoryModel();
+        InventoryModel inventory = PioneerTrail.getPlayer().getGames().get(0).getInventory();
         
         //temporary set up for test
         inventory.setWeight(243);
