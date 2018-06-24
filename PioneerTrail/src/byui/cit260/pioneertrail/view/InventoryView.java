@@ -15,7 +15,7 @@ public class InventoryView extends View {
 
     public InventoryView() {
 
-        super("\nInventory"
+        super("\nInventory NOTE: Actual values will be displayed when the implementation gets that far"
             + "\n  Total Weight: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getWeight()
             + "\n  Food: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getFoodAmount()
             + "\n  Medicine: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getMedicineAmount()
