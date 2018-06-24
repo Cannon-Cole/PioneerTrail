@@ -20,22 +20,6 @@ public class HelpMenuView extends View {
     }
 
     @Override
-    public String[] getInputs() {
-
-        String[] inputs = new String[1];
-
-        String choice = this.getInput("What do you need help with?"
-            + "\n  G: Goal of the game"
-            + "\n  M: How to move"
-            + "\n  H: How to hunt"
-            + "\n  E: Exit");
-
-        inputs[0] = choice;
-
-        return inputs;
-    }
-
-    @Override
     public boolean doAction(String[] inputs) {
 
         switch (inputs[0].toUpperCase()) {
