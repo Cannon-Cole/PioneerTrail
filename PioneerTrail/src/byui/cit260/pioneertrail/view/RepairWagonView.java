@@ -11,6 +11,13 @@ package byui.cit260.pioneertrail.view;
  * @author Derek
  */
 public class RepairWagonView extends View{
+
+    public RepairWagonView() {
+        super("\nYou didn't specify an action.");
+    }
+    
+    
+    
     
 //    delete this view
 //    public int displayRepairWagonView(GameControl gameControl, GameModel gameModel, InventoryModel inventoryModel) {

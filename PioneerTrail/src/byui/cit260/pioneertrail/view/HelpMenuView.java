@@ -11,41 +11,23 @@ package byui.cit260.pioneertrail.view;
  */
 public class HelpMenuView extends View {
 
-    //functions return values, need to assign to something lest it cause errors
-//    public void displayHelpMenuView() {
-//        System.out.println("====================================================");
-//
-//        boolean endOfView = false;
-//
-//        do {
-//
-//            String[] inputs = this.getInputs();
-//
-//            if (inputs == null) {
-//                return;
-//
-//            }
-//            else if ("Q".equals(inputs[0].toUpperCase())) {
-//                return;
-//            }
-//
-//            endOfView = doAction(inputs);
-//
-//        }
-//        while (endOfView == false);
-//
-//    }
-//delete this view
-//    String[] inputs = new String[1];
+    public HelpMenuView() {
+        super("What do you need help with?"
+            + "\n  G: Goal of the game"
+            + "\n  M: How to move"
+            + "\n  H: How to hunt"
+            + "\n  E: Exit");
+    }
+
     @Override
     public String[] getInputs() {
 
         String[] inputs = new String[1];
 
         String choice = this.getInput("What do you need help with?"
-            + "\n  G: Goal of the game"                 
-            + "\n  M: How to move"                
-            + "\n  H: How to hunt"                            
+            + "\n  G: Goal of the game"
+            + "\n  M: How to move"
+            + "\n  H: How to hunt"
             + "\n  E: Exit");
 
         inputs[0] = choice;

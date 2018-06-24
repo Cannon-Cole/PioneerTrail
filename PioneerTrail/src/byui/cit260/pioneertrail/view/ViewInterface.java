@@ -9,7 +9,7 @@ package byui.cit260.pioneertrail.view;
 
 /**
  *
- * @author aimeejorgensen
+ * @author Cole
  */
 public interface ViewInterface {
 

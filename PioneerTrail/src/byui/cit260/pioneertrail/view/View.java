@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author aimeejorgensen
+ * @author Cole
  */
 public abstract class View implements ViewInterface {
 
@@ -53,7 +53,9 @@ public abstract class View implements ViewInterface {
 
         do {
 
-            String[] inputs = this.getInputs();
+            String[] inputs = new String[1];
+            
+            inputs[0] = this.getInput(displayMessage);
 
             if (inputs == null) {
                 return;

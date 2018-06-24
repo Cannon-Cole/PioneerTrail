@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.pioneertrail.view;
-import byui.cit260.pioneertrail.model.InventoryModel;
+
 import pioneertrail.PioneerTrail;
 
 /**
@@ -13,34 +13,16 @@ import pioneertrail.PioneerTrail;
  */
 public class InventoryView extends View {
 
-    @Override
-    public String[] getInputs() {
-     
-        InventoryModel inventory = PioneerTrail.getPlayer().getGames().get(0).getInventory();
-        
-        //temporary set up for test
-        inventory.setWeight(243);
-        inventory.setFoodAmount(120);
-        inventory.setMedicineAmount(10);
-        inventory.setSpareWheels(15);
-        inventory.setHasAxe(true);
-        inventory.setAxeDurability(10);
-        inventory.setHasHammer(true);
-        inventory.setHammerDurability(10);
+    public InventoryView() {
 
-        String[] inputs = new String[1];
-
-        String choice = this.getInput("\nInventory"
-            + "\n  Total Weight: " + inventory.getWeight()
-            + "\n  Food: " + inventory.getFoodAmount()
-            + "\n  Medicine: " + inventory.getMedicineAmount()
-            + "\n  Spare Wheels: " + inventory.getSpareWheels()
-            + "\n  Axe Durability: " + inventory.getAxeDurability()
-            + "\n  Hammer Durability: " + inventory.getHammerDurability());
-
-        inputs[0] = choice;
-
-        return inputs;
+        super("\nInventory"
+            + "\n  Total Weight: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getWeight()
+            + "\n  Food: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getFoodAmount()
+            + "\n  Medicine: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getMedicineAmount()
+            + "\n  Spare Wheels: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getSpareWheels()
+            + "\n  Axe Durability: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getAxeDurability()
+            + "\n  Hammer Durability: " + PioneerTrail.getPlayer().getGames().get(0).getInventory().getHammerDurability()
+            + "\n E: Exit");
     }
 
     @Override
@@ -48,5 +30,5 @@ public class InventoryView extends View {
 
         return false;
     }
-
+    
 }
