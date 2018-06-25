@@ -29,7 +29,7 @@ public class GameMainView extends View {
             + "\n  M: Move to new location"
             + "\n  R: Estimate the resources needed"
             + "\n  B: Repair Wagon"
-            + "\n  C: Utilize tools"
+            + "\n  T: Utilize tools"
             + "\n  D: Deal with illness"
             + "\n  H: Hunt for Resources"
             + "\n  S: Save game"
@@ -54,6 +54,7 @@ public class GameMainView extends View {
         RepairWagonView repairWagonView = new RepairWagonView();
         IllnessHealView illnessHealView = new IllnessHealView();
         InventoryView inventoryView = new InventoryView();
+        UtilizeToolsView utilizeToolsView = new UtilizeToolsView();
 
         switch (inputs[0].toUpperCase()) {
             case "V":
@@ -75,10 +76,11 @@ public class GameMainView extends View {
                 inventoryControl.estimateResources();
                 break;
             case "B":
+                //repurpose to repairWagonCheck
                 //throwawayInt = repairWagonView.displayRepairWagonView(gameControl, gameModel, inventoryModel);
                 break;
-            case "C":
-                gameControl.utilizeTools();
+            case "T":
+                utilizeToolsView.display();
                 break;
             case "D":
                 double healTempFoodAmount = 150;

@@ -175,8 +175,13 @@ public class GameControl {
         System.out.println("*** repairWagonTemp() called ***");
     }
     
-    public void utilizeTools() {
-        System.out.println("*** utilizeTools() called ***");
+    public static void utilizeAxe() {
+        System.out.println("*** utilizeAxe() called ***");
+    }
+    
+    public static void utilizeHammer() {
+        //repurpose repairwagonapply
+        System.out.println("*** utilizeHammer() called ***");
     }
 
 }
