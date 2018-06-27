@@ -24,8 +24,6 @@ public class PlayerModel implements Serializable {
     private ArrayList<GameModel> games = new ArrayList<GameModel>();
     
     public PlayerModel() {
-        
-        games.add(new GameModel());
     }
 
     @Override
@@ -126,7 +124,12 @@ public class PlayerModel implements Serializable {
         this.maxWeight = maxWeight;
     }
 
+    public void addGame(GameModel game) {
+        this.games.add(game); 
+    }
+    
     public ArrayList<GameModel> getGames() {
         return games;
     }
+
 }

@@ -8,6 +8,7 @@ package byui.cit260.pioneertrail.control;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,14 +16,23 @@ import byui.cit260.pioneertrail.model.PlayerModel;
  */
 public class GameControl {
 
-    public static int[] repairWagonCheck(GameModel game, InventoryModel inventory) {
+    public static int[] repairWagonCheck(GameModel game, ArrayList<InventoryModel> inventory) {
 
         int wagonHealth = game.getWagonHealth();
         int wagonStrength = game.getWagonStrength();
-        boolean hasHammer = inventory.getHasHammer();
-        int hammerDurability = inventory.getHammerDurability();
-        int spareWheels = inventory.getSpareWheels();
+        boolean hasHammer;
+        int hammerDurability = inventory.get(3).getQuantity();
+        int spareWheels = inventory.get(4).getQuantity();
 
+        if (inventory.get(3).getQuantity() > 0)
+        {
+            hasHammer = true;
+        }
+        else
+        {
+            hasHammer = false;
+        }
+        
         int returnArray[] = new int[4];
         
         /* array indexes
@@ -67,13 +77,22 @@ public class GameControl {
         return returnArray;
     }
     
-    public static int repairWagonApply(GameModel game, InventoryModel inventory, int action) {
+    public static int repairWagonApply(GameModel game, ArrayList<InventoryModel> inventory, int action) {
 
         int wagonHealth = game.getWagonHealth();
         int wagonStrength = game.getWagonStrength();
-        boolean hasHammer = inventory.getHasHammer();
-        int hammerDurability = inventory.getHammerDurability();
-        int spareWheels = inventory.getSpareWheels();
+        boolean hasHammer;
+        int hammerDurability = inventory.get(3).getQuantity();
+        int spareWheels = inventory.get(4).getQuantity();
+
+        if (inventory.get(3).getQuantity() > 0)
+        {
+            hasHammer = true;
+        }
+        else
+        {
+            hasHammer = false;
+        }
 
         int returnVal = 0;
 
@@ -135,16 +154,15 @@ public class GameControl {
 
         game.setWagonHealth(wagonHealth);
         game.setWagonStrength(wagonStrength);
-        inventory.setHasHammer(hasHammer);
-        inventory.setHammerDurability(hammerDurability);
-        inventory.setSpareWheels(spareWheels);
+        //inventory.setHasHammer(hasHammer);
+        inventory.get(3).setQuantity(hammerDurability);
+        inventory.get(4).setQuantity(spareWheels);
 
         //if returnVal is still zero here, something was missed
         return returnVal;
     }
     
     public PlayerModel savePlayer(String name) {
-        System.out.println("*** savePlayer() called ***");
 
         if (name == null || name.length() < 1) {
             return null;
@@ -160,7 +178,7 @@ public class GameControl {
     }
     
     public static void createNewGame(PlayerModel player) {
-        System.out.println("*** GameControl - createNewGame() called ***");
+      player.addGame(new GameModel());
     }
     
     public void saveGame() {

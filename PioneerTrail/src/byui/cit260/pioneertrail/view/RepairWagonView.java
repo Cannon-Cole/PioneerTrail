@@ -115,7 +115,7 @@ public class RepairWagonView extends View{
 //    }
 
     @Override
-     public String[] getInputs () {
+     public String getInputs () {
 
          String[] inputs = new String[1];
          
@@ -123,7 +123,7 @@ public class RepairWagonView extends View{
          
          inputs[0] = choice;
  
-         return inputs;
+         return choice;
      }
      
      @Override

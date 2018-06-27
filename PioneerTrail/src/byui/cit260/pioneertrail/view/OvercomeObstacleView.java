@@ -39,17 +39,17 @@ public class OvercomeObstacleView extends View {
 
         ArrayList<GameModel> game = player.getGames();
 
-        InventoryModel inventory = game.get(0).getInventory();
+        ArrayList<InventoryModel> inventory = game.get(0).getInventory();
 
-        inventory.setFoodAmount(100);
+        inventory.get(0).setQuantity(5);
 
         if (overcame == 1) {
-            inventoryControl.removeFoodForOverComeObstacle(inventory, inputInt, true);
+            inventoryControl.removeFoodForOvercomeObstacle(inventory, inputInt, true);
             return true;
 
         }
         else {
-            inventoryControl.removeFoodForOverComeObstacle(inventory, inputInt, false);
+            inventoryControl.removeFoodForOvercomeObstacle(inventory, inputInt, false);
             return false;
         }
     }

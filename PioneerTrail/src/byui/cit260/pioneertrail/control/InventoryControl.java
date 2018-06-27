@@ -6,6 +6,7 @@
 package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.model.InventoryModel;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,25 +14,25 @@ import byui.cit260.pioneertrail.model.InventoryModel;
  */
 public class InventoryControl {
 
-    public int getFoodAmountForOverComeObstacleDisplay(InventoryModel inventory) {
+    public int getFoodAmountForOvercomeObstacleDisplay(ArrayList<InventoryModel> inventory) {
 
-        return inventory.getFoodAmount();
+        return inventory.get(0).getQuantity();
 
     }
 
-    public void removeFoodForOverComeObstacle(InventoryModel inventory, int foodEntered, boolean removeAll) {
+    public void removeFoodForOvercomeObstacle(ArrayList<InventoryModel> inventory, int foodEntered, boolean removeAll) {
 
         if (removeAll) {
-            inventory.setFoodAmount((int) (inventory.getFoodAmount() - (foodEntered * 0.65)));
+            inventory.get(0).setQuantity((int) (inventory.get(0).getQuantity() - (foodEntered * 0.65)));
         }
         else {
-            inventory.setFoodAmount(inventory.getFoodAmount() - foodEntered);
+            inventory.get(0).setQuantity(inventory.get(0).getQuantity() - foodEntered);
         }
     }
 
-    public int getFoodAmountForView(InventoryModel inventory) {
+    public int getFoodAmountForView(ArrayList<InventoryModel> inventory) {
 
-        return inventory.getFoodAmount();
+        return inventory.get(0).getQuantity();
     }
 
     public void estimateResources() {

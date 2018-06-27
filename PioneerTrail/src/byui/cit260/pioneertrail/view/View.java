@@ -23,27 +23,9 @@ public abstract class View implements ViewInterface {
 }
 
     @Override
-    public String[] getInputs() {
+    public String getInputs() {
 
-        Scanner reader = new Scanner(System.in);
-        String[] inputs = new String[1];
-        boolean valid = false;
-
-        while (valid == false) {
-
-            System.out.println("\n View Super Class");
-
-            inputs[0] = reader.nextLine().trim();
-
-            if (inputs[0].length() < 1) {
-                System.out.println("You must specify a value");
-                continue;
-            }
-
-            valid = true;
-        }
-
-        return inputs;
+        return getInput(this.displayMessage);
     }
     
     @Override
@@ -55,7 +37,7 @@ public abstract class View implements ViewInterface {
 
             String[] inputs = new String[1];
             
-            inputs[0] = this.getInput(displayMessage);
+            inputs[0] = this.getInputs();
 
             if (inputs == null) {
                 return;

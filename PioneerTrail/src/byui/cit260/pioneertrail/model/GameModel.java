@@ -6,6 +6,7 @@
 package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,9 +20,14 @@ public class GameModel implements Serializable {
     private int wagonHealth;
     private int wagonStrength;
     private PlayerModel player;
-    private InventoryModel inventory = new InventoryModel();
+    private ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
     public GameModel() {
+        inventory.add(new InventoryModel("Food", 123));
+        inventory.add(new InventoryModel("Medicine", 10));
+        inventory.add(new InventoryModel("Spare Wheels", 6));
+        inventory.add(new InventoryModel("Hammer Durability", 5));
+        inventory.add(new InventoryModel("Axe Durability", 4));
     }
 
     @Override
@@ -106,13 +112,15 @@ public class GameModel implements Serializable {
         this.wagonStrength = wagonStrength;
     }
 
-    public InventoryModel getInventory() {
+    public ArrayList<InventoryModel> getInventory() {
         return inventory;
     }
 
-    public void setInventory(InventoryModel inventory) {
+    public void setInventory(ArrayList<InventoryModel> inventory) {
         this.inventory = inventory;
     }
+
+    
     
     
     
