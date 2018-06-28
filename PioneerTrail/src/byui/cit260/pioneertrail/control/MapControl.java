@@ -6,8 +6,9 @@
 package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.model.InventoryModel;
+import byui.cit260.pioneertrail.model.LocationModel;
+import byui.cit260.pioneertrail.model.MapModel;
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  *
@@ -19,17 +20,22 @@ public class MapControl {
         System.out.println("*** displayMap() called ***");
     }
 
-    private static Map createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory){
-        
-        if(noOfRows < 0 || noOfColumns < 0){
-        return null;
-    }
-        
-        if(inventory == null || inventory.size() < 1){
+    private static MapModel createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory) {
+
+        if (noOfRows < 0 || noOfColumns < 0) {
             return null;
         }
-        
-        
-        
+
+        if (inventory == null || inventory.size() < 1) {
+            return null;
+        }
+
+        MapModel map = new MapModel();
+        map.setNumRows(noOfRows);
+        map.setNumColumns(noOfColumns);
+
+        LocationModel locations[][] = LocationControl.createLocations(noOfRows, noOfColumns);
+
+        return map;
     }
 }

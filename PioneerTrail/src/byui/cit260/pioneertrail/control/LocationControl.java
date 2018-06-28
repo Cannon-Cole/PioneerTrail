@@ -5,6 +5,8 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.model.LocationModel;
+
 /**
  *
  * @author Cole, Derek,
@@ -72,6 +74,39 @@ public class LocationControl {
     public void huntForResources() {
 
         System.out.println("*** huntForResources() called ***");
+    }
+
+    public static LocationModel[][] createLocations(int rows, int columns) {
+
+        //error check for size
+        if (rows < 1 || columns < 1) {
+            return null;
+        }
+        //creates an 2d array of locations
+        LocationModel[][] locations = new LocationModel[rows][columns];
+
+        //fills array with new location objects
+        //row control
+        for (int rowLoop = 0; rowLoop < rows; rowLoop++) {
+            //column control
+            for (int colLoop = 0; colLoop < columns; colLoop++) {
+                //creates a temporary location object
+                LocationModel tempLocation = new LocationModel();
+
+                //sets rows
+                tempLocation.setCurrentRow(rowLoop);
+                tempLocation.setCurrentColumn(colLoop);
+
+                //sets visited
+                tempLocation.setVisited(false);
+
+                //sets temporary object into the permanent array list
+                locations[rowLoop][colLoop] = tempLocation;
+
+            }
+        }
+        return locations;
+
     }
 
 }
