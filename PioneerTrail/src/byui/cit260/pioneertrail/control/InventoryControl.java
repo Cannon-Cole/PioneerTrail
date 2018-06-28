@@ -5,7 +5,9 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.model.InventoryEnum;
 import byui.cit260.pioneertrail.model.InventoryModel;
+import byui.cit260.pioneertrail.model.InventoryWeightPerItem;
 import java.util.ArrayList;
 
 /**
@@ -37,12 +39,40 @@ public class InventoryControl {
     public void estimateResources() {
         System.out.println("*** estimateResources() called ***");
     }
-    
+
     public static ArrayList<InventoryModel> createInventory() {
-        System.out.println("***InventoryModel createInventory() called***");
+        System.out.println("***InventoryControl createInventory() called***");
         //new arraylist of inventory
         ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
         return inventory;
     }
+
+    public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
+        System.out.println("***InventoryControl fillInventoryTEMP() called***");
+        //fills inventory with items
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(100);
+        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
+        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
+        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);
+        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
+
+    }
+
+    public static double getTotalWeight(ArrayList<InventoryModel> inventory) {
+
+        double totalWeight = 0.0;
+
+        for (InventoryModel inventoryLoop : inventory) {
+            int index = 0;
+            //TO INSTRUCTOR I feel like there is a better way to do this but I am not entirely sure what.
+            //Is there a way to get a value using a name? That way I could get the name from my inventory
+            //and use it to get the weight for that item.
+            totalWeight += inventoryLoop.getQuantity() * InventoryWeightPerItem.values()[index].getWeight();
+            index++;
+        }
+
+        return totalWeight;
+    }
+
 }

@@ -5,9 +5,9 @@
  */
 package byui.cit260.pioneertrail.control;
 
-import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
+import byui.cit260.pioneertrail.model.InventoryEnum;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
 import java.util.ArrayList;
@@ -24,8 +24,8 @@ public class GameControl {
         int wagonHealth = game.getWagonHealth();
         int wagonStrength = game.getWagonStrength();
         boolean hasHammer;
-        int hammerDurability = inventory.get(3).getQuantity();
-        int spareWheels = inventory.get(4).getQuantity();
+        int hammerDurability = inventory.get(InventoryEnum.Hammer.ordinal()).getQuantity();
+        int spareWheels = inventory.get(InventoryEnum.SpareWheels.ordinal()).getQuantity();
 
         if (inventory.get(3).getQuantity() > 0) {
             hasHammer = true;

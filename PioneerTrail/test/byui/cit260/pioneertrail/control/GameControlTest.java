@@ -8,6 +8,8 @@ package byui.cit260.pioneertrail.control;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.control.GameControl;
+import byui.cit260.pioneertrail.model.InventoryEnum;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.Scanner;
 import org.junit.After;
@@ -47,13 +49,23 @@ public class GameControlTest {
         
         GameControl gameControl = new GameControl();
         GameModel game = new GameModel();
-        InventoryModel inventory = new InventoryModel();
+        ArrayList<InventoryModel> inventory = InventoryControl.createInventory();
         
         game.setWagonHealth(15);
         game.setWagonStrength(10);
         inventory.setHasHammer(true);
         inventory.setHammerDurability(12);
         inventory.setSpareWheels(0);
+        
+        //NOTE FROM COLE to fix the errors do it something like this
+        //Something will have to be done about hasHammer in repairwagon if that is still a thing
+        if(inventory.get(InventoryEnum.HammerDurability.ordinal()).getQuantity() > 0){
+            //add something here maybe
+        }
+        
+        inventory.get(InventoryEnum.HammerDurability.ordinal()).setQuantity(12);
+        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        
         int action = 2;
         int expResult = 2;
         int result = gameControl.repairWagonApply(game, inventory, action);

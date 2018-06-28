@@ -6,7 +6,6 @@
 package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,6 +16,7 @@ public class InventoryModel implements Serializable {
 
     private String name;
     private int quantity;
+    private int durability;
 
 //    private String name;
 //    private String type;
@@ -87,4 +87,14 @@ public class InventoryModel implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public int getDurability() {
+        return durability;
+    }
+
+    public void setDurability(int durability) {
+        this.durability = durability;
+    }
+    
+    
 }

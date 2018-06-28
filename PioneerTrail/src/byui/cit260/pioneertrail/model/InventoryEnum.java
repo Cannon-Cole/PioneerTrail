@@ -10,11 +10,9 @@ package byui.cit260.pioneertrail.model;
  * @author Cole
  */
 public enum InventoryEnum {
-    
      Food, 
      Medicine, 
      SpareWheels,
-     HammerDurability,
-     AxeDurability;
-    
+     Hammer,
+     Axe;
 }

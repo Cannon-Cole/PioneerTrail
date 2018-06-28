@@ -5,7 +5,7 @@
  */
 package byui.cit260.pioneertrail.view;
 
-import byui.cit260.pioneertrail.model.InventoryEnum;
+import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
@@ -19,14 +19,19 @@ public class InventoryView extends View {
     public InventoryView() {
 
         ArrayList<InventoryModel> mainInventory = PioneerTrail.getPlayer().getGames().get(0).getInventory();
+        
+        //test function remove later;
+        InventoryControl.fillInventoryTEMP(mainInventory);
 
         String message = new String();
 
+        message += "Inventory";
+        
         for (InventoryModel inventory : mainInventory) {
-            
             message += "\n " + inventory.getName() + ": " + inventory.getQuantity();
-            
         }
+        
+        message += "\nTotal Weight: " + String.format("%.2f", InventoryControl.getTotalWeight(mainInventory));
 
         this.displayMessage = message;
 
