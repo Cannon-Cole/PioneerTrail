@@ -57,12 +57,11 @@ public class InventoryControl {
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
         System.out.println("***InventoryControl fillInventoryTEMP() called***");
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(101);
-        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
-        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
-
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(0);
+        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(0);
+        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(50);
+        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(0);
     }
 
     public static double getTotalWeight(ArrayList<InventoryModel> inventory) {
@@ -75,6 +74,16 @@ public class InventoryControl {
             //and use it to get the weight for that item.
             totalWeight += inventoryLoop.getQuantity() * InventoryWeightPerItem.values()[index].getWeight();
             index++;
+        }
+        
+        if(totalWeight > 500)
+        {
+            return -1;
+        }
+        
+        if(totalWeight < 0)
+        {
+            return -2;
         }
 
         return totalWeight;
