@@ -5,6 +5,7 @@
  */
 package byui.cit260.pioneertrail.view;
 
+import byui.cit260.pioneertrail.model.InventoryEnum;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
