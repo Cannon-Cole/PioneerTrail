@@ -223,7 +223,7 @@ public class GameControl {
         game.addInventory(new InventoryModel());
 
         //gets arraylist
-        ArrayList<InventoryModel> inventory = InventoryModel.createInventory();
+        ArrayList<InventoryModel> inventory = InventoryControl.createInventory();
         //saves list to game
         game.setInventory(inventory);
 

@@ -87,13 +87,4 @@ public class InventoryModel implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    public static ArrayList<InventoryModel> createInventory() {
-        System.out.println("***InventoryModel createInventory() called***");
-        //new arraylist of inventory
-        ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
-
-        return inventory;
-    }
-
 }

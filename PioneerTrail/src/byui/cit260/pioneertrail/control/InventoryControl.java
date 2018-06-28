@@ -37,4 +37,12 @@ public class InventoryControl {
     public void estimateResources() {
         System.out.println("*** estimateResources() called ***");
     }
+    
+    public static ArrayList<InventoryModel> createInventory() {
+        System.out.println("***InventoryModel createInventory() called***");
+        //new arraylist of inventory
+        ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
+
+        return inventory;
+    }
 }
