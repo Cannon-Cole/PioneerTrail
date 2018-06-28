@@ -17,7 +17,6 @@ public class InventoryControl {
     public int getFoodAmountForOvercomeObstacleDisplay(ArrayList<InventoryModel> inventory) {
 
         return inventory.get(0).getQuantity();
-
     }
 
     public void removeFoodForOvercomeObstacle(ArrayList<InventoryModel> inventory, int foodEntered, boolean removeAll) {

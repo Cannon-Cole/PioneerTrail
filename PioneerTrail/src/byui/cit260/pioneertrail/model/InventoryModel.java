@@ -14,10 +14,10 @@ import java.util.Objects;
  * @author Cole, Derek
  */
 public class InventoryModel implements Serializable {
-    
+
     private String name;
     private int quantity;
-    
+
 //    private String name;
 //    private String type;
 //    private double weight;
@@ -30,37 +30,7 @@ public class InventoryModel implements Serializable {
 //    private boolean hasAxe;
 //    private int axeDurability;
 //    private int spareWheels;
-
     public InventoryModel() {
-    }
-    
-    public InventoryModel(String name, int quantity) {
-        this.name = name;
-        this.quantity = quantity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-    
-    public static ArrayList<InventoryModel> createInventory(){
-        System.out.println("***InventoryModel createInventory() called***");
-        //new arraylist of inventory
-        ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
-        
-        return inventory;
     }
 
     @Override
@@ -95,6 +65,35 @@ public class InventoryModel implements Serializable {
     @Override
     public String toString() {
         return "InventoryModel{" + "name=" + name + ", quantity=" + quantity + '}';
+    }
+
+    public InventoryModel(String name, int quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public static ArrayList<InventoryModel> createInventory() {
+        System.out.println("***InventoryModel createInventory() called***");
+        //new arraylist of inventory
+        ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
+
+        return inventory;
     }
 
 }

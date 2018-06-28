@@ -81,7 +81,11 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        GameControl.createNewGame(PioneerTrail.getPlayer());
+        int holder = GameControl.createNewGame(PioneerTrail.getPlayer());
+        
+        if (holder == -1){
+            System.out.println("***createNewGame Failed***");
+        }
 
         GameMainView gameMainView = new GameMainView();
 
