@@ -13,19 +13,21 @@ import java.awt.Point;
  */
 public enum ActorModel {
 
-    Father("Brigham", new Point(1, 1)),
-    Mother("Sarah", new Point(1, 1)),
-    Child1("Hyrum", new Point(1, 1)),
-    Child2("Anna", new Point(1, 1)),
-    Child3("Martin", new Point(1, 1));
+    Father("Brigham", new Point(1, 1), true),
+    Mother("Sarah", new Point(1, 1), true),
+    Child1("Hyrum", new Point(1, 1), true),
+    Child2("Anna", new Point(1, 1), true),
+    Child3("Martin", new Point(1, 1), true);
 
     private String name;
     private Point coordinates;
+    private boolean alive;
 
-    ActorModel(String name, Point coordinates) {
+    ActorModel(String name, Point coordinates, boolean alive) {
 
         this.name = name;
         this.coordinates = coordinates;
+        this.alive = alive;
 
     }
 

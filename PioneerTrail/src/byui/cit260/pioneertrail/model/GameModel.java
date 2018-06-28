@@ -20,14 +20,15 @@ public class GameModel implements Serializable {
     private int wagonHealth;
     private int wagonStrength;
     private PlayerModel player;
+    private MapModel map;
     private ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
     public GameModel() {
-        inventory.add(new InventoryModel("Food", 123));
-        inventory.add(new InventoryModel("Medicine", 10));
-        inventory.add(new InventoryModel("Spare Wheels", 6));
-        inventory.add(new InventoryModel("Hammer Durability", 5));
-        inventory.add(new InventoryModel("Axe Durability", 4));
+        inventory.add(new InventoryModel("Food", 0));
+        inventory.add(new InventoryModel("Medicine", 0));
+        inventory.add(new InventoryModel("Spare Wheels", 0));
+        inventory.add(new InventoryModel("Hammer Durability", 0));
+        inventory.add(new InventoryModel("Axe Durability", 0));
     }
 
     @Override
@@ -120,8 +121,16 @@ public class GameModel implements Serializable {
         this.inventory = inventory;
     }
 
-    
-    
-    
-    
+    public void addInventory(InventoryModel inventory) {
+        this.inventory.add(inventory);
+    }
+
+    public MapModel getMap() {
+        return map;
+    }
+
+    public void setMap(MapModel map) {
+        this.map = map;
+    }
+
 }

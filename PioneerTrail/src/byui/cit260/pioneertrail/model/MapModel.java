@@ -6,6 +6,7 @@
 package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
+import java.nio.channels.FileChannel;
 import java.util.Objects;
 
 /**
@@ -16,8 +17,8 @@ public class MapModel implements Serializable {
 
     private int currentRow;
     private int currentColumn;
-    private int totalRows;
-    private int totalColumns;
+    private int numRows;
+    private int numColumns;
     private LocationModel location;  //this will eventually be an array
     private LocationModel currentLocation;
 
@@ -40,20 +41,20 @@ public class MapModel implements Serializable {
         this.currentColumn = rowOne;
     }
 
-    public int getTotalRows() {
-        return totalRows;
+    public int getNumRows() {
+        return numRows;
     }
 
-    public void setTotalRows(int totalRows) {
-        this.totalRows = totalRows;
+    public void setNumRows(int numRows) {
+        this.numRows = numRows;
     }
 
-    public int getTotalColumns() {
-        return totalColumns;
+    public int getNumColumns() {
+        return numColumns;
     }
 
-    public void setTotalColumns(int totalColumns) {
-        this.totalColumns = totalColumns;
+    public void setNumColumns(int numcolumns) {
+        this.numColumns = numcolumns;
     }
 
     public LocationModel getLocation() {
@@ -71,14 +72,24 @@ public class MapModel implements Serializable {
     public void setCurrentLocation(LocationModel currentLocation) {
         this.currentLocation = currentLocation;
     }
+    
+    public static MapModel createMap(int noOfRows, int noOfColumns){
+        System.out.println("***MapModel createMap() called***");
+        MapModel map = new MapModel();
+        
+        map.numRows = noOfRows;
+        map.numColumns = noOfColumns;
+        
+        return map;
+    }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + this.currentRow;
         hash = 97 * hash + this.currentColumn;
-        hash = 97 * hash + this.totalRows;
-        hash = 97 * hash + this.totalColumns;
+        hash = 97 * hash + this.numRows;
+        hash = 97 * hash + this.numColumns;
         hash = 97 * hash + Objects.hashCode(this.location);
         hash = 97 * hash + Objects.hashCode(this.currentLocation);
         return hash;
@@ -102,10 +113,10 @@ public class MapModel implements Serializable {
         if (this.currentColumn != other.currentColumn) {
             return false;
         }
-        if (this.totalRows != other.totalRows) {
+        if (this.numRows != other.numRows) {
             return false;
         }
-        if (this.totalColumns != other.totalColumns) {
+        if (this.numColumns != other.numColumns) {
             return false;
         }
         if (!Objects.equals(this.location, other.location)) {
@@ -119,7 +130,7 @@ public class MapModel implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", totalRows=" + totalRows + ", totalColumns=" + totalColumns + ", location=" + location + ", currentLocation=" + currentLocation + '}';
+        return "Map{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", numRows=" + numRows + ", numcolumns=" + numColumns + ", location=" + location + ", currentLocation=" + currentLocation + '}';
     }
 
 }
