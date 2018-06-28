@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.model.InventoryModel;
+import byui.cit260.pioneertrail.model.InventoryWeightPerItem;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 
@@ -18,19 +19,29 @@ public class InventoryView extends View {
 
     public InventoryView() {
 
-        ArrayList<InventoryModel> mainInventory = PioneerTrail.getPlayer().getGames().get(0).getInventory();
+        //gets inventory from
+        ArrayList<InventoryModel> mainInventory = PioneerTrail.getCurrentGame().getInventory();
         
         //test function remove later;
         InventoryControl.fillInventoryTEMP(mainInventory);
 
+        //creates message holder
         String message = new String();
 
+        //adds heading
         message += "Inventory";
         
+        //goes through each inventory object in the arraylist
+         int index = 0;
         for (InventoryModel inventory : mainInventory) {
+
+            //appends the name and quantity
             message += "\n " + inventory.getName() + ": " + inventory.getQuantity();
+            message += " that weighs: " +  String.format("%.2f", inventory.getQuantity() * InventoryWeightPerItem.values()[index].getWeight());
+            
+            index++;
         }
-        
+        //appends total weight to the list
         message += "\nTotal Weight: " + String.format("%.2f", InventoryControl.getTotalWeight(mainInventory));
 
         this.displayMessage = message;

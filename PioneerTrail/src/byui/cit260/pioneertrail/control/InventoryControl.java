@@ -45,13 +45,19 @@ public class InventoryControl {
         //new arraylist of inventory
         ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
+        inventory.add(new InventoryModel("Food", 0));
+        inventory.add(new InventoryModel("Medicine", 0));
+        inventory.add(new InventoryModel("Spare Wheels", 0));
+        inventory.add(new InventoryModel("Hammer Durability", 0));
+        inventory.add(new InventoryModel("Axe Durability", 0));
+
         return inventory;
     }
 
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
         System.out.println("***InventoryControl fillInventoryTEMP() called***");
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(100);
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(101);
         inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
         inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
         inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);
@@ -62,9 +68,8 @@ public class InventoryControl {
     public static double getTotalWeight(ArrayList<InventoryModel> inventory) {
 
         double totalWeight = 0.0;
-
+        int index = 0;
         for (InventoryModel inventoryLoop : inventory) {
-            int index = 0;
             //TO INSTRUCTOR I feel like there is a better way to do this but I am not entirely sure what.
             //Is there a way to get a value using a name? That way I could get the name from my inventory
             //and use it to get the weight for that item.

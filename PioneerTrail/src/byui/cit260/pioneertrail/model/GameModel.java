@@ -24,11 +24,7 @@ public class GameModel implements Serializable {
     private ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
     public GameModel() {
-        inventory.add(new InventoryModel("Food", 0));
-        inventory.add(new InventoryModel("Medicine", 0));
-        inventory.add(new InventoryModel("Spare Wheels", 0));
-        inventory.add(new InventoryModel("Hammer Durability", 0));
-        inventory.add(new InventoryModel("Axe Durability", 0));
+      
     }
 
     @Override
@@ -120,7 +116,7 @@ public class GameModel implements Serializable {
     public void setInventory(ArrayList<InventoryModel> inventory) {
         this.inventory = inventory;
     }
-
+    
     public void addInventory(InventoryModel inventory) {
         this.inventory.add(inventory);
     }
@@ -132,5 +128,7 @@ public class GameModel implements Serializable {
     public void setMap(MapModel map) {
         this.map = map;
     }
+    
+    
 
 }

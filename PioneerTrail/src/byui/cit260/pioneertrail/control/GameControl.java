@@ -206,8 +206,7 @@ public class GameControl {
     }
 
     public static int createNewGame(PlayerModel player) {
-        player.addGame(new GameModel());
-
+        
         if (player == null) {
             return -1;
 
@@ -219,8 +218,6 @@ public class GameControl {
 
         //sets game in main
         PioneerTrail.setCurrentGame(game);
-        //name and then quantity/durability
-        game.addInventory(new InventoryModel());
 
         //gets arraylist
         ArrayList<InventoryModel> inventory = InventoryControl.createInventory();

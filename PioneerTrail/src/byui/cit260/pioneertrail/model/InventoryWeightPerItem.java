@@ -10,11 +10,11 @@ package byui.cit260.pioneertrail.model;
  * @author Cole
  */
 public enum InventoryWeightPerItem {
-     Food(.3), 
-     Medicine(1), 
-     Spare(30),
-     Hammer(3),
-     Axe(10); 
+     Food(0.3), 
+     Medicine(0.7), 
+     SpareWheels(30.0),
+     Hammer(3.5),
+     Axe(10.0); 
      
      double weight;
 
