@@ -11,60 +11,29 @@ package byui.cit260.pioneertrail.model;
  */
 public enum SceneType {
     Nauvoo,
-    RichardsonsPoint,
-    LocustCreek,
-    NishnabotnaRiver,
-    CouncilBluffs,
-    ElkhornRiverCrossing,
-    FortKearny,
-    AshHollow,
-    ScottsBluff,
-    SweetwaterRiver,
-    FortBridger,
-    GoldenPassRoad,
-    Zion1,
     SugarCreek,
+    RichardsonsPoint,
     CharitonRiverCrossing,
+    LocustCreek,
     GardenGrove,
+    NishnabotnaRiver,
     GrandEncampment,
+    CouncilBluffs,
     WinterQuarters,
+    ElkhornRiverCrossing,
     PlatteRiver,
+    FortKearny,
     ConfluencePoint,
+    AshHollow,
     ChimneyRock,
+    ScottsBluff,
     FortLaramie,
+    SweetwaterRiver,
     IndependenceRock,
+    FortBridger,
     EchoCanyon,
+    GoldenPassRoad,
     EmigrationCanyon,
+    Zion1,
     Zion2;
 }
-    
-/*
-List of objects in visible order, needed to split up because tilemap is in rows instead of columns
-Zion is both rows of last column because we have 25 locations to fill 26 slots
-    Nauvoo
-    Sugar Creek
-    Richardson’s Point
-    Chariton River Crossing
-    Locust Creek
-    Garden Grove
-    Nishnabotna River
-    Grand Encampment
-    Council Bluffs
-    Winter Quarters
-    Elkhorn River Crossing
-    Platte River
-    Fort Kearny
-    Confluence Point
-    Ash Hollow
-    Chimney Rock
-    Scotts Bluff
-    Fort Laramie
-    Sweetwater River
-    Independence Rock
-    Fort Bridger
-    Echo Canyon
-    Golden Pass Road
-    Emigration Canyon
-    Zion
-    Zion
-*/

@@ -29,7 +29,7 @@ public class SceneModel {
     private double prices;
     private boolean visited;
 
-    private InventoryModel inventory;
+    private ArrayList<InventoryModel> inventory;
     private ActorModel actor;
 
     public SceneModel() {
@@ -225,11 +225,11 @@ public class SceneModel {
         this.visited = visited;
     }
 
-    public InventoryModel getInventory() {
+    public ArrayList<InventoryModel> getInventory() {
         return inventory;
     }
 
-    public void setInventory(InventoryModel inventory) {
+    public void setInventory(ArrayList<InventoryModel> inventory) {
         this.inventory = inventory;
     }
 

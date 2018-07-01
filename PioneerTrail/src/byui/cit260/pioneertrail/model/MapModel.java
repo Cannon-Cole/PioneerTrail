@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
 import java.nio.channels.FileChannel;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -19,7 +20,7 @@ public class MapModel implements Serializable {
     private int currentColumn;
     private int numRows;
     private int numColumns;
-    private LocationModel location;  //this will eventually be an array
+    private LocationModel locations[][];
     private LocationModel currentLocation;
 
     public MapModel() {
@@ -57,12 +58,12 @@ public class MapModel implements Serializable {
         this.numColumns = numcolumns;
     }
 
-    public LocationModel getLocation() {
-        return location;
+    public LocationModel[][] getLocations() {
+        return locations;
     }
 
-    public void setLocation(LocationModel location) {
-        this.location = location;
+    public void setLocation(LocationModel[][] locations) {
+        this.locations = locations;
     }
 
     public LocationModel getCurrentLocation() {
@@ -85,13 +86,13 @@ public class MapModel implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + this.currentRow;
-        hash = 97 * hash + this.currentColumn;
-        hash = 97 * hash + this.numRows;
-        hash = 97 * hash + this.numColumns;
-        hash = 97 * hash + Objects.hashCode(this.location);
-        hash = 97 * hash + Objects.hashCode(this.currentLocation);
+        int hash = 3;
+        hash = 19 * hash + this.currentRow;
+        hash = 19 * hash + this.currentColumn;
+        hash = 19 * hash + this.numRows;
+        hash = 19 * hash + this.numColumns;
+        hash = 19 * hash + Arrays.deepHashCode(this.locations);
+        hash = 19 * hash + Objects.hashCode(this.currentLocation);
         return hash;
     }
 
@@ -119,7 +120,7 @@ public class MapModel implements Serializable {
         if (this.numColumns != other.numColumns) {
             return false;
         }
-        if (!Objects.equals(this.location, other.location)) {
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
             return false;
         }
         if (!Objects.equals(this.currentLocation, other.currentLocation)) {
@@ -130,7 +131,7 @@ public class MapModel implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", numRows=" + numRows + ", numcolumns=" + numColumns + ", location=" + location + ", currentLocation=" + currentLocation + '}';
+        return "MapModel{" + "currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", numRows=" + numRows + ", numColumns=" + numColumns + ", locations=" + locations + ", currentLocation=" + currentLocation + '}';
     }
 
 }
