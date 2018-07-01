@@ -74,6 +74,9 @@ public class MapModel implements Serializable {
         this.currentLocation = currentLocation;
     }
     
+    /* Keeping this around in case it actually is used somewhere
+       Other createMap() function is in control layer
+    
     public static MapModel createMap(int noOfRows, int noOfColumns){
         System.out.println("***MapModel createMap() called***");
         MapModel map = new MapModel();
@@ -83,6 +86,7 @@ public class MapModel implements Serializable {
         
         return map;
     }
+    */
 
     @Override
     public int hashCode() {

@@ -227,7 +227,7 @@ public class GameControl {
         //creates map that looks like this
         //*************
         //*************
-        MapModel map = MapModel.createMap(2, 13);
+        MapModel map = MapControl.createMap(2, 13, inventory);
 
         //checks if map exists
         if (map == null) {

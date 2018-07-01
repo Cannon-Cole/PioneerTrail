@@ -22,8 +22,10 @@ public class MapControl {
         System.out.println("*** displayMap() called ***");
     }
 
-    private static MapModel createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory) {
-
+    public static MapModel createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory) {
+        
+        System.out.println("*** MapControl - createMap() called ***");
+        
         if (noOfRows < 0 || noOfColumns < 0) {
             return null;
         }
