@@ -15,9 +15,9 @@ import java.util.Objects;
  */
 public class SceneModel {
 
-    private String description;
-    private String symbol;
     private String name;
+    private String symbol;
+    private String description;
     private int illness;
     private double mortalityRate;
     private String itemsAvailable[];
