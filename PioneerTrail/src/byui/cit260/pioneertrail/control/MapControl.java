@@ -39,7 +39,8 @@ public class MapControl {
         map.setNumColumns(noOfColumns);
 
         LocationModel locations[][] = LocationControl.createLocations(noOfRows, noOfColumns);
-
+        map.setLocation(locations);
+        
         SceneModel[] scenes = createScenes();
         
         assignItemsToScenes(inventory, scenes);
@@ -52,6 +53,10 @@ public class MapControl {
     public static SceneModel[] createScenes() {
         
         SceneModel[] scenes = new SceneModel[26];
+        
+        for( int i = 0; i < scenes.length; i++ ) {
+            scenes[i] = new SceneModel();
+        }
         
         //names
         scenes[SceneType.Nauvoo.ordinal()].setName("Nauvoo");
