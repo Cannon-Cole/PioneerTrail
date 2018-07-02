@@ -37,8 +37,6 @@ public class ActorControl {
         family[ActorEnum.Child2.ordinal()].setDescription("");
         family[ActorEnum.Child3.ordinal()].setDescription("");
         
-        System.out.println(family[0]);
-        
         return family;
     }
 
