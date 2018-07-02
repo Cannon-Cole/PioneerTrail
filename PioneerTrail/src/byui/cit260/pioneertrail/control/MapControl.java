@@ -5,6 +5,8 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import pioneertrail.PioneerTrail;
+import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.LocationModel;
 import byui.cit260.pioneertrail.model.MapModel;
@@ -19,8 +21,67 @@ import java.util.ArrayList;
 public class MapControl {
 
     public void displayMap() {
-        System.out.println("*** displayMap() called ***");
+        String leftIndicator;
+        String rightIndicator;
+        GameModel game = PioneerTrail.getCurrentGame(); // retreive the game
+        MapModel map = game.getMap(); // retreive the map from game
+        LocationModel[][] locations = map.getLocations(); // retreive the locations from map
+        
+        // Build the heading of the map
+        System.out.println("\n                     ===[ THE PIONEER TRAIL ]===");
+        System.out.print("  -");
+        
+        for (int column = 0; column < locations[0].length; column++) {
+            // print col numbers to side of map
+            if (column < 10) {
+                System.out.print("  " + column + " -");
+            } else {
+                System.out.print(" " + column + " -");
+            }
+        }
+        
+        // Now build the map.  For each row, show the column information
+        System.out.println();
+        
+        for (int row = 0; row < locations.length; row++) {
+            System.out.print(row + " "); // print row numbers to side of map
+            
+            for (int column = 0; column < locations[row].length; column++) {
+                // set default indicators as blanks
+                leftIndicator = " ";
+                rightIndicator = " ";
+                
+                boolean isThere = false; //boolean until it's handled elsewhere
+                if ((locations[row][column].getCurrentRow() == map.getCurrentRow())
+                && locations[row][column].getCurrentColumn() == map.getCurrentColumn()) {
+                    // Set arrow indicators to show this is the current location.
+                    leftIndicator = ">";
+                    rightIndicator = "<";
+                    isThere = true;
+                }
+                
+                System.out.print("|"); // start map with a |
+                
+                if (locations[row][column].getScene() == null) {
+                    // No scene assigned here so use ?? for the symbol
+                    System.out.print(leftIndicator + "??" + rightIndicator);
+                } else {
+                    if (locations[row][column].isVisited() || (column == 12) || isThere) {
+                        // only show symbol if visited, or is the goal
+                        System.out.print(leftIndicator
+                            + locations[row][column].getScene().getSymbol()
+                            + rightIndicator);
+                    } else {
+                        // else, hide location abbreviations
+                        System.out.print(" -- ");
+                    }
+                }
+            }
+            
+            System.out.println("|");
+        }
     }
+
 
     public static MapModel createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory) {
         
@@ -39,7 +100,8 @@ public class MapControl {
         map.setNumColumns(noOfColumns);
 
         LocationModel locations[][] = LocationControl.createLocations(noOfRows, noOfColumns);
-        map.setLocation(locations);
+        locations[0][0].setVisited(true); //starting point
+        map.setLocations(locations);
         
         SceneModel[] scenes = createScenes();
         
@@ -54,7 +116,7 @@ public class MapControl {
         
         SceneModel[] scenes = new SceneModel[26];
         
-        for( int i = 0; i < scenes.length; i++ ) {
+        for (int i = 0; i < scenes.length; i++) {
             scenes[i] = new SceneModel();
         }
         

@@ -30,16 +30,16 @@ public class MapModel implements Serializable {
         return currentRow;
     }
 
-    public void setCurrentRow(int rowOne) {
-        this.currentRow = rowOne;
+    public void setCurrentRow(int row) {
+        this.currentRow = row;
     }
 
     public int getCurrentColumn() {
         return currentColumn;
     }
 
-    public void setCurrentColumn(int rowOne) {
-        this.currentColumn = rowOne;
+    public void setCurrentColumn(int column) {
+        this.currentColumn = column;
     }
 
     public int getNumRows() {
@@ -62,7 +62,7 @@ public class MapModel implements Serializable {
         return locations;
     }
 
-    public void setLocation(LocationModel[][] locations) {
+    public void setLocations(LocationModel[][] locations) {
         this.locations = locations;
     }
 

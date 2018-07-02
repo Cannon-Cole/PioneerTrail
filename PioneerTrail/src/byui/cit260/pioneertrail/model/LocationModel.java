@@ -26,18 +26,22 @@ public class LocationModel implements Serializable {
         return currentRow;
     }
 
-    public void setCurrentRow(int rowOne) {
-        this.currentRow = rowOne;
+    public void setCurrentRow(int row) {
+        this.currentRow = row;
     }
 
     public int getCurrentColumn() {
         return currentColumn;
     }
 
-    public void setCurrentColumn(int rowOne) {
-        this.currentColumn = rowOne;
+    public void setCurrentColumn(int column) {
+        this.currentColumn = column;
     }
-
+    
+    public boolean isVisited() {
+        return visited;
+    }
+    
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
