@@ -5,11 +5,42 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.model.ActorModel;
+import byui.cit260.pioneertrail.model.ActorEnum;
+
 /**
  *
  * @author Cole, Derek, Aimee
  */
 public class ActorControl {
+    
+    public static ActorModel[] createActors() {
+        
+        ActorModel[] family = new ActorModel[5];
+        
+        for (int i = 0; i < family.length; i++) {
+            family[i] = new ActorModel();
+            family[i].setHealth(100);
+            family[i].setStrength(100);
+            family[i].setAlive(true);
+        }
+        
+        family[ActorEnum.Father.ordinal()].setName("Brigham");
+        family[ActorEnum.Mother.ordinal()].setName("Sarah");
+        family[ActorEnum.Child1.ordinal()].setName("Hyrum");
+        family[ActorEnum.Child2.ordinal()].setName("Anna");
+        family[ActorEnum.Child3.ordinal()].setName("Martin");
+        
+        family[ActorEnum.Father.ordinal()].setDescription("");
+        family[ActorEnum.Mother.ordinal()].setDescription("");
+        family[ActorEnum.Child1.ordinal()].setDescription("");
+        family[ActorEnum.Child2.ordinal()].setDescription("");
+        family[ActorEnum.Child3.ordinal()].setDescription("");
+        
+        System.out.println(family[0]);
+        
+        return family;
+    }
 
     public static int[] illnessHealCheck(double foodAmount, double mortalityRate, double medicineAmount) {
 

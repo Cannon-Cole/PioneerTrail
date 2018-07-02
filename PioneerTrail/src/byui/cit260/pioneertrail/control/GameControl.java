@@ -5,6 +5,7 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryEnum;
@@ -219,6 +220,9 @@ public class GameControl {
         //sets game in main
         PioneerTrail.setCurrentGame(game);
 
+        ActorModel[] family = ActorControl.createActors();
+        game.setFamily(family);
+        
         //gets arraylist
         ArrayList<InventoryModel> inventory = InventoryControl.createInventory();
         //saves list to game

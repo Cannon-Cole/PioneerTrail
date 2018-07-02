@@ -21,6 +21,7 @@ public class GameModel implements Serializable {
     private int wagonStrength;
     private PlayerModel player;
     private MapModel map;
+    private ActorModel[] family;
     private ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
     public GameModel() {
@@ -109,6 +110,14 @@ public class GameModel implements Serializable {
         this.wagonStrength = wagonStrength;
     }
 
+    public ActorModel[] getFamily() {
+        return family;
+    }
+
+    public void setFamily(ActorModel[] family) {
+        this.family = family;
+    }
+    
     public ArrayList<InventoryModel> getInventory() {
         return inventory;
     }
