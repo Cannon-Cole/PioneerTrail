@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.ActorEnum;
+import byui.cit260.pioneertrail.view.FamilyStatusView;
 
 /**
  *
@@ -20,8 +21,8 @@ public class ActorControl {
         
         for (int i = 0; i < family.length; i++) {
             family[i] = new ActorModel();
-            family[i].setHealth(100);
-            family[i].setStrength(100);
+            family[i].setHealth(20);
+            family[i].setStrength(20);
             family[i].setAlive(true);
         }
         
@@ -108,8 +109,53 @@ public class ActorControl {
     }
 
     public void moveActor() {
-
         System.out.println("*** moveactor() called ***");
+    }
+    
+    public static void familyStatusWrapper(ActorModel[] family) {
+        int average = checkFamilyStatus(family);
+        
+        if (average < 0)
+            //error handling
+            return;
+        
+        String message = "Your family's average health is " + average + ".\n\n  C: Continue";
+        FamilyStatusView view = new FamilyStatusView(message);
+        view.display();
+    }
+    
+    public static int checkFamilyStatus(ActorModel[] family) {
+        
+        int runningSum = 0;
+        int aliveCount = 0;
+        int health = 0;
+        
+        for (ActorModel person : family) {
+            
+            if (person.isAlive() == true) {
+
+                aliveCount++;
+                health = person.getHealth();
+                
+                if (health == 0)
+                    return -1;
+                    //health can't be 0
+                
+                if (health > 20)
+                    return -2;
+                    //health can't be over 20
+                
+                runningSum = runningSum + health;
+            }
+        }
+        
+        if (aliveCount < 2)
+            return -3;
+            //need at least two alive
+        
+        int average = runningSum / aliveCount;
+        
+        return average;
     }
 
 }

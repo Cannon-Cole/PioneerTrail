@@ -10,9 +10,11 @@ import byui.cit260.pioneertrail.control.GameControl;
 import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.control.LocationControl;
 import byui.cit260.pioneertrail.control.MapControl;
+import byui.cit260.pioneertrail.model.ActorModel;
 
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -32,6 +34,7 @@ public class GameMainView extends View {
             + "\n  T: Utilize tools"
             + "\n  D: Deal with illness"
             + "\n  H: Hunt for Resources"
+            + "\n  F: Family Status"
             + "\n  S: Save game"
             + "\n  ?: Help"
             + "\n  Q: Quit");
@@ -90,6 +93,9 @@ public class GameMainView extends View {
             case "H":
                 locationControl.huntForResources();
                 break;
+            case "F":
+                ActorModel[] family = PioneerTrail.getCurrentGame().getFamily();
+                ActorControl.familyStatusWrapper(family);
             case "S":
                 gameControl.saveGame();
                 break;

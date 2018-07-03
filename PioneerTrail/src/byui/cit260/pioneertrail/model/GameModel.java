@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -21,11 +22,11 @@ public class GameModel implements Serializable {
     private int wagonStrength;
     private PlayerModel player;
     private MapModel map;
-    private ActorModel[] family;
+    private ActorModel[] family = new ActorModel[5];
     private ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
     public GameModel() {
-      
+    
     }
 
     @Override
@@ -114,8 +115,8 @@ public class GameModel implements Serializable {
         return family;
     }
 
-    public void setFamily(ActorModel[] family) {
-        this.family = family;
+    public void setFamily(ActorModel[] familyParam) {
+        this.family = familyParam;
     }
     
     public ArrayList<InventoryModel> getInventory() {
