@@ -137,7 +137,7 @@ public class ActorControl {
                 aliveCount++;
                 health = person.getHealth();
                 
-                if (health == 0)
+                if (health <= 0)
                     return -1;
                     //health can't be 0
                 
