@@ -14,6 +14,7 @@ import byui.cit260.pioneertrail.model.ActorModel;
 
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
+import exceptions.ActorControlException;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -39,7 +40,6 @@ public class GameMainView extends View {
             + "\n  ?: Help"
             + "\n  Q: Quit");
     }
-
 
     @Override
     public boolean doAction(String[] inputs) {
@@ -95,7 +95,13 @@ public class GameMainView extends View {
                 break;
             case "F":
                 ActorModel[] family = PioneerTrail.getCurrentGame().getFamily();
-                ActorControl.familyStatusWrapper(family);
+                try {
+                    ActorControl.familyStatusWrapper(family);
+                } catch (ActorControlException ie) {
+                    System.out.println(ie.getMessage());
+                    return false;
+                }
+                return true;
             case "S":
                 gameControl.saveGame();
                 break;
