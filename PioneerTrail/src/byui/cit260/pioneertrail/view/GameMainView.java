@@ -28,14 +28,14 @@ public class GameMainView extends View {
 
     public GameMainView() {
         super("\nGame Menu"
-            + "\n  V: View map"
+            + "\n  M: View map"
             + "\n  I: View list inventory"
             + "\n  P: Purchase new supplies"
-            + "\n  L: Explore a location"
-            + "\n  M: Move to new location"
-            + "\n  R: Estimate the resources needed"
+            + "\n  L: Explore a Location"
+            + "\n  N: Move to New location"
+            + "\n  R: Estimate the Resources needed"
             + "\n  B: Repair Wagon"
-            + "\n  T: Utilize tools"
+            + "\n  T: Utilize Tools"
             + "\n  D: Deal with illness"
             + "\n  H: Hunt for Resources"
             + "\n  F: Family Status"
@@ -61,9 +61,10 @@ public class GameMainView extends View {
         IllnessHealView illnessHealView = new IllnessHealView();
         InventoryView inventoryView = new InventoryView();
         UtilizeToolsView utilizeToolsView = new UtilizeToolsView();
+        GameModel currentGame = PioneerTrail.getCurrentGame();
 
         switch (inputs[0].toUpperCase()) {
-            case "V":
+            case "M":
                 mapControl.displayMap();
                 break;
             case "I":
@@ -75,14 +76,12 @@ public class GameMainView extends View {
             case "L":
                 locationControl.exploreLocation();
                 break;
-            case "M":
-        {
-            try {
-                mapControl.moveActor(PioneerTrail.getCurrentGame().getMap().getCurrentRow(),PioneerTrail.getCurrentGame().getMap().getCurrentColumn());
-            } catch (MapControlException ex) {
-              System.out.println(ex.getMessage());
-            }
-        }
+            case "N":
+                try {
+                    mapControl.moveActorWrapper(currentGame.getMap().getCurrentRow(),currentGame.getMap().getCurrentColumn());
+                } catch (MapControlException ex) {
+                    System.out.println(ex.getMessage());
+                }
                 break;
             case "R":
                 inventoryControl.estimateResources();
@@ -103,7 +102,7 @@ public class GameMainView extends View {
                 locationControl.huntForResources();
                 break;
             case "F":
-                ActorModel[] family = PioneerTrail.getCurrentGame().getFamily();
+                ActorModel[] family = currentGame.getFamily();
                 try {
                     ActorControl.familyStatusWrapper(family);
                 } catch (ActorControlException ie) {
