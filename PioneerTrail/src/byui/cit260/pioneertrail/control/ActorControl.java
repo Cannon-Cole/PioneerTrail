@@ -118,9 +118,7 @@ public class ActorControl {
 
     }
 
-    public void moveActor() {
-        System.out.println("*** moveactor() called ***");
-    }
+    
 
     public static void familyStatusWrapper(ActorModel[] family) throws ActorControlException {
         int average = checkFamilyStatus(family);

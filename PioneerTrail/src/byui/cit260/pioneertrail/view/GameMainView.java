@@ -15,6 +15,9 @@ import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import exceptions.ActorControlException;
+import exceptions.MapControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -73,7 +76,13 @@ public class GameMainView extends View {
                 locationControl.exploreLocation();
                 break;
             case "M":
-                actorControl.moveActor();
+        {
+            try {
+                mapControl.moveActor(PioneerTrail.getCurrentGame().getMap().getCurrentRow(),PioneerTrail.getCurrentGame().getMap().getCurrentColumn());
+            } catch (MapControlException ex) {
+              System.out.println(ex.getMessage());
+            }
+        }
                 break;
             case "R":
                 inventoryControl.estimateResources();

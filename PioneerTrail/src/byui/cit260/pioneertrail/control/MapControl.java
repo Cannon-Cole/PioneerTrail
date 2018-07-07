@@ -5,6 +5,7 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.model.ActorModel;
 import pioneertrail.PioneerTrail;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
@@ -12,6 +13,7 @@ import byui.cit260.pioneertrail.model.LocationModel;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.SceneModel;
 import byui.cit260.pioneertrail.model.SceneType;
+import exceptions.MapControlException;
 import java.util.ArrayList;
 
 /**
@@ -246,6 +248,32 @@ public class MapControl {
         locations[1][11].setScene(scenes[SceneType.EmigrationCanyon.ordinal()]);
         locations[0][12].setScene(scenes[SceneType.Zion1.ordinal()]);
         locations[1][12].setScene(scenes[SceneType.Zion2.ordinal()]);
+        
+    }
+    
+    public static LocationModel moveActor(int newRow, int newColumn) throws MapControlException {
+        if (actor == null )
+            throw new MapControlException("actor can't be null");
+        
+        GameModel game = PioneerTrail.getCurrentGame();
+        MapModel map = game.getMap();
+        LocationModel location = map.getCurrentLocation();
+        
+        if (newRow < 1 || newRow > map.getNumRows() || newColumn < 1 || newColumn > map.getNumColumns())
+            throw new MapControlException("new location out of range");
+        
+        int currentRow = map.getCurrentRow();
+        int currentColumn = map.getCurrentColumn();
+        LocationModel[][] locationArray = map.getLocations();
+        LocationModel oldLocation = locationArray[currentRow][currentColumn];
+        
+        LocationModel newLocation = locationArray[newRow][newColumn];
+        newLocation.setVisited(true);
+        map.setCurrentRow(newRow);
+        map.setCurrentColumn(newColumn);
+        map.setCurrentLocation(newLocation);
+        System.out.println("*** moveactor() called ***");
+        return newLocation;
         
     }
     
