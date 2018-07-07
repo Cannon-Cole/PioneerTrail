@@ -8,7 +8,7 @@ package byui.cit260.pioneertrail.view;
 import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.exceptions.InventoryControlException;
 import byui.cit260.pioneertrail.model.InventoryModel;
-import byui.cit260.pioneertrail.model.InventoryWeightPerItem;
+import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 

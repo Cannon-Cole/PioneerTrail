@@ -6,9 +6,9 @@
 package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.exceptions.InventoryControlException;
-import byui.cit260.pioneertrail.model.InventoryEnum;
+import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.model.InventoryModel;
-import byui.cit260.pioneertrail.model.InventoryWeightPerItem;
+import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
 import java.util.ArrayList;
 
 /**

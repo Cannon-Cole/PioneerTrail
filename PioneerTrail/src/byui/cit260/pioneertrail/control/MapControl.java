@@ -11,7 +11,7 @@ import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.LocationModel;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.SceneModel;
-import byui.cit260.pioneertrail.model.SceneType;
+import byui.cit260.pioneertrail.enums.SceneType;
 import byui.cit260.pioneertrail.view.MoveActorView;
 import byui.cit260.pioneertrail.exceptions.MapControlException;
 import java.util.ArrayList;

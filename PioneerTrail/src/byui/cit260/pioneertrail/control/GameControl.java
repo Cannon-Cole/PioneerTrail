@@ -8,7 +8,7 @@ package byui.cit260.pioneertrail.control;
 import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
-import byui.cit260.pioneertrail.model.InventoryEnum;
+import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
 import java.util.ArrayList;

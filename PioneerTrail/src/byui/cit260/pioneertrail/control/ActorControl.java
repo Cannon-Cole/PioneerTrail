@@ -6,7 +6,7 @@
 package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.model.ActorModel;
-import byui.cit260.pioneertrail.model.ActorEnum;
+import byui.cit260.pioneertrail.enums.ActorEnum;
 import byui.cit260.pioneertrail.view.FamilyStatusView;
 import byui.cit260.pioneertrail.exceptions.ActorControlException;
 

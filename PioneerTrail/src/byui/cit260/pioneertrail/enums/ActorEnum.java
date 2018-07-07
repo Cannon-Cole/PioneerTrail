@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.pioneertrail.model;
+package byui.cit260.pioneertrail.enums;
 
 /**
  *
- * @author Cole
+ * @author Derek
  */
-public enum InventoryEnum {
-     Food, 
-     Medicine, 
-     SpareWheels,
-     Hammer,
-     Axe;
+public enum ActorEnum {
+    Father,
+    Mother,
+    Child1,
+    Child2,
+    Child3;
 }
