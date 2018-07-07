@@ -5,6 +5,7 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.exceptions.InventoryControlException;
 import byui.cit260.pioneertrail.model.InventoryEnum;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.InventoryWeightPerItem;
@@ -16,11 +17,6 @@ import java.util.ArrayList;
  */
 public class InventoryControl {
 
-    public int getFoodAmountForOvercomeObstacleDisplay(ArrayList<InventoryModel> inventory) {
-
-        return inventory.get(0).getQuantity();
-    }
-
     public void removeFoodForOvercomeObstacle(ArrayList<InventoryModel> inventory, int foodEntered, boolean removeAll) {
 
         if (removeAll) {
@@ -31,17 +27,13 @@ public class InventoryControl {
         }
     }
 
-    public int getFoodAmountForView(ArrayList<InventoryModel> inventory) {
-
-        return inventory.get(0).getQuantity();
-    }
-
     public void estimateResources() {
         System.out.println("*** estimateResources() called ***");
     }
 
     public static ArrayList<InventoryModel> createInventory() {
         System.out.println("***InventoryControl createInventory() called***");
+        
         //new arraylist of inventory
         ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
@@ -55,16 +47,26 @@ public class InventoryControl {
     }
 
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
-        System.out.println("***InventoryControl fillInventoryTEMP() called***");
+        //System.out.println("***InventoryControl fillInventoryTEMP() called***");
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(0);
-        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(0);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(50);
+        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(50);
+        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(50);
         inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(50);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(0);
+        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(50);
+    }
+    
+    public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory, int notUsed) {
+        //System.out.println("***InventoryControl fillInventoryTEMP() called***");
+        //fills inventory with items
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(-1);
+        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(-1);
+        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(-1);
+        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(-1);
+        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(-1);
     }
 
-    public static double getTotalWeight(ArrayList<InventoryModel> inventory) {
+    public static double getTotalWeight(ArrayList<InventoryModel> inventory) throws InventoryControlException {
 
         double totalWeight = 0.0;
         int index = 0;
@@ -78,12 +80,12 @@ public class InventoryControl {
         
         if(totalWeight > 500)
         {
-            return -1;
+             throw new InventoryControlException("Total weight can't be over 500");
         }
         
         if(totalWeight < 0)
         {
-            return -2;
+            throw new InventoryControlException("Total weight can't be less than 0");
         }
 
         return totalWeight;

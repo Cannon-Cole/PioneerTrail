@@ -14,10 +14,8 @@ import byui.cit260.pioneertrail.model.ActorModel;
 
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
-import exceptions.ActorControlException;
-import exceptions.MapControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import byui.cit260.pioneertrail.exceptions.ActorControlException;
+import byui.cit260.pioneertrail.exceptions.MapControlException;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -30,6 +28,7 @@ public class GameMainView extends View {
         super("\nGame Menu"
             + "\n  M: View map"
             + "\n  I: View list inventory"
+            + "\n  O: View list inventory"
             + "\n  P: Purchase new supplies"
             + "\n  L: Explore a Location"
             + "\n  N: Move to New location"
@@ -52,14 +51,11 @@ public class GameMainView extends View {
         GameControl gameControl = new GameControl();
         LocationControl locationControl = new LocationControl();
         ActorControl actorControl = new ActorControl();
-
         InventoryModel inventoryModel = new InventoryModel();
         GameModel gameModel = new GameModel();
-
         HelpMenuView helpMenuView = new HelpMenuView();
         RepairWagonView repairWagonView = new RepairWagonView();
         IllnessHealView illnessHealView = new IllnessHealView();
-        InventoryView inventoryView = new InventoryView();
         UtilizeToolsView utilizeToolsView = new UtilizeToolsView();
         GameModel currentGame = PioneerTrail.getCurrentGame();
 
@@ -68,7 +64,12 @@ public class GameMainView extends View {
                 mapControl.displayMap();
                 break;
             case "I":
+                InventoryView inventoryView = new InventoryView();
                 inventoryView.display();
+                break;
+            case "O":
+                InventoryView inventoryView2 = new InventoryView(1);
+                inventoryView2.display();
                 break;
             case "P":
                 gameControl.purchaseSupplies();
@@ -78,7 +79,7 @@ public class GameMainView extends View {
                 break;
             case "N":
                 try {
-                    mapControl.moveActorWrapper(currentGame.getMap().getCurrentRow(),currentGame.getMap().getCurrentColumn());
+                    mapControl.moveActorWrapper(currentGame.getMap().getCurrentRow(), currentGame.getMap().getCurrentColumn());
                 } catch (MapControlException ex) {
                     System.out.println(ex.getMessage());
                 }

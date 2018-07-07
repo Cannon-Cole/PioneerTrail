@@ -7,7 +7,6 @@ package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  *

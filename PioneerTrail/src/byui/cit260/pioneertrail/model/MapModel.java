@@ -6,7 +6,6 @@
 package byui.cit260.pioneertrail.model;
 
 import java.io.Serializable;
-import java.nio.channels.FileChannel;
 import java.util.Arrays;
 import java.util.Objects;
 

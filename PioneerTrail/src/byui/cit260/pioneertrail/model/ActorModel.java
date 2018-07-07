@@ -7,7 +7,6 @@ package byui.cit260.pioneertrail.model;
 
 import java.util.Objects;
 
-
 /**
  *
  * @author Aimee, Cole, Derek

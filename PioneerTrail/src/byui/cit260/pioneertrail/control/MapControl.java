@@ -5,7 +5,6 @@
  */
 package byui.cit260.pioneertrail.control;
 
-import byui.cit260.pioneertrail.model.ActorModel;
 import pioneertrail.PioneerTrail;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
@@ -14,7 +13,7 @@ import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.SceneModel;
 import byui.cit260.pioneertrail.model.SceneType;
 import byui.cit260.pioneertrail.view.MoveActorView;
-import exceptions.MapControlException;
+import byui.cit260.pioneertrail.exceptions.MapControlException;
 import java.util.ArrayList;
 
 /**
@@ -180,32 +179,32 @@ public class MapControl {
         scenes[SceneType.Zion2.ordinal()].setSymbol("Z!");
         
         //descriptions
-        scenes[SceneType.Nauvoo.ordinal()].setDescription("");
-        scenes[SceneType.SugarCreek.ordinal()].setDescription("");
-        scenes[SceneType.RichardsonsPoint.ordinal()].setDescription("");
-        scenes[SceneType.CharitonRiverCrossing.ordinal()].setDescription("");
-        scenes[SceneType.LocustCreek.ordinal()].setDescription("");
-        scenes[SceneType.GardenGrove.ordinal()].setDescription("");
-        scenes[SceneType.NishnabotnaRiver.ordinal()].setDescription("");
-        scenes[SceneType.GrandEncampment.ordinal()].setDescription("");
-        scenes[SceneType.CouncilBluffs.ordinal()].setDescription("");
-        scenes[SceneType.WinterQuarters.ordinal()].setDescription("");
-        scenes[SceneType.ElkhornRiverCrossing.ordinal()].setDescription("");
-        scenes[SceneType.PlatteRiver.ordinal()].setDescription("");
-        scenes[SceneType.FortKearny.ordinal()].setDescription("");
-        scenes[SceneType.ConfluencePoint.ordinal()].setDescription("");
-        scenes[SceneType.AshHollow.ordinal()].setDescription("");
-        scenes[SceneType.ChimneyRock.ordinal()].setDescription("");
-        scenes[SceneType.ScottsBluff.ordinal()].setDescription("");
-        scenes[SceneType.FortLaramie.ordinal()].setDescription("");
-        scenes[SceneType.SweetwaterRiver.ordinal()].setDescription("");
-        scenes[SceneType.IndependenceRock.ordinal()].setDescription("");
-        scenes[SceneType.FortBridger.ordinal()].setDescription("");
-        scenes[SceneType.EchoCanyon.ordinal()].setDescription("");
-        scenes[SceneType.GoldenPassRoad.ordinal()].setDescription("");
-        scenes[SceneType.EmigrationCanyon.ordinal()].setDescription("");
-        scenes[SceneType.Zion1.ordinal()].setDescription("");
-        scenes[SceneType.Zion2.ordinal()].setDescription("");
+        scenes[SceneType.Nauvoo.ordinal()].setDescription("Welcome to Nauvoo");
+        scenes[SceneType.SugarCreek.ordinal()].setDescription("Welcome to Sugar Creek");
+        scenes[SceneType.RichardsonsPoint.ordinal()].setDescription("Welcome to Richardsons Point");
+        scenes[SceneType.CharitonRiverCrossing.ordinal()].setDescription("Welcome to Chariton River Crossing");
+        scenes[SceneType.LocustCreek.ordinal()].setDescription("Welcome to Locust Creek");
+        scenes[SceneType.GardenGrove.ordinal()].setDescription("Welcome to Garden Grove");
+        scenes[SceneType.NishnabotnaRiver.ordinal()].setDescription("Welcome to Nishnabotna River");
+        scenes[SceneType.GrandEncampment.ordinal()].setDescription("Welcome to Grand Encampment");
+        scenes[SceneType.CouncilBluffs.ordinal()].setDescription("Welcome to Council Bluffs");
+        scenes[SceneType.WinterQuarters.ordinal()].setDescription("Welcome to Winter Quarters");
+        scenes[SceneType.ElkhornRiverCrossing.ordinal()].setDescription("Welcome to Elkhorn River Crossing");
+        scenes[SceneType.PlatteRiver.ordinal()].setDescription("Welcome to Platte River");
+        scenes[SceneType.FortKearny.ordinal()].setDescription("Welcome to Fort Kearny");
+        scenes[SceneType.ConfluencePoint.ordinal()].setDescription("Welcome to Confluence Point");
+        scenes[SceneType.AshHollow.ordinal()].setDescription("Welcome to Ash Hollow");
+        scenes[SceneType.ChimneyRock.ordinal()].setDescription("Welcome to Chimney Rock");
+        scenes[SceneType.ScottsBluff.ordinal()].setDescription("Welcome to Scotts Bluff");
+        scenes[SceneType.FortLaramie.ordinal()].setDescription("Welcome to Fort Laramie");
+        scenes[SceneType.SweetwaterRiver.ordinal()].setDescription("Welcome to Sweetwater River");
+        scenes[SceneType.IndependenceRock.ordinal()].setDescription("Welcome to Independence Rock");
+        scenes[SceneType.FortBridger.ordinal()].setDescription("Welcome to Fort Bridger");
+        scenes[SceneType.EchoCanyon.ordinal()].setDescription("Welcome to Echo Canyon");
+        scenes[SceneType.GoldenPassRoad.ordinal()].setDescription("Welcome to Golden Pass Road");
+        scenes[SceneType.EmigrationCanyon.ordinal()].setDescription("Welcome to Emigration Canyon");
+        scenes[SceneType.Zion1.ordinal()].setDescription("Welcome to Zion");
+        scenes[SceneType.Zion2.ordinal()].setDescription("Welcome to Zion");
 
         return scenes;
     }
@@ -285,7 +284,6 @@ public class MapControl {
         map.setCurrentRow(newRow);
         map.setCurrentColumn(newColumn);
         map.setCurrentLocation(newLocation);
-        System.out.println("*** moveactor() called ***");
         
         return newLocation;
     }

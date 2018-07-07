@@ -7,7 +7,7 @@ package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.MapControl;
 import byui.cit260.pioneertrail.model.LocationModel;
-import exceptions.MapControlException;
+import byui.cit260.pioneertrail.exceptions.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -57,7 +57,7 @@ public class MoveActorView extends View {
         
         try {
             LocationModel newLocation = MapControl.moveActor(newRow, newColumn);
-            System.out.println(newLocation.getScene().getName());
+            System.out.println(newLocation.getScene().getDescription());
         } catch (MapControlException ex) {
             System.out.println(ex.getMessage());
             return false;

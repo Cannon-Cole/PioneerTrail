@@ -30,6 +30,7 @@ public class InventoryModel implements Serializable {
 //    private boolean hasAxe;
 //    private int axeDurability;
 //    private int spareWheels;
+    
     public InventoryModel() {
     }
 

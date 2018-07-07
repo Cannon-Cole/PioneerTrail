@@ -8,7 +8,7 @@ package byui.cit260.pioneertrail.control;
 import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.ActorEnum;
 import byui.cit260.pioneertrail.view.FamilyStatusView;
-import exceptions.ActorControlException;
+import byui.cit260.pioneertrail.exceptions.ActorControlException;
 
 /**
  *
@@ -117,8 +117,6 @@ public class ActorControl {
         }
 
     }
-
-    
 
     public static void familyStatusWrapper(ActorModel[] family) throws ActorControlException {
         int average = checkFamilyStatus(family);
