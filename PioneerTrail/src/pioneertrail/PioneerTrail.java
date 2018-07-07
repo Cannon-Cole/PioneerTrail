@@ -19,11 +19,15 @@ public class PioneerTrail {
     private static PlayerModel player = null;
     
     public static void main(String[] args) {
-
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-         
-        PioneerTrail.setPlayer(player); //save the player
+        try {
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            PioneerTrail.setPlayer(player); //save the player
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            return;
+        }
         
     }
     
