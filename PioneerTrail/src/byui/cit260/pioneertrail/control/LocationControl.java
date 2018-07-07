@@ -4,23 +4,24 @@
  * and open the template in the editor.
  */
 package byui.cit260.pioneertrail.control;
-
+import byui.cit260.pioneertrail.exceptions.LocationControlException;
 import byui.cit260.pioneertrail.model.LocationModel;
 
 /**
  *
  * @author Cole, Derek,
  */
+
 public class LocationControl {
 
-    public int overComeObstacle(int foodAmount, int peopleAlive, boolean hasProperGear) {
+    public int overComeObstacle(int foodAmount, int peopleAlive, boolean hasProperGear) throws LocationControlException {
 
         if (foodAmount <= 0 || foodAmount > 500) {
-            return -1;
+        throw new LocationControlException("Food Amounts must be between 0-500 lbs.");
         }
 
         if (peopleAlive < 2 || peopleAlive > 5) {
-            return -2;
+        throw new LocationControlException("You must maintion 2-5 people in your party");
         }
 
         int hasGear = hasProperGear ? 1 : 0;
@@ -34,27 +35,28 @@ public class LocationControl {
             return 0;
         }
     }
-
-    public static int checkAfterHuntWeight(int estimateResources, int gatherResources, int reduceFoodSupply) {
+    
+    public static int checkAfterHuntWeight(int estimateResources, int gatherResources, int reduceFoodSupply) throws LocationControlException {
 
         int afterHuntWeight = (estimateResources + gatherResources - reduceFoodSupply);
 
         if (estimateResources < 0 || estimateResources > 500) {
-            return -1;
+            throw new LocationControlException ("Your food resources must be between 1 and 500 lbs.");
         }
 
         if (gatherResources < 5 || gatherResources > 150) {
-            return -2;
+            throw new LocationControlException ("You may gather between 5 - 150 lbs of food");
         }
 
         if (reduceFoodSupply < 0 || reduceFoodSupply > 30) {
-            return -3;
+            throw new LocationControlException ("You must reduce your food supply by 1-30 lbs on this turn");
         }
         else {
             return afterHuntWeight;
         }
     }
 
+    
     public static boolean checkAfterHuntSuccess(int estimateResources, int gatherResources, int reduceFoodSupply) {
 
         int afterHuntWeight = checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
@@ -111,20 +113,20 @@ public class LocationControl {
 
 }
 
-/*public static double illnessHeal(double foodAmount, double mortalityRate, double medicineAmount) {
+/*public static double illnessHeal(double foodAmount, double mortalityRate, double medicineAmount)throws LocationControlException {
 
         double healChance = 0;
 
         if (foodAmount <= 0 || foodAmount > 500) {
-            return -1;
+            throw new LocationControlException ("You must carry between 1-500 lbs of food.");
         }
 
         if (mortalityRate < 75 || mortalityRate > 125) {
-            return -2;
+            throw new LocationControlException ("Your health rate must be between 75-150.");
         }
 
         if (medicineAmount < 0) {
-            return -3;
+            throw new LocationControlException ("You need medicine.");
         }
 
         if (medicineAmount > 0) {
