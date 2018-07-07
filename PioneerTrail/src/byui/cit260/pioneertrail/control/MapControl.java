@@ -179,32 +179,32 @@ public class MapControl {
         scenes[SceneType.Zion2.ordinal()].setSymbol("Z!");
         
         //descriptions
-        scenes[SceneType.Nauvoo.ordinal()].setDescription("Welcome to Nauvoo");
-        scenes[SceneType.SugarCreek.ordinal()].setDescription("Welcome to Sugar Creek");
-        scenes[SceneType.RichardsonsPoint.ordinal()].setDescription("Welcome to Richardsons Point");
-        scenes[SceneType.CharitonRiverCrossing.ordinal()].setDescription("Welcome to Chariton River Crossing");
-        scenes[SceneType.LocustCreek.ordinal()].setDescription("Welcome to Locust Creek");
-        scenes[SceneType.GardenGrove.ordinal()].setDescription("Welcome to Garden Grove");
-        scenes[SceneType.NishnabotnaRiver.ordinal()].setDescription("Welcome to Nishnabotna River");
-        scenes[SceneType.GrandEncampment.ordinal()].setDescription("Welcome to Grand Encampment");
-        scenes[SceneType.CouncilBluffs.ordinal()].setDescription("Welcome to Council Bluffs");
-        scenes[SceneType.WinterQuarters.ordinal()].setDescription("Welcome to Winter Quarters");
-        scenes[SceneType.ElkhornRiverCrossing.ordinal()].setDescription("Welcome to Elkhorn River Crossing");
-        scenes[SceneType.PlatteRiver.ordinal()].setDescription("Welcome to Platte River");
-        scenes[SceneType.FortKearny.ordinal()].setDescription("Welcome to Fort Kearny");
-        scenes[SceneType.ConfluencePoint.ordinal()].setDescription("Welcome to Confluence Point");
-        scenes[SceneType.AshHollow.ordinal()].setDescription("Welcome to Ash Hollow");
-        scenes[SceneType.ChimneyRock.ordinal()].setDescription("Welcome to Chimney Rock");
-        scenes[SceneType.ScottsBluff.ordinal()].setDescription("Welcome to Scotts Bluff");
-        scenes[SceneType.FortLaramie.ordinal()].setDescription("Welcome to Fort Laramie");
-        scenes[SceneType.SweetwaterRiver.ordinal()].setDescription("Welcome to Sweetwater River");
-        scenes[SceneType.IndependenceRock.ordinal()].setDescription("Welcome to Independence Rock");
-        scenes[SceneType.FortBridger.ordinal()].setDescription("Welcome to Fort Bridger");
-        scenes[SceneType.EchoCanyon.ordinal()].setDescription("Welcome to Echo Canyon");
-        scenes[SceneType.GoldenPassRoad.ordinal()].setDescription("Welcome to Golden Pass Road");
-        scenes[SceneType.EmigrationCanyon.ordinal()].setDescription("Welcome to Emigration Canyon");
-        scenes[SceneType.Zion1.ordinal()].setDescription("Welcome to Zion");
-        scenes[SceneType.Zion2.ordinal()].setDescription("Welcome to Zion");
+        scenes[SceneType.Nauvoo.ordinal()].setDescription("You have arrived at Nauvoo");
+        scenes[SceneType.SugarCreek.ordinal()].setDescription("You have arrived at Creek");
+        scenes[SceneType.RichardsonsPoint.ordinal()].setDescription("You have arrived at Richardsons Point");
+        scenes[SceneType.CharitonRiverCrossing.ordinal()].setDescription("You have arrived at Chariton River Crossing");
+        scenes[SceneType.LocustCreek.ordinal()].setDescription("You have arrived at Locust Creek");
+        scenes[SceneType.GardenGrove.ordinal()].setDescription("You have arrived at Garden Grove");
+        scenes[SceneType.NishnabotnaRiver.ordinal()].setDescription("You have arrived at Nishnabotna River");
+        scenes[SceneType.GrandEncampment.ordinal()].setDescription("You have arrived at Grand Encampment");
+        scenes[SceneType.CouncilBluffs.ordinal()].setDescription("You have arrived at Council Bluffs");
+        scenes[SceneType.WinterQuarters.ordinal()].setDescription("You have arrived at Winter Quarters");
+        scenes[SceneType.ElkhornRiverCrossing.ordinal()].setDescription("You have arrived at Elkhorn River Crossing");
+        scenes[SceneType.PlatteRiver.ordinal()].setDescription("You have arrived at Platte River");
+        scenes[SceneType.FortKearny.ordinal()].setDescription("You have arrived at Fort Kearny");
+        scenes[SceneType.ConfluencePoint.ordinal()].setDescription("You have arrived at Confluence Point");
+        scenes[SceneType.AshHollow.ordinal()].setDescription("You have arrived at Ash Hollow");
+        scenes[SceneType.ChimneyRock.ordinal()].setDescription("You have arrived at Chimney Rock");
+        scenes[SceneType.ScottsBluff.ordinal()].setDescription("You have arrived at Scotts Bluff");
+        scenes[SceneType.FortLaramie.ordinal()].setDescription("You have arrived at Fort Laramie");
+        scenes[SceneType.SweetwaterRiver.ordinal()].setDescription("You have arrived at Sweetwater River");
+        scenes[SceneType.IndependenceRock.ordinal()].setDescription("You have arrived at Independence Rock");
+        scenes[SceneType.FortBridger.ordinal()].setDescription("You have arrived at Fort Bridger");
+        scenes[SceneType.EchoCanyon.ordinal()].setDescription("You have arrived at Echo Canyon");
+        scenes[SceneType.GoldenPassRoad.ordinal()].setDescription("You have arrived at Golden Pass Road");
+        scenes[SceneType.EmigrationCanyon.ordinal()].setDescription("You have arrived at Emigration Canyon");
+        scenes[SceneType.Zion1.ordinal()].setDescription("You have arrived at Zion");
+        scenes[SceneType.Zion2.ordinal()].setDescription("You have arrived at Zion");
 
         return scenes;
     }
