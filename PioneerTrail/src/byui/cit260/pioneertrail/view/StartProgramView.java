@@ -6,6 +6,7 @@
 package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.GameControl;
+import byui.cit260.pioneertrail.exceptions.GameControlException;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -36,7 +37,12 @@ public class StartProgramView extends View {
 
         String playersName = inputs[0];
 
-        PioneerTrail.setPlayer(gameControl.savePlayer(playersName));
+        try {
+            PioneerTrail.setPlayer(gameControl.savePlayer(playersName));
+        } catch (GameControlException gce) {
+            System.out.println(gce.getMessage());
+            return false;
+        }
 
         if (PioneerTrail.getPlayer() == null) {
             System.out.println("Could not create the player. " + playersName + "Enter a different name.");

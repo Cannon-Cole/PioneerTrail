@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.view;
 
 import pioneertrail.PioneerTrail;
 import byui.cit260.pioneertrail.control.GameControl;
+import byui.cit260.pioneertrail.exceptions.GameControlException;
 
 /**
  *
@@ -81,7 +82,13 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        int holder = GameControl.createNewGame(PioneerTrail.getPlayer());
+        int holder;
+        try {
+            holder = GameControl.createNewGame(PioneerTrail.getPlayer());
+        } catch (GameControlException gce) {
+            System.out.println(gce.getMessage());
+            return;
+        }
         
         if (holder == -1){
             System.out.println("***createNewGame Failed***");

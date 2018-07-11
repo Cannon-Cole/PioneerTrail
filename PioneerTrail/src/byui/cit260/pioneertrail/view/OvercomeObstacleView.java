@@ -7,6 +7,7 @@ package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.control.LocationControl;
+import byui.cit260.pioneertrail.exceptions.LocationControlException;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
@@ -33,7 +34,13 @@ public class OvercomeObstacleView extends View {
         InventoryControl inventoryControl = new InventoryControl();
         LocationControl locationControl = new LocationControl();
 
-        int overcame = locationControl.overComeObstacle(inputInt, 5, true);
+        int overcame;
+        try {
+            overcame = locationControl.overComeObstacle(inputInt, 5, true);
+        } catch (LocationControlException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
 
         PlayerModel player = PioneerTrail.getPlayer();
 
