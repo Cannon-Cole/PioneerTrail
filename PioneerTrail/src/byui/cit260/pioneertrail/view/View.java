@@ -5,7 +5,10 @@
  */
 package byui.cit260.pioneertrail.view;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -14,20 +17,23 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
-    
+
+    protected final BufferedReader keyboard = PioneerTrail.getInFile();
+    protected final PrintWriter console = PioneerTrail.getOutFile();
+
     public View() {
     }
-    
-    public View(String message){
-    this.displayMessage = message;
-}
+
+    public View(String message) {
+        this.displayMessage = message;
+    }
 
     @Override
     public String getInputs() {
 
         return getInput(this.displayMessage);
     }
-    
+
     @Override
     public void display() {
 
@@ -36,7 +42,7 @@ public abstract class View implements ViewInterface {
         do {
 
             String[] inputs = new String[1];
-            
+
             inputs[0] = this.getInputs();
 
             if (inputs == null) {
@@ -52,22 +58,25 @@ public abstract class View implements ViewInterface {
         while (endOfView == false);
 
     }
-    
+
     @Override
-    public String getInput(String promptMessage)
-    {
-        Scanner reader = new Scanner(System.in);
-        String[] inputs = new String[1];
-        
+    public String getInput(String promptMessage) {
+        String selection = "";
         boolean valid = false;
 
         while (valid == false) {
 
             System.out.println(promptMessage);
 
-            inputs[0] = reader.nextLine().trim();
+            try {
+                selection = this.keyboard.readLine();
+            } catch (IOException ex) {
+                System.out.println("Could not read line.");
+            }
 
-            if (inputs[0].length() < 1) {
+            selection = selection.trim();
+
+            if (selection.length() < 1) {
                 System.out.println("You must specify a value");
                 continue;
             }
@@ -75,7 +84,7 @@ public abstract class View implements ViewInterface {
             valid = true;
         }
 
-        return inputs[0];
+        return selection;
     }
 
 }

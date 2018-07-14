@@ -9,11 +9,28 @@ package byui.cit260.pioneertrail.exceptions;
  *
  * @author aimeejorgensen
  */
-public class LocationControlException {
+public class LocationControlException extends Exception{
 
-    public LocationControlException(String you_must_maintion_25_people_in_your_party) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public LocationControlException() {
     }
+
+    public LocationControlException(String message) {
+        super(message);
+    }
+
+    public LocationControlException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public LocationControlException(Throwable cause) {
+        super(cause);
+    }
+
+    public LocationControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+
+   
     
     
     }  

@@ -7,22 +7,23 @@ package byui.cit260.pioneertrail.view;
 
 import byui.cit260.pioneertrail.control.LocationControl;
 import byui.cit260.pioneertrail.exceptions.LocationControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 /**
  *
  * @author aimeejorgensen
  */
-public class CheckAfterHuntWeightView extends View{
+public class CheckAfterHuntWeightView extends View {
 
     public CheckAfterHuntWeightView(String Message) {
-     super("\nYou must maintain your food supply.  You have \" + foodAmount");   
+        super("\nYou must maintain your food supply.  You have \" + foodAmount");
     }
-        @Override
+
+    @Override
     public boolean doAction(String[] inputs) {
-        try{
+        try {
             LocationControl.checkAfterHuntWeight(0, 0, 0);
-        catch (LocationControlException ex) {
+        } catch (LocationControlException ex) {
         }
-      return false; 
+        return false;
+    }
 }

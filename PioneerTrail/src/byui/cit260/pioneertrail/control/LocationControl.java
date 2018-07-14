@@ -57,7 +57,7 @@ public class LocationControl {
     }
 
     
-    public static boolean checkAfterHuntSuccess(int estimateResources, int gatherResources, int reduceFoodSupply) {
+    public static boolean checkAfterHuntSuccess(int estimateResources, int gatherResources, int reduceFoodSupply) throws LocationControlException {
 
         int afterHuntWeight = checkAfterHuntWeight(estimateResources, gatherResources, reduceFoodSupply);
 
