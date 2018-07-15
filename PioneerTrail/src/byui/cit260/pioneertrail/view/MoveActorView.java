@@ -10,6 +10,7 @@ import byui.cit260.pioneertrail.model.LocationModel;
 import byui.cit260.pioneertrail.exceptions.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import byui.cit260.pioneertrail.control.LocationControl;
 
 /**
  *
@@ -62,6 +63,11 @@ public class MoveActorView extends View {
             System.out.println(ex.getMessage());
             return false;
         }
+        
+//        try {
+//        }
+//            catch(){
+//        }
         
         return true;
         

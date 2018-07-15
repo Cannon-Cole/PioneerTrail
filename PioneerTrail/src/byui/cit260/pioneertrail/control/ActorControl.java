@@ -127,7 +127,7 @@ public class ActorControl {
         }
 
         String message = "Your family's average health is " + average + ".\n\n  C: Continue";
-        FamilyStatusView view = new FamilyStatusView(message);
+        FamilyStatusView view = new FamilyStatusView();
         view.display();
     }
 

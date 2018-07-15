@@ -31,6 +31,7 @@ public class GameMainView extends View {
             + "\n  O: View list inventory"
             + "\n  P: Purchase new supplies"
             + "\n  L: Explore a Location"
+            + "\n  A: Family Report"    
             + "\n  N: Move to New location"
             + "\n  R: Estimate the Resources needed"
             + "\n  B: Repair Wagon"
@@ -41,6 +42,7 @@ public class GameMainView extends View {
             + "\n  S: Save game"
             + "\n  ?: Help"
             + "\n  Q: Quit");
+            
     }
 
     @Override
@@ -77,6 +79,9 @@ public class GameMainView extends View {
             case "L":
                 locationControl.exploreLocation();
                 break;
+            case "A":
+                FamilyStatusView familyReportView = new FamilyStatusView();
+                familyReportView.display();
             case "N":
                 try {
                     mapControl.moveActorWrapper(currentGame.getMap().getCurrentRow(), currentGame.getMap().getCurrentColumn());
@@ -109,9 +114,8 @@ public class GameMainView extends View {
                 } catch (ActorControlException ie) {
                     System.out.println(ie.getMessage());
                     return false;
-                }
-                return true;
-            case "S":
+                }   
+                case "S":
                 gameControl.saveGame();
                 break;
             case "?":

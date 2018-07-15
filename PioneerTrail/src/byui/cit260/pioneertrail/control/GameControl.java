@@ -272,4 +272,5 @@ public class GameControl {
         //function succesful
         return 1;
     }
+  
 }
