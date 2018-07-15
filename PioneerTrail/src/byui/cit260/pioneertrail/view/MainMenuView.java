@@ -18,7 +18,7 @@ public class MainMenuView extends View {
     public MainMenuView() {
         super("\nMAIN MENU"
             + "\n  N: Start new game"
-            + "\n  R: Restart game"
+            + "\n  L: Load existing game"
             + "\n  H: Get help on how to play the game"
             /*
             + "\n  C: Test Cole's overcomeObstacleView"
@@ -35,8 +35,8 @@ public class MainMenuView extends View {
             case "N":
                 startNewGame();
                 break;
-            case "R":
-                restartGame();
+            case "L":
+                loadGame();
                 break;
             case "H":
                 getHelp();
@@ -99,11 +99,9 @@ public class MainMenuView extends View {
         gameMainView.display();
     }
 
-    private void restartGame() {
-        //Start existing game? The method's called "restart" game
-        //why not just call it "load"
+    private void loadGame() {
         StartExistingGameView startExistingGameView = new StartExistingGameView();
-        /*startExistingGameView.displayStartExistingGameView();*/
+        startExistingGameView.display();
     }
 
     private void getHelp() {

@@ -27,10 +27,12 @@ public class SaveGameView extends View {
         String filePath = inputs[0];
         GameModel game = PioneerTrail.getCurrentGame();
         
+        try {
             GameControl.saveGame(game, filePath);
-
+        } catch (GameControlException ex) {
+            ErrorView.display(this.getClass().getName(), "I/O Error in doAction(): " + ex.getMessage());
+        }
         
-        this.console.println("Game was saved to " + filePath);
         
         return true;
     }

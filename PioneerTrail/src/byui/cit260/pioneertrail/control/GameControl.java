@@ -13,8 +13,10 @@ import byui.cit260.pioneertrail.exceptions.GameControlException;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
 import byui.cit260.pioneertrail.view.ErrorView;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
@@ -227,11 +229,31 @@ public class GameControl {
         if (game == null)
             throw new GameControlException("GameModel cannot be null");
         
-        try {
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath));
+        if ((filePath == null) || (filePath.length() < 1))
+            throw new GameControlException("Path is either too short or null");
+        
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
             out.writeObject(game);
+            output.println("Game was saved to " + filePath);
         } catch (IOException ex) {
-            output.println("I/O Error: " + ex.getMessage());
+            ErrorView.display("GameControl","I/O Error: " + ex.getMessage());
+        }
+        
+    }
+    
+    public static void loadGame(String filePath) throws GameControlException, ClassNotFoundException, IOException {
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** loadGame() called ***");
+        
+        if (filePath == null)
+            throw new GameControlException("Path cannot be null");
+        
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))) {
+            GameModel game = (GameModel) in.readObject();
+            PioneerTrail.setCurrentGame(game);
+            PioneerTrail.setPlayer(game.getPlayer());
+        } catch (IOException ex) {
+            throw new IOException(ex.getMessage());
         }
         
     }
