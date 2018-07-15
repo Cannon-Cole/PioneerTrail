@@ -6,6 +6,8 @@
 package byui.cit260.pioneertrail.control;
 import byui.cit260.pioneertrail.exceptions.LocationControlException;
 import byui.cit260.pioneertrail.model.LocationModel;
+import java.io.PrintWriter;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -69,13 +71,13 @@ public class LocationControl {
     }
 
     public void exploreLocation() {
-
-        System.out.println("*** exploreLocation() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** exploreLocation() called ***");
     }
 
     public void huntForResources() {
-
-        System.out.println("*** huntForResources() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** huntForResources() called ***");
     }
 
     public static LocationModel[][] createLocations(int rows, int columns) {
