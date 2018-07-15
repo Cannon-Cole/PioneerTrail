@@ -77,7 +77,7 @@ public class MapModel implements Serializable {
        Other createMap() function is in control layer
     
     public static MapModel createMap(int noOfRows, int noOfColumns){
-        System.out.println("***MapModel createMap() called***");
+        //System.out.println("***MapModel createMap() called***");
         MapModel map = new MapModel();
         
         map.numRows = noOfRows;

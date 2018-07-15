@@ -5,12 +5,14 @@
  */
 package byui.cit260.pioneertrail.view;
 
+import java.io.PrintWriter;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -42,7 +44,8 @@ public class CheckAfterHuntWeightViewTest {
      */
     @Test
     public void testDoAction() {
-        System.out.println("doAction");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("doAction");
         String[] inputs = null;
         CheckAfterHuntWeightView instance = null;
         boolean expResult = false;

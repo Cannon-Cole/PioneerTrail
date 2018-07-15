@@ -9,7 +9,9 @@ import byui.cit260.pioneertrail.exceptions.InventoryControlException;
 import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import pioneertrail.PioneerTrail;
 
 /**
  *
@@ -28,11 +30,13 @@ public class InventoryControl {
     }
 
     public void estimateResources() {
-        System.out.println("*** estimateResources() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** estimateResources() called ***");
     }
 
     public static ArrayList<InventoryModel> createInventory() {
-        System.out.println("***InventoryControl createInventory() called***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("***InventoryControl createInventory() called***");
         
         //new arraylist of inventory
         ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();

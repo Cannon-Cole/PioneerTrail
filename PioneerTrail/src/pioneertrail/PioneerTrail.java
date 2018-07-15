@@ -41,7 +41,7 @@ public class PioneerTrail {
             return;
 
         } catch (Throwable e) {
-            System.out.println("Exception: " + e.toString()
+            outFile.println("Exception: " + e.toString()
                 + "\nCause: " + e.getCause()
                 + "\nmessage: " + e.getMessage());
         } finally {
@@ -59,7 +59,7 @@ public class PioneerTrail {
                     logFile.close();
 
             } catch (IOException ex) {
-                System.out.println("input or output stream couldn't close");
+                outFile.println("input or output stream couldn't close");
             }
         }
 

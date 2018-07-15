@@ -14,12 +14,15 @@ import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Aimee, Derek
  */
 public class GameControl {
+    
+    PrintWriter output = PioneerTrail.getOutFile();
 
     public static int[] repairWagonCheck(GameModel game, ArrayList<InventoryModel> inventory) throws GameControlException {
         /*
@@ -214,24 +217,30 @@ public class GameControl {
     }
 
     public void saveGame() {
-        System.out.println("*** saveGame() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        //comment out all of these stubs?
+        output.println("*** saveGame() called ***");
     }
 
     public void purchaseSupplies() {
-        System.out.println("*** purchaseSupplies() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** purchaseSupplies() called ***");
     }
 
     public void repairWagonTemp() {
-        System.out.println("*** repairWagonTemp() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** repairWagonTemp() called ***");
     }
 
     public static void utilizeAxe() {
-        System.out.println("*** utilizeAxe() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** utilizeAxe() called ***");
     }
 
     public static void utilizeHammer() {
         //repurpose repairwagonapply
-        System.out.println("*** utilizeHammer() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** utilizeHammer() called ***");
     }
 
     public static int createNewGame(PlayerModel player) throws GameControlException {

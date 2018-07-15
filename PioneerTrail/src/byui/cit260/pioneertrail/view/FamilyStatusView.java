@@ -53,11 +53,10 @@ public class FamilyStatusView extends View {
                 report.flush();
                 report.close();
                 
-                System.out.println("You Successfully Created Your Report.");
+                console.println("You Successfully Created Your Report.");
             } catch (IOException ex) {
 //                Logger.getLogger(FamilyStatusView.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage());
-
+                ErrorView.display(this.getClass().getName(),ex.getMessage());
             }
             
         }

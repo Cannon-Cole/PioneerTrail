@@ -23,6 +23,7 @@ import java.util.ArrayList;
  */
 public class MapControl {
 
+    
     public void displayMap() {
         String leftIndicator;
         String rightIndicator;
@@ -89,7 +90,9 @@ public class MapControl {
 
     public static MapModel createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory) {
         
-        System.out.println("*** MapControl - createMap() called ***");
+        PrintWriter output = PioneerTrail.getOutFile();
+        
+        output.println("*** MapControl - createMap() called ***");
         
         if (noOfRows < 0 || noOfColumns < 0) {
             return null;

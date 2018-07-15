@@ -29,7 +29,7 @@ public class CheckAfterHuntWeightView extends View {
             LocationControl.checkAfterHuntWeight(0, 0, 0);
         } catch (LocationControlException ex) {
             
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
             
         }
         return false;
