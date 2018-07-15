@@ -66,18 +66,18 @@ public abstract class View implements ViewInterface {
 
         while (valid == false) {
 
-            System.out.println(promptMessage);
+            this.console.println(promptMessage);
 
             try {
                 selection = this.keyboard.readLine();
             } catch (IOException ex) {
-                System.out.println("Could not read line.");
+                ErrorView.display(this.getClass().getName(),"Could not read line.");
             }
 
             selection = selection.trim();
 
             if (selection.length() < 1) {
-                System.out.println("You must specify a value");
+                ErrorView.display(this.getClass().getName(),"You must specify a value");
                 continue;
             }
 

@@ -33,7 +33,7 @@ public class UtilizeToolsView extends View {
                 //repurpose repairWagonApply
                 return true;
             default:
-                System.out.println("Invalid Input");
+                ErrorView.display(this.getClass().getName(),"Invalid Input");
                 break;
         }
      

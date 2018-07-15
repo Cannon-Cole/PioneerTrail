@@ -75,7 +75,7 @@ public class MainMenuView extends View {
             case "Q":
                 return true;
             default:
-                System.out.println("Invalid input");
+                ErrorView.display(this.getClass().getName(),"Invalid input");
         }
 
         return false;
@@ -86,12 +86,12 @@ public class MainMenuView extends View {
         try {
             holder = GameControl.createNewGame(PioneerTrail.getPlayer());
         } catch (GameControlException gce) {
-            System.out.println(gce.getMessage());
+            ErrorView.display(this.getClass().getName(),gce.getMessage());
             return;
         }
         
         if (holder == -1){
-            System.out.println("***createNewGame Failed***");
+            ErrorView.display(this.getClass().getName(),"***createNewGame Failed***");
         }
 
         GameMainView gameMainView = new GameMainView();

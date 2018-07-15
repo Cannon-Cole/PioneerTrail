@@ -40,16 +40,16 @@ public class StartProgramView extends View {
         try {
             PioneerTrail.setPlayer(gameControl.savePlayer(playersName));
         } catch (GameControlException gce) {
-            System.out.println(gce.getMessage());
+            ErrorView.display(this.getClass().getName(),gce.getMessage());
             return false;
         }
 
         if (PioneerTrail.getPlayer() == null) {
-            System.out.println("Could not create the player. " + playersName + "Enter a different name.");
+            ErrorView.display(this.getClass().getName(),"Could not create the player. " + playersName + "Enter a different name.");
             return false;
         }
 
-        System.out.println("==================================================================\n"
+        this.console.println("==================================================================\n"
             + "Welcome to the game " + PioneerTrail.getPlayer().getName()
             + "\nWe hope you have a lot of fun!\n"
             + "==================================================================");

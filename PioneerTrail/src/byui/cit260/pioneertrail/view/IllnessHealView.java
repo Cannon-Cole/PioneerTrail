@@ -31,7 +31,7 @@ public class IllnessHealView extends View {
             case "E":
                 return true;
             default:
-                System.out.println("Invalid input");
+                ErrorView.display(this.getClass().getName(),"Invalid input");
                 break;
         }
 
