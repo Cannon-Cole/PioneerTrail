@@ -5,13 +5,14 @@
  */
 package byui.cit260.pioneertrail.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Aimee, Cole, Derek
  */
-public class ActorModel {
+public class ActorModel implements Serializable {
     
     private String name;
     private int health;

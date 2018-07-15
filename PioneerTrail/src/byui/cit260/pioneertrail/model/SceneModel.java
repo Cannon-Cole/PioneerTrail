@@ -5,6 +5,7 @@
  */
 package byui.cit260.pioneertrail.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
@@ -13,7 +14,7 @@ import java.util.Objects;
  *
  * @author Cole
  */
-public class SceneModel {
+public class SceneModel implements Serializable {
 
     private String name;
     private String symbol;

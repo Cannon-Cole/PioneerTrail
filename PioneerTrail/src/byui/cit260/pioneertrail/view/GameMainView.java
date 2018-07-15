@@ -16,6 +16,7 @@ import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.exceptions.ActorControlException;
 import byui.cit260.pioneertrail.exceptions.MapControlException;
+import java.io.PrintWriter;
 import pioneertrail.PioneerTrail;
 
 /**
@@ -116,7 +117,7 @@ public class GameMainView extends View {
                     return false;
                 }   
                 case "S":
-                gameControl.saveGame();
+                this.saveGame();
                 break;
             case "?":
                 helpMenuView.display();
@@ -128,6 +129,15 @@ public class GameMainView extends View {
         }
 
         return false;
+    }
+    
+    private void saveGame() {
+        PrintWriter output = PioneerTrail.getOutFile();
+        output.println("*** GameMainView: saveGame() called ***");
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
+        
+        
     }
 
 }

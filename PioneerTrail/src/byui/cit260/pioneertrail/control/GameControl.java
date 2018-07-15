@@ -12,6 +12,10 @@ import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.exceptions.GameControlException;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
+import byui.cit260.pioneertrail.view.ErrorView;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 import java.io.PrintWriter;
@@ -216,10 +220,20 @@ public class GameControl {
 
     }
 
-    public void saveGame() {
+    public static void saveGame(GameModel game, String filePath) throws GameControlException {
         PrintWriter output = PioneerTrail.getOutFile();
-        //comment out all of these stubs?
-        output.println("*** saveGame() called ***");
+        output.println("*** GameControl: saveGame() called ***");
+        
+        if (game == null)
+            throw new GameControlException("GameModel cannot be null");
+        
+        try {
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath));
+            out.writeObject(game);
+        } catch (IOException ex) {
+            output.println("I/O Error: " + ex.getMessage());
+        }
+        
     }
 
     public void purchaseSupplies() {
