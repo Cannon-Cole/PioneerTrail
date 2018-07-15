@@ -1,0 +1,9 @@
+
+****Family Actors****
+        Name HlthStrgth  Alive           Description
+        ---- ----------  -----           -----------
+     Brigham   20   20   True                      
+       Sarah   20   20   True                      
+       Hyrum   20   20   True                      
+        Anna   20   20   True                      
+      Martin   20   20   True                      
