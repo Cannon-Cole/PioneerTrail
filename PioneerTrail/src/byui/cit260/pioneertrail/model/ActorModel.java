@@ -14,11 +14,19 @@ import java.util.Objects;
 public class ActorModel {
     
     private String name;
-    private String description;
     private int health;
     private int Strength;
     private boolean alive;
+    private String description;
 
+    public ActorModel(){
+    name = "";
+    health = 100;
+    Strength = 100;
+    alive = true;
+    description = "";
+}
+    
     public String getName() {
         return name;
     }

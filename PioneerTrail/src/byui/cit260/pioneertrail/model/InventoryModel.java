@@ -23,7 +23,7 @@ public class InventoryModel implements Serializable {
 //    private double weight;
 //    private double price;
 //    private int quantity;
-//    private int foodAmount;
+      private int foodAmount;
 //    private double medicineAmount;
 //    private boolean hasHammer;
 //    private int hammerDurability;
