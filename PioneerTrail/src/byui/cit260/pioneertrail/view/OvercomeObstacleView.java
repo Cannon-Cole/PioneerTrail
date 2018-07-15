@@ -38,7 +38,7 @@ public class OvercomeObstacleView extends View {
         try {
             overcame = locationControl.overComeObstacle(inputInt, 5, true);
         } catch (LocationControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
             return false;
         }
 

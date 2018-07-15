@@ -33,6 +33,7 @@ public class PioneerTrail {
 
             PioneerTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
             PioneerTrail.outFile = new PrintWriter(System.out, true);
+            PioneerTrail.logFile = new PrintWriter("logfile.txt");
 
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
@@ -53,6 +54,9 @@ public class PioneerTrail {
                 if (PioneerTrail.outFile != null) {
                     outFile.close();
                 }
+                
+                if (logFile != null)
+                    logFile.close();
 
             } catch (IOException ex) {
                 System.out.println("input or output stream couldn't close");

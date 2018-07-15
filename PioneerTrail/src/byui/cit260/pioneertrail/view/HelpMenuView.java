@@ -24,41 +24,41 @@ public class HelpMenuView extends View {
 
         switch (inputs[0].toUpperCase()) {
             case "G":
-                System.out.println("");
+                this.console.println("");
                 displayGoalGame();
                 break;
 
             case "M":
-                System.out.println("");
+                this.console.println("");
                 displayHowToMove();
                 break;
 
             case "H":
-                System.out.println("");
+                this.console.println("");
                 displayHowToHunt();
                 break;
 
             case "E":
                 return true;
             default:
-                System.out.println("Invalid Selection");
+                ErrorView.display(this.getClass().getName(),"Invalid Selection");
         }
 
         return false;
     }
 
     private void displayGoalGame() {
-        System.out.println("*The goal of the game is for your wagon party to make it across the plains to Zion,"
+        this.console.println("*The goal of the game is for your wagon party to make it across the plains to Zion,"
             + "\n with 2 or more family members.");
     }
 
     private void displayHowToMove() {
-        System.out.println("* Move your player by entering the coordinates on the map at each turn, \n for example, (0,1) would indicate ROW 1, COLUMN 2, which would move your player to square 2.");
+        this.console.println("* Move your player by entering the coordinates on the map at each turn, \n for example, (0,1) would indicate ROW 1, COLUMN 2, which would move your player to square 2.");
 
     }
 
     private void displayHowToHunt() {
-        System.out.println("* If you wish to hunt for food, enter \"A\" for shoot arrow,"
+        this.console.println("* If you wish to hunt for food, enter \"A\" for shoot arrow,"
             + "\n\"G\" for shoot gun, or \"T\" for use a trap.");
     }
 

@@ -52,15 +52,15 @@ public class MoveActorView extends View {
             newColumn = Integer.parseInt(theInputs[1]);
             
         } catch (NumberFormatException nx) {
-            System.out.println(nx.getMessage().replaceFirst("For input string:.*","\nYou need to enter an integer"));
+            ErrorView.display(this.getClass().getName(),nx.getMessage().replaceFirst("For input string:.*","\nYou need to enter an integer"));
             return false;
         }
         
         try {
             LocationModel newLocation = MapControl.moveActor(newRow, newColumn);
-            System.out.println(newLocation.getScene().getDescription());
+            this.console.println(newLocation.getScene().getDescription());
         } catch (MapControlException ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display(this.getClass().getName(),ex.getMessage());
             return false;
         }
         

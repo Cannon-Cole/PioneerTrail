@@ -46,7 +46,7 @@ public class InventoryView extends View {
             totalWeight = InventoryControl.getTotalWeight(mainInventory);
             message += "\nTotal Weight: " + String.format("%.2f", totalWeight);
         } catch (InventoryControlException ex) {
-            System.out.println("Can't calculate total weight. " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),"Can't calculate total weight. " + ex.getMessage());
         }
 
         message += "\n(E to Exit)";
@@ -92,7 +92,7 @@ public class InventoryView extends View {
             totalWeight = InventoryControl.getTotalWeight(mainInventory);
             message += "\nTotal Weight: " + String.format("%.2f", totalWeight);
         } catch (InventoryControlException ex) {
-            System.out.println("Can't calculate total weight. " + ex.getMessage());
+            ErrorView.display(this.getClass().getName(),"Can't calculate total weight. " + ex.getMessage());
         }
 
         message += "\n(E to Exit)";

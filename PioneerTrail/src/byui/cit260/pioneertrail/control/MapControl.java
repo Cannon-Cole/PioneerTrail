@@ -14,6 +14,7 @@ import byui.cit260.pioneertrail.model.SceneModel;
 import byui.cit260.pioneertrail.enums.SceneType;
 import byui.cit260.pioneertrail.view.MoveActorView;
 import byui.cit260.pioneertrail.exceptions.MapControlException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -28,25 +29,26 @@ public class MapControl {
         GameModel game = PioneerTrail.getCurrentGame(); // retreive the game
         MapModel map = game.getMap(); // retreive the map from game
         LocationModel[][] locations = map.getLocations(); // retreive the locations from map
+        PrintWriter output = PioneerTrail.getOutFile();
         
         // Build the heading of the map
-        System.out.println("\n                     ===[ THE PIONEER TRAIL ]===");
-        System.out.print("  -");
+        output.println("\n                     ===[ THE PIONEER TRAIL ]===");
+        output.print("  -");
         
         for (int column = 0; column < locations[0].length; column++) {
             // print col numbers to side of map
             if (column < 10) {
-                System.out.print("  " + column + " -");
+                output.print("  " + column + " -");
             } else {
-                System.out.print(" " + column + " -");
+                output.print(" " + column + " -");
             }
         }
         
         // Now build the map.  For each row, show the column information
-        System.out.println();
+        output.println();
         
         for (int row = 0; row < locations.length; row++) {
-            System.out.print(row + " "); // print row numbers to side of map
+            output.print(row + " "); // print row numbers to side of map
             
             for (int column = 0; column < locations[row].length; column++) {
                 // set default indicators as blanks
@@ -62,25 +64,25 @@ public class MapControl {
                     isThere = true;
                 }
                 
-                System.out.print("|"); // start map with a |
+                output.print("|"); // start map with a |
                 
                 if (locations[row][column].getScene() == null) {
                     // No scene assigned here so use ?? for the symbol
-                    System.out.print(leftIndicator + "??" + rightIndicator);
+                    output.print(leftIndicator + "??" + rightIndicator);
                 } else {
                     if (locations[row][column].isVisited() || (column == 12) || isThere) {
                         // only show symbol if visited, or is the goal
-                        System.out.print(leftIndicator
+                        output.print(leftIndicator
                             + locations[row][column].getScene().getSymbol()
                             + rightIndicator);
                     } else {
                         // else, hide location abbreviations
-                        System.out.print(" -- ");
+                        output.print(" -- ");
                     }
                 }
             }
             
-            System.out.println("|");
+            output.println("|");
         }
     }
 

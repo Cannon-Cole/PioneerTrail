@@ -86,7 +86,7 @@ public class GameMainView extends View {
                 try {
                     mapControl.moveActorWrapper(currentGame.getMap().getCurrentRow(), currentGame.getMap().getCurrentColumn());
                 } catch (MapControlException ex) {
-                    System.out.println(ex.getMessage());
+                    ErrorView.display(this.getClass().getName(), ex.getMessage());
                 }
                 break;
             case "R":
@@ -112,7 +112,7 @@ public class GameMainView extends View {
                 try {
                     ActorControl.familyStatusWrapper(family);
                 } catch (ActorControlException ie) {
-                    System.out.println(ie.getMessage());
+                    ErrorView.display(this.getClass().getName(),ie.getMessage());
                     return false;
                 }   
                 case "S":
@@ -124,7 +124,7 @@ public class GameMainView extends View {
             case "Q":
                 return true;
             default:
-                System.out.println("Invalid input");
+                ErrorView.display(this.getClass().getName(),"Invalid input");
         }
 
         return false;

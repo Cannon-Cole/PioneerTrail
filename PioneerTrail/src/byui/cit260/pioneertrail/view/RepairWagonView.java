@@ -35,7 +35,7 @@ public class RepairWagonView extends View{
 //            return -1;
 //            //todo: error handling
 //        
-//        System.out.println("Repairing Wagon:");
+//        this.console.println("Repairing Wagon:");
 //        String promptString = new String();
 //        
 //        if (availableActions[0] == 1) {
@@ -107,7 +107,7 @@ public class RepairWagonView extends View{
 //                break;
 //            }
 //            
-//            System.out.println(feedbackString);
+//            this.console.println(feedbackString);
 //            
 //        } while (endOfView == false);
 //        
@@ -138,7 +138,7 @@ public class RepairWagonView extends View{
                 chosenAction = 1;
                 return true;
             } else {
-                System.out.println("Invalid input");
+                ErrorView.display(this.getClass().getName(),"Invalid input");
             }
             break;
         case "H":
@@ -146,7 +146,7 @@ public class RepairWagonView extends View{
                 chosenAction = 2;
                 return true;
             } else {
-                System.out.println("Invalid input");
+                ErrorView.display(this.getClass().getName(),"Invalid input");
             }
             break;
         case "F":
@@ -156,7 +156,7 @@ public class RepairWagonView extends View{
         case "Q":
             return true;
         default:
-            System.out.println("Invalid input");
+            ErrorView.display(this.getClass().getName(),"Invalid input");
         }
 
         return false;
