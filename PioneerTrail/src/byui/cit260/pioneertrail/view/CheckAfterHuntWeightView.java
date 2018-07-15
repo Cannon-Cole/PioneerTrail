@@ -18,11 +18,19 @@ public class CheckAfterHuntWeightView extends View {
         super("\nYou must maintain your food supply.  You have \" + foodAmount");
     }
 
+//    estimateResources(food,weightLeft):  The current weight of food resources 
+//gatherResources(visited,animalWeight):  The weight of animal in hunt
+//reduceFoodSupply
+
+    
     @Override
     public boolean doAction(String[] inputs) {
         try {
             LocationControl.checkAfterHuntWeight(0, 0, 0);
         } catch (LocationControlException ex) {
+            
+            System.out.println(ex.getMessage());
+            
         }
         return false;
     }
