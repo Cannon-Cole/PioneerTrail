@@ -100,7 +100,8 @@ public class InventoryView extends View {
             FileWriter inventoryLog = new FileWriter(filePath);
             PrintWriter keyboard = PioneerTrail.getOutFile();
 
-            String message = String.format("%-17s %-10s %-10s %n %n", "Inventory", "Quantity", "Weight");
+            String message = String.format("%27s %n %n", "Inventory Report");
+            message += String.format("%-17s %-10s %-10s %n %n", "Inventory", "Quantity", "Weight");
 
             //goes through each inventory object in the arraylist
             int index = 0;
