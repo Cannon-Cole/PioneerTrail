@@ -1,0 +1,7 @@
+Inventory         Quantity   Weight     
+ 
+Food                  55      16.50 
+Medicine              10      7.00 
+Spare Wheels          3       90.00 
+Hammer Durability     1       3.50 
+Axe Durability        1       10.00 

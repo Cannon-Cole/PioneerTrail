@@ -53,11 +53,11 @@ public class InventoryControl {
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
         //System.out.println("***InventoryControl fillInventoryTEMP() called***");
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(2);
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(55);
+        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
         inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
-        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(4);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(5);
+        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);
+        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
     }
 
     public static double getTotalWeight(ArrayList<InventoryModel> inventory) throws InventoryControlException {
