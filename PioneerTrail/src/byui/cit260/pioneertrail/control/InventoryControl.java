@@ -53,21 +53,11 @@ public class InventoryControl {
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
         //System.out.println("***InventoryControl fillInventoryTEMP() called***");
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(50);
-        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(50);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(50);
-        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(50);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(50);
-    }
-    
-    public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory, int notUsed) {
-        //System.out.println("***InventoryControl fillInventoryTEMP() called***");
-        //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(-1);
-        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(-1);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(-1);
-        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(-1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(-1);
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(1);
+        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(2);
+        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
+        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(4);
+        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(5);
     }
 
     public static double getTotalWeight(ArrayList<InventoryModel> inventory) throws InventoryControlException {

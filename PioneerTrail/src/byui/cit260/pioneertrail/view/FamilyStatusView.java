@@ -4,15 +4,10 @@
  * and open the template in the editor.
  */
 package byui.cit260.pioneertrail.view;
-import byui.cit260.pioneertrail.control.ActorControl;
 import byui.cit260.pioneertrail.model.ActorModel;
-
-import byui.cit260.pioneertrail.exceptions.ActorControlException;
 import byui.cit260.pioneertrail.model.GameModel;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pioneertrail.PioneerTrail;
 
 /**

@@ -11,7 +11,6 @@ import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.control.LocationControl;
 import byui.cit260.pioneertrail.control.MapControl;
 import byui.cit260.pioneertrail.model.ActorModel;
-
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.exceptions.ActorControlException;
@@ -29,10 +28,10 @@ public class GameMainView extends View {
         super("\nGame Menu"
             + "\n  M: View map"
             + "\n  I: View list inventory"
-            + "\n  O: View list inventory"
+            + "\n  O: Inventory Report"
             + "\n  P: Purchase new supplies"
             + "\n  L: Explore a Location"
-            + "\n  A: Family Report"    
+            + "\n  A: Family Report"
             + "\n  N: Move to New location"
             + "\n  R: Estimate the Resources needed"
             + "\n  B: Repair Wagon"
@@ -43,7 +42,7 @@ public class GameMainView extends View {
             + "\n  S: Save game"
             + "\n  ?: Help"
             + "\n  Q: Quit");
-            
+
     }
 
     @Override
@@ -71,8 +70,8 @@ public class GameMainView extends View {
                 inventoryView.display();
                 break;
             case "O":
-                InventoryView inventoryView2 = new InventoryView(1);
-                inventoryView2.display();
+                InventoryView inventoryViewReport = new InventoryView();
+                inventoryViewReport.getFilePath();
                 break;
             case "P":
                 gameControl.purchaseSupplies();
@@ -115,8 +114,8 @@ public class GameMainView extends View {
                 } catch (ActorControlException ie) {
                     ErrorView.display(this.getClass().getName(), ie.getMessage());
                     return false;
-                }   
-                case "S":
+                }
+            case "S":
                 this.saveGame();
                 break;
             case "?":
@@ -130,14 +129,13 @@ public class GameMainView extends View {
 
         return false;
     }
-    
+
     private void saveGame() {
         PrintWriter output = PioneerTrail.getOutFile();
         output.println("*** GameMainView: saveGame() called ***");
         SaveGameView saveGameView = new SaveGameView();
         saveGameView.display();
-        
-        
+
     }
 
 }
