@@ -73,7 +73,6 @@ public class InventoryView extends View {
         String filePath = "";
 
         this.console.println("Please enter the file path for the inventory report. "
-            + "\nBe sure to have a / on the end of the file path. "
             + "\nEnter nothing to save to game folder"
             + "\nFile name will be InventoryReport");
 
@@ -83,7 +82,7 @@ public class InventoryView extends View {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
 
-        this.printReport(filePath + "InventoryReport.txt");
+        this.printReport(filePath + "/InventoryReport.txt");
 
     }
 
