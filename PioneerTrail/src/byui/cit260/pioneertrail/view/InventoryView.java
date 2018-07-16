@@ -82,7 +82,13 @@ public class InventoryView extends View {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
 
-        this.printReport(filePath + "/InventoryReport.txt");
+        if ("".equals(filePath)) {
+            this.printReport(filePath + "InventoryReport.txt");
+        }
+
+        else {
+            this.printReport(filePath + "/InventoryReport.txt");
+        }
 
     }
 
