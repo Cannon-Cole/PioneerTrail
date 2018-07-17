@@ -76,7 +76,6 @@ public class LocationsVisitedView extends View {
         } else {
             this.saveReport(savePath + "/VisitedLocationsReport.txt");
         }
-
     }
     
     private void saveReport(String savePath) {
@@ -108,7 +107,6 @@ public class LocationsVisitedView extends View {
                 ErrorView.display(this.getClass().getName(),"Invalid Input");
                 break;
         }
-     
         return false;
     }
 }
