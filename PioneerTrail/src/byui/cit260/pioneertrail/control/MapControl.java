@@ -184,6 +184,7 @@ public class MapControl {
         scenes[SceneType.Zion2.ordinal()].setSymbol("Z!");
         
         //descriptions
+        //try to keep under 54 characters long, else locationsvisitedview needs adjusting for >80 columns
         scenes[SceneType.Nauvoo.ordinal()].setDescription("You have arrived at Nauvoo");
         scenes[SceneType.SugarCreek.ordinal()].setDescription("You have arrived at Creek");
         scenes[SceneType.RichardsonsPoint.ordinal()].setDescription("You have arrived at Richardsons Point");

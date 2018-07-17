@@ -27,12 +27,13 @@ public class GameMainView extends View {
     public GameMainView() {
         super("\nGame Menu"
             + "\n  M: View map"
+            + "\n  V: Visited locations Report"
+            + "\n  N: Move to New location"
+            + "\n  L: Explore Location"
             + "\n  I: View list inventory"
             + "\n  O: Inventory Report"
             + "\n  P: Purchase new supplies"
-            + "\n  L: Explore a Location"
             + "\n  A: Family Report"
-            + "\n  N: Move to New location"
             + "\n  R: Estimate the Resources needed"
             + "\n  B: Repair Wagon"
             + "\n  T: Utilize Tools"
@@ -64,6 +65,10 @@ public class GameMainView extends View {
         switch (inputs[0].toUpperCase()) {
             case "M":
                 mapControl.displayMap();
+                break;
+            case "V":
+                LocationsVisitedView locationsVisitedReport = new LocationsVisitedView();
+                locationsVisitedReport.display();
                 break;
             case "I":
                 InventoryView inventoryView = new InventoryView();
