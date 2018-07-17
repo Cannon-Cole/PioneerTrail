@@ -39,16 +39,16 @@ public class LocationsVisitedView extends View {
         
         // loops read map from left-to-right instead of by row
         for (int column = 0; column < locations[0].length; column++) {
-            for (int row = 0; row < locations.length; row++) {
-                if (locations[row][column].isVisited()) {
+            for (LocationModel[] location : locations) {
+                if (location[column].isVisited()) {
                     // add > before name if current location
-                    if ((locations[row][column].getCurrentRow() == PioneerTrail.getCurrentGame().getMap().getCurrentRow())
-                    && locations[row][column].getCurrentColumn() == PioneerTrail.getCurrentGame().getMap().getCurrentColumn()) {
+                    if ((location[column].getCurrentRow() == PioneerTrail.getCurrentGame().getMap().getCurrentRow())
+                    && location[column].getCurrentColumn() == PioneerTrail.getCurrentGame().getMap().getCurrentColumn()) {
                         current = ">";
                     } else {
                         current = " ";
                     }
-                    reportWrite += String.format("%n%1s%-24s %-54s", current, locations[row][column].getScene().getName(), locations[row][column].getScene().getDescription());
+                    reportWrite += String.format("%n%1s%-24s %-54s", current, location[column].getScene().getName(), location[column].getScene().getDescription());
                 }
             }
         }
