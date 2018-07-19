@@ -280,6 +280,9 @@ public class MapControl {
         if (newRow < 0 || newRow > map.getNumRows() - 1 || newColumn < 0 || newColumn > map.getNumColumns() - 1)
             throw new MapControlException("\nNew location out of range - check the map");
         
+        else if (newRow > map.getCurrentRow() + 1 || newRow < map.getCurrentRow() - 1 || newColumn > map.getCurrentColumn() + 1 || newColumn < map.getCurrentColumn() - 1)
+            throw new MapControlException("\nYou can only move one square at a time - check the map");
+        
         int currentRow = map.getCurrentRow();
         int currentColumn = map.getCurrentColumn();
         LocationModel[][] locationArray = map.getLocations();
