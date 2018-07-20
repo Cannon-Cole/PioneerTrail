@@ -14,7 +14,6 @@ import java.util.ArrayList;
  */
 public class GameModel implements Serializable {
 
-    private int numberOfPioneers;
     private int timeOfYear;
     private int mortalityRate;
     private int wagonHealth;
@@ -25,20 +24,19 @@ public class GameModel implements Serializable {
     private ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
 
     public GameModel() {
-    
+
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 59 * hash + this.numberOfPioneers;
         hash = 59 * hash + this.timeOfYear;
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "numberOfPioneers=" + numberOfPioneers + ", timeOfYear=" + timeOfYear + '}';
+        return "Game{" + "timeOfYear=" + timeOfYear + '}';
     }
 
     @Override
@@ -53,9 +51,6 @@ public class GameModel implements Serializable {
             return false;
         }
         final GameModel other = (GameModel) obj;
-        if (this.numberOfPioneers != other.numberOfPioneers) {
-            return false;
-        }
         if (this.timeOfYear != other.timeOfYear) {
             return false;
         }
@@ -71,11 +66,18 @@ public class GameModel implements Serializable {
     }
 
     public int getNumberOfPioneers() {
-        return numberOfPioneers;
-    }
 
-    public void setNumberOfPioneers(int numberOfPioneers) {
-        this.numberOfPioneers = numberOfPioneers;
+        int aliveCount = 0;
+
+        for (ActorModel person : family) {
+
+            if (person.isAlive() == true) {
+
+                aliveCount++;
+            }
+
+        }
+        return aliveCount;
     }
 
     public int getTimeOfYear() {
@@ -117,7 +119,7 @@ public class GameModel implements Serializable {
     public void setFamily(ActorModel[] familyParam) {
         this.family = familyParam;
     }
-    
+
     public ArrayList<InventoryModel> getInventory() {
         return inventory;
     }
@@ -125,7 +127,7 @@ public class GameModel implements Serializable {
     public void setInventory(ArrayList<InventoryModel> inventory) {
         this.inventory = inventory;
     }
-    
+
     public void addInventory(InventoryModel inventory) {
         this.inventory.add(inventory);
     }
@@ -137,7 +139,4 @@ public class GameModel implements Serializable {
     public void setMap(MapModel map) {
         this.map = map;
     }
-    
-    
-
 }

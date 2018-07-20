@@ -14,8 +14,10 @@ import byui.cit260.pioneertrail.model.SceneModel;
 import byui.cit260.pioneertrail.enums.SceneType;
 import byui.cit260.pioneertrail.view.MoveActorView;
 import byui.cit260.pioneertrail.exceptions.MapControlException;
+import byui.cit260.pioneertrail.view.OvercomeObstacleView;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -23,7 +25,6 @@ import java.util.ArrayList;
  */
 public class MapControl {
 
-    
     public void displayMap() {
         String leftIndicator;
         String rightIndicator;
@@ -31,69 +32,71 @@ public class MapControl {
         MapModel map = game.getMap(); // retreive the map from game
         LocationModel[][] locations = map.getLocations(); // retreive the locations from map
         PrintWriter output = PioneerTrail.getOutFile();
-        
+
         // Build the heading of the map
         output.println("\n                     ===[ THE PIONEER TRAIL ]===");
         output.print("  -");
-        
+
         for (int column = 0; column < locations[0].length; column++) {
             // print col numbers to side of map
             if (column < 10) {
                 output.print("  " + column + " -");
-            } else {
+            }
+            else {
                 output.print(" " + column + " -");
             }
         }
-        
+
         // Now build the map.  For each row, show the column information
         output.println();
-        
+
         for (int row = 0; row < locations.length; row++) {
             output.print(row + " "); // print row numbers to side of map
-            
+
             for (int column = 0; column < locations[row].length; column++) {
                 // set default indicators as blanks
                 leftIndicator = " ";
                 rightIndicator = " ";
-                
+
                 boolean isThere = false; //boolean until it's handled elsewhere
                 if ((locations[row][column].getCurrentRow() == map.getCurrentRow())
-                && locations[row][column].getCurrentColumn() == map.getCurrentColumn()) {
+                    && locations[row][column].getCurrentColumn() == map.getCurrentColumn()) {
                     // Set arrow indicators to show this is the current location.
                     leftIndicator = ">";
                     rightIndicator = "<";
                     isThere = true;
                 }
-                
+
                 output.print("|"); // start map with a |
-                
+
                 if (locations[row][column].getScene() == null) {
                     // No scene assigned here so use ?? for the symbol
                     output.print(leftIndicator + "??" + rightIndicator);
-                } else {
+                }
+                else {
                     if (locations[row][column].isVisited() || (column == 12) || isThere) {
                         // only show symbol if visited, or is the goal
                         output.print(leftIndicator
                             + locations[row][column].getScene().getSymbol()
                             + rightIndicator);
-                    } else {
+                    }
+                    else {
                         // else, hide location abbreviations
                         output.print(" -- ");
                     }
                 }
             }
-            
+
             output.println("|");
         }
     }
 
-
     public static MapModel createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory) {
-        
+
         PrintWriter output = PioneerTrail.getOutFile();
-        
+
         output.println("*** MapControl - createMap() called ***");
-        
+
         if (noOfRows < 0 || noOfColumns < 0) {
             return null;
         }
@@ -109,24 +112,24 @@ public class MapControl {
         LocationModel locations[][] = LocationControl.createLocations(noOfRows, noOfColumns);
         locations[0][0].setVisited(true); //starting point
         map.setLocations(locations);
-        
+
         SceneModel[] scenes = createScenes();
-        
+
         assignItemsToScenes(inventory, scenes);
-        
+
         assignScenesToLocations(map, scenes);
-        
+
         return map;
     }
-    
+
     public static SceneModel[] createScenes() {
-        
+
         SceneModel[] scenes = new SceneModel[26];
-        
+
         for (int i = 0; i < scenes.length; i++) {
             scenes[i] = new SceneModel();
         }
-        
+
         //names
         scenes[SceneType.Nauvoo.ordinal()].setName("Nauvoo");
         scenes[SceneType.SugarCreek.ordinal()].setName("Sugar Creek");
@@ -154,7 +157,7 @@ public class MapControl {
         scenes[SceneType.EmigrationCanyon.ordinal()].setName("Emigration Canyon");
         scenes[SceneType.Zion1.ordinal()].setName("Zion");
         scenes[SceneType.Zion2.ordinal()].setName("Zion");
-        
+
         //symbols
         scenes[SceneType.Nauvoo.ordinal()].setSymbol("NV");
         scenes[SceneType.SugarCreek.ordinal()].setSymbol("SC");
@@ -182,7 +185,7 @@ public class MapControl {
         scenes[SceneType.EmigrationCanyon.ordinal()].setSymbol("EC");
         scenes[SceneType.Zion1.ordinal()].setSymbol("Z!");
         scenes[SceneType.Zion2.ordinal()].setSymbol("Z!");
-        
+
         //descriptions
         //try to keep under 54 characters long, else locationsvisitedview needs adjusting for >80 columns
         scenes[SceneType.Nauvoo.ordinal()].setDescription("You have arrived at Nauvoo");
@@ -214,20 +217,20 @@ public class MapControl {
 
         return scenes;
     }
-    
+
     private static void assignItemsToScenes(ArrayList<InventoryModel> inventory, SceneModel[] scenes) {
-        
+
         ArrayList<InventoryModel> itemsInScene = InventoryControl.createInventory();
         SceneModel resourceScene1 = scenes[SceneType.Nauvoo.ordinal()];
         itemsInScene.add(new InventoryModel("Food", 100));
         itemsInScene.add(new InventoryModel("Medicine", 10));
         resourceScene1.setInventory(itemsInScene);
-        
+
     }
-    
+
     private static void assignScenesToLocations(MapModel map, SceneModel[] scenes) {
         LocationModel[][] locations = map.getLocations();
-        
+
         locations[0][0].setScene(scenes[SceneType.Nauvoo.ordinal()]);
         locations[1][0].setScene(scenes[SceneType.SugarCreek.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.RichardsonsPoint.ordinal()]);
@@ -254,47 +257,58 @@ public class MapControl {
         locations[1][11].setScene(scenes[SceneType.EmigrationCanyon.ordinal()]);
         locations[0][12].setScene(scenes[SceneType.Zion1.ordinal()]);
         locations[1][12].setScene(scenes[SceneType.Zion2.ordinal()]);
-        
+
     }
-    
-    public static int moveActorWrapper(int currentRow, int currentColumn) throws MapControlException{
-    
+
+    public static int moveActorWrapper(int currentRow, int currentColumn) throws MapControlException {
+
         MoveActorView view = new MoveActorView();
         view.display();
-        
-        
+
         return 0;
     }
-    
+
     public static LocationModel moveActor(int newRow, int newColumn) throws MapControlException {
         /*
         if (actor == null )
             throw new MapControlException("actor can't be null");
-        */
+         */
         // todo: pass down a FamilyModel?
-        
+
         GameModel game = PioneerTrail.getCurrentGame();
         MapModel map = game.getMap();
         LocationModel location = map.getCurrentLocation();
-        
-        if (newRow < 0 || newRow > map.getNumRows() - 1 || newColumn < 0 || newColumn > map.getNumColumns() - 1)
+
+        if (newRow < 0 || newRow > map.getNumRows() - 1 || newColumn < 0 || newColumn > map.getNumColumns() - 1) {
             throw new MapControlException("\nNew location out of range - check the map");
-        
-        else if (newRow > map.getCurrentRow() + 1 || newRow < map.getCurrentRow() - 1 || newColumn > map.getCurrentColumn() + 1 || newColumn < map.getCurrentColumn() - 1)
+        }
+
+        else if (newRow > map.getCurrentRow() + 1 || newRow < map.getCurrentRow() - 1 || newColumn > map.getCurrentColumn() + 1 || newColumn < map.getCurrentColumn() - 1) {
             throw new MapControlException("\nYou can only move one square at a time - check the map");
-        
+        }
+
         int currentRow = map.getCurrentRow();
         int currentColumn = map.getCurrentColumn();
         LocationModel[][] locationArray = map.getLocations();
         LocationModel oldLocation = locationArray[currentRow][currentColumn];
-        
+
         LocationModel newLocation = locationArray[newRow][newColumn];
         newLocation.setVisited(true);
         map.setCurrentRow(newRow);
         map.setCurrentColumn(newColumn);
         map.setCurrentLocation(newLocation);
+
+        Random rand = new Random();
+
+        int hasObstacle = rand.nextInt(11) + 1;
         
+        if(hasObstacle <= 5)
+        {
+            OvercomeObstacleView overcomeObstacleView = new OvercomeObstacleView();
+            overcomeObstacleView.display();
+        }
+
         return newLocation;
     }
-    
+
 }

@@ -1,0 +1,7 @@
+
+
+byui.cit260.pioneertrail.view.GameMainView - Invalid input
+
+byui.cit260.pioneertrail.view.GameMainView - Invalid input
+
+byui.cit260.pioneertrail.view.OvercomeObstacleView - You must maintion 2-5 people in your party

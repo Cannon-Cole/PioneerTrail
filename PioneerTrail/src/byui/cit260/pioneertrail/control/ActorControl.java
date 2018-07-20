@@ -1,5 +1,3 @@
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,6 +9,9 @@ import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.enums.ActorEnum;
 import byui.cit260.pioneertrail.view.FamilyStatusView;
 import byui.cit260.pioneertrail.exceptions.ActorControlException;
+import java.io.PrintWriter;
+import pioneertrail.PioneerTrail;
+import java.util.Random;
 
 /**
  *
@@ -168,6 +169,32 @@ public class ActorControl {
         int average = runningSum / aliveCount;
 
         return average;
+    }
+
+    public static void removeFamilyMemberForOvercomeObstacle() {
+
+        Random rand = new Random();
+
+        ActorModel family[] = PioneerTrail.getCurrentGame().getFamily();
+
+        PrintWriter console = PioneerTrail.getOutFile();
+
+        boolean run = true;
+
+        do {
+
+            run = true;
+
+            int whichMember = rand.nextInt(5);
+
+            if (family[whichMember].isAlive()) {
+                family[whichMember].setAlive(false);
+                console.print(family[whichMember].getName());
+
+                run = false;
+            }
+        }
+        while (run == true);
     }
 
 }

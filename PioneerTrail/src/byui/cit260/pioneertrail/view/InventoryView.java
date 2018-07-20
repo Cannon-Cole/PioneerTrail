@@ -9,6 +9,7 @@ import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.exceptions.InventoryControlException;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -69,7 +70,7 @@ public class InventoryView extends View {
     public void getFilePath() {
 
         PrintWriter console = PioneerTrail.getOutFile();
-        PrintWriter keyboard = PioneerTrail.getOutFile();
+        BufferedReader keyboard = PioneerTrail.getInFile();
         String filePath = "";
 
         this.console.println("Please enter the file path for the inventory report. "

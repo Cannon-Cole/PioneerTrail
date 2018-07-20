@@ -22,10 +22,20 @@ public class InventoryControl {
     public void removeFoodForOvercomeObstacle(ArrayList<InventoryModel> inventory, int foodEntered, boolean removeAll) {
 
         if (removeAll) {
-            inventory.get(0).setQuantity((int) (inventory.get(0).getQuantity() - (foodEntered * 0.65)));
+            inventory.get(InventoryEnum.Food.ordinal()).setQuantity((int) (inventory.get(InventoryEnum.Food.ordinal()).getQuantity() - (foodEntered * 0.65)));
+            
+            if(inventory.get(InventoryEnum.Food.ordinal()).getQuantity() < 0)
+            {
+                inventory.get(InventoryEnum.Food.ordinal()).setQuantity(0);
+            }
         }
         else {
             inventory.get(0).setQuantity(inventory.get(0).getQuantity() - foodEntered);
+            
+            if(inventory.get(InventoryEnum.Food.ordinal()).getQuantity() < 0)
+            {
+                inventory.get(InventoryEnum.Food.ordinal()).setQuantity(0);
+            }
         }
     }
 
@@ -53,7 +63,7 @@ public class InventoryControl {
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
         //System.out.println("***InventoryControl fillInventoryTEMP() called***");
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(55);
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(100);
         inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
         inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
         inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);
