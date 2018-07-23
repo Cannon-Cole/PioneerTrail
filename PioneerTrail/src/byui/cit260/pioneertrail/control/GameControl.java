@@ -10,6 +10,7 @@ import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.exceptions.GameControlException;
+import byui.cit260.pioneertrail.model.LocationModel;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
 import byui.cit260.pioneertrail.view.ErrorView;
@@ -313,9 +314,37 @@ public class GameControl {
         }
         //sets map to game
         game.setMap(map);
+        
+        // GAME OVER TESTING
+//        map.setCurrentColumn(11);
+//        map.setCurrentRow(0);
+//        LocationModel[][] locationArray = map.getLocations();
+//        LocationModel newLocation = locationArray[0][11];
+//        newLocation.setVisited(true);
+//        
+//        family[1].setAlive(false);
+//        family[2].setAlive(false);
+//        family[3].setAlive(false);
+//        family[4].setAlive(false);
+        // END TESTING
 
         //function succesful
         return 1;
+    }
+    
+    public static void checkGameLoss() {
+        ActorModel[] family = PioneerTrail.getCurrentGame().getFamily();
+        int aliveCount = 0;
+        for (ActorModel actor : family) {
+            if (actor.isAlive())
+                aliveCount++;
+        }
+
+        if (aliveCount < 2) {
+            PioneerTrail.getCurrentGame().setGameOver(true);
+            PioneerTrail.getCurrentGame().setGameOverType(2);
+            return;
+        }
     }
   
 }

@@ -45,6 +45,47 @@ public class GameMainView extends View {
             + "\n  Q: Quit");
 
     }
+    
+    @Override
+    public void display() {
+
+        boolean endOfView = false;
+
+        do {
+
+            String[] inputs = new String[1];
+
+            inputs[0] = this.getInputs();
+
+            if (inputs == null) {
+                return;
+            }
+            else if ("E".equals(inputs[0].toUpperCase())) {
+                return;
+            }
+
+            endOfView = doAction(inputs);
+            
+            GameControl.checkGameLoss();
+            
+            if (PioneerTrail.getCurrentGame().isGameOver()) {
+                String gameOverMessage;
+                if (PioneerTrail.getCurrentGame().getGameOverType() == 1) {
+                    gameOverMessage = "Congratulations! You've reached Zion!\n  Enter any input to exit...";
+                } else {
+                    gameOverMessage = "Game over. Better luck next time.\n  Enter any input to exit...";
+                }
+                GameOverView gameOverView = new GameOverView(gameOverMessage);
+                gameOverView.display();
+                
+                endOfView = true;
+                return;
+            }
+            
+        }
+        while (endOfView == false);
+
+    }
 
     @Override
     public boolean doAction(String[] inputs) {

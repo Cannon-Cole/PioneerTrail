@@ -18,6 +18,8 @@ public class GameModel implements Serializable {
     private int mortalityRate;
     private int wagonHealth;
     private int wagonStrength;
+    private boolean GameOver;
+    private int GameOverType; //1 = win, 2 = loss
     private PlayerModel player;
     private MapModel map;
     private ActorModel[] family = new ActorModel[5];
@@ -139,4 +141,22 @@ public class GameModel implements Serializable {
     public void setMap(MapModel map) {
         this.map = map;
     }
+
+    public boolean isGameOver() {
+        return GameOver;
+    }
+
+    public void setGameOver(boolean GameOver) {
+        this.GameOver = GameOver;
+    }
+
+    public int getGameOverType() {
+        return GameOverType;
+    }
+
+    public void setGameOverType(int GameOverType) {
+        this.GameOverType = GameOverType;
+    }
+    
+    
 }

@@ -14,6 +14,7 @@ import byui.cit260.pioneertrail.model.SceneModel;
 import byui.cit260.pioneertrail.enums.SceneType;
 import byui.cit260.pioneertrail.view.MoveActorView;
 import byui.cit260.pioneertrail.exceptions.MapControlException;
+import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.view.OvercomeObstacleView;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -297,6 +298,21 @@ public class MapControl {
         map.setCurrentRow(newRow);
         map.setCurrentColumn(newColumn);
         map.setCurrentLocation(newLocation);
+        
+        if (newLocation.getScene().getName().equals("Zion")) {
+            int aliveCount = 0;
+            ActorModel[] actorFamily = game.getFamily();
+            for (ActorModel actor : actorFamily) {
+                if (actor.isAlive())
+                    aliveCount++;
+            }
+            
+            if (aliveCount >= 2) {
+                game.setGameOver(true);
+                game.setGameOverType(1);
+                return newLocation;
+            }
+        }
 
         Random rand = new Random();
 
