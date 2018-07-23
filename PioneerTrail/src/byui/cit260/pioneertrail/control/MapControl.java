@@ -307,11 +307,15 @@ public class MapControl {
                     aliveCount++;
             }
             
+            game.setGameOver(true);
+            
             if (aliveCount >= 2) {
-                game.setGameOver(true);
                 game.setGameOverType(1);
-                return newLocation;
+            } else {
+                game.setGameOverType(2);
             }
+            
+            return newLocation;
         }
 
         Random rand = new Random();
