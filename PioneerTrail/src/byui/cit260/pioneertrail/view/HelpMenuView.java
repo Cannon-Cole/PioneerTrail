@@ -58,8 +58,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayHowToHunt() {
-        this.console.println("* If you wish to hunt for food, enter \"A\" for shoot arrow,"
-            + "\n\"G\" for shoot gun, or \"T\" for use a trap.");
+        this.console.println("* If you wish to hunt for food, you must purchase weapons at the start of the game.");
     }
 
 }
