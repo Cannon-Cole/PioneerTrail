@@ -15,6 +15,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 import java.io.FileWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -94,8 +96,15 @@ public class InventoryView extends View {
 
         ArrayList<InventoryModel> mainInventory = PioneerTrail.getCurrentGame().getInventory();
 
+        FileWriter inventoryLog = null;
         try {
-            FileWriter inventoryLog = new FileWriter(filePath);
+            inventoryLog = new FileWriter(filePath);
+        } catch (IOException ex) {
+            this.console.println("Could not create inventory report character stream character stream");
+        }
+
+        try {
+
             PrintWriter keyboard = PioneerTrail.getOutFile();
 
             String message = String.format("%27s %n %n", "Inventory Report");
@@ -115,14 +124,18 @@ public class InventoryView extends View {
 
             inventoryLog.write(message);
             inventoryLog.flush();
-            inventoryLog.close();
 
             this.console.println("Inventory report print success");
 
         } catch (IOException ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
             this.console.println("Inventory report print failure");
-
+        } finally {
+            try {
+                inventoryLog.close();
+            } catch (IOException ex) {
+                this.console.println("Could not close inventory report character stream");
+            }
         }
     }
 
