@@ -5,8 +5,6 @@
  */
 package byui.cit260.pioneertrail.view;
 
-import pioneertrail.PioneerTrail;
-
 /**
  *
  * @author Derek

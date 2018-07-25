@@ -20,8 +20,8 @@ public class FamilyStatusView extends View {
     public FamilyStatusView() {
 
         displayMessage = getFamilyReportString();
-        displayMessage += "r\n  P: Print Actor Report";
-        displayMessage += "\r\n Q: Quit Menu";
+        displayMessage += "\n P: Print Actor Report";
+        displayMessage += "\r\n E: Exit Menu";
     }
 
     public String getFamilyReportString() {

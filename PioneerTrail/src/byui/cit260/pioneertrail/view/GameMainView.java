@@ -81,7 +81,7 @@ public class GameMainView extends View {
                 endOfView = true;
                 return;
             }
-            
+              
         }
         while (endOfView == false);
 
