@@ -18,19 +18,6 @@ public class InventoryModel implements Serializable {
     private int quantity;
     private int durability;
 
-//    private String name;
-//    private String type;
-//    private double weight;
-//    private double price;
-//    private int quantity;
-      private int foodAmount;
-//    private double medicineAmount;
-//    private boolean hasHammer;
-//    private int hammerDurability;
-//    private boolean hasAxe;
-//    private int axeDurability;
-//    private int spareWheels;
-    
     public InventoryModel() {
     }
 

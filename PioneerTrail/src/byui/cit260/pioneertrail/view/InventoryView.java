@@ -27,9 +27,6 @@ public class InventoryView extends View {
         //gets inventory from
         ArrayList<InventoryModel> mainInventory = PioneerTrail.getCurrentGame().getInventory();
 
-        //test function remove later;
-        InventoryControl.fillInventoryTEMP(mainInventory);
-
         //creates message holder
         String message = "Inventory";
 

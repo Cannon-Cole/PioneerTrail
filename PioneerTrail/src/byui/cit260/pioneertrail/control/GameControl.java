@@ -10,7 +10,6 @@ import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.exceptions.GameControlException;
-import byui.cit260.pioneertrail.model.LocationModel;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
 import byui.cit260.pioneertrail.view.ErrorView;
@@ -225,7 +224,6 @@ public class GameControl {
 
     public static void saveGame(GameModel game, String filePath) throws GameControlException {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** GameControl: saveGame() called ***");
         
         if (game == null)
             throw new GameControlException("GameModel cannot be null");
@@ -244,7 +242,6 @@ public class GameControl {
     
     public static void loadGame(String filePath) throws GameControlException, ClassNotFoundException, IOException {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** loadGame() called ***");
         
         if (filePath == null)
             throw new GameControlException("Path cannot be null");
@@ -261,23 +258,19 @@ public class GameControl {
 
     public void purchaseSupplies() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** purchaseSupplies() called ***");
     }
 
     public void repairWagonTemp() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** repairWagonTemp() called ***");
     }
 
     public static void utilizeAxe() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** utilizeAxe() called ***");
     }
 
     public static void utilizeHammer() {
         //repurpose repairwagonapply
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** utilizeHammer() called ***");
     }
 
     public static int createNewGame(PlayerModel player) throws GameControlException {

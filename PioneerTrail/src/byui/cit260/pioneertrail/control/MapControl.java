@@ -96,8 +96,6 @@ public class MapControl {
 
         PrintWriter output = PioneerTrail.getOutFile();
 
-        output.println("*** MapControl - createMap() called ***");
-
         if (noOfRows < 0 || noOfColumns < 0) {
             return null;
         }

@@ -5,8 +5,6 @@
  */
 package byui.cit260.pioneertrail.view;
 
-import byui.cit260.pioneertrail.control.GameControl;
-import pioneertrail.PioneerTrail;
 /**
  *
  * @author aimeejorgensen

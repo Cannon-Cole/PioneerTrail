@@ -7,7 +7,10 @@ package byui.cit260.pioneertrail.view;
 
 import pioneertrail.PioneerTrail;
 import byui.cit260.pioneertrail.control.GameControl;
+import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.exceptions.GameControlException;
+import byui.cit260.pioneertrail.model.InventoryModel;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,11 +23,6 @@ public class MainMenuView extends View {
             + "\n  N: Start new game"
             + "\n  L: Load existing game"
             + "\n  H: Get help on how to play the game"
-            /*
-            + "\n  C: Test Cole's overcomeObstacleView"
-            + "\n  W: Test Derek's repairWagonView"
-            + "\n  I: Test Derek's healIllnessView"
-             */
             + "\n  E: Exit");
     }
 
@@ -96,6 +94,10 @@ public class MainMenuView extends View {
 
         GameMainView gameMainView = new GameMainView();
 
+        ArrayList<InventoryModel> mainInventory = PioneerTrail.getCurrentGame().getInventory();
+
+        InventoryControl.fillInventoryTEMP(mainInventory);
+        
         gameMainView.display();
     }
 

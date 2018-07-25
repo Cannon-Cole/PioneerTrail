@@ -41,12 +41,10 @@ public class InventoryControl {
 
     public void estimateResources() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** estimateResources() called ***");
     }
 
     public static ArrayList<InventoryModel> createInventory() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("***InventoryControl createInventory() called***");
         
         //new arraylist of inventory
         ArrayList<InventoryModel> inventory = new ArrayList<InventoryModel>();
@@ -61,9 +59,8 @@ public class InventoryControl {
     }
 
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
-        //System.out.println("***InventoryControl fillInventoryTEMP() called***");
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(100);
+        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(400);
         inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
         inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
         inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);

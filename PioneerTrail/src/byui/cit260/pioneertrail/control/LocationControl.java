@@ -18,7 +18,7 @@ public class LocationControl {
 
     public int overComeObstacle(int foodAmount, int peopleAlive, boolean hasProperGear) throws LocationControlException {
 
-        if (foodAmount <= 0 || foodAmount > 500) {
+        if (foodAmount < 0 || foodAmount > 500) {
             throw new LocationControlException("Food Amounts must be between 0-500 lbs.");
         }
 
@@ -71,12 +71,10 @@ public class LocationControl {
 
     public void exploreLocation() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** exploreLocation() called ***");
     }
 
     public void huntForResources() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** huntForResources() called ***");
     }
 
     public static LocationModel[][] createLocations(int rows, int columns) {

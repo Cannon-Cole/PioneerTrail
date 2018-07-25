@@ -73,7 +73,7 @@ public class GameMainView extends View {
                 if (PioneerTrail.getCurrentGame().getGameOverType() == 1) {
                     gameOverMessage = "Congratulations! You've reached Zion!\n  Enter any input to exit...";
                 } else {
-                    gameOverMessage = "Game over. Better luck next time.\n  Enter any input to exit...";
+                    gameOverMessage = "Game over. Too many family members died. Better luck next time.\n  Enter any input to exit...";
                 }
                 GameOverView gameOverView = new GameOverView(gameOverMessage);
                 gameOverView.display();
@@ -95,7 +95,6 @@ public class GameMainView extends View {
         GameControl gameControl = new GameControl();
         LocationControl locationControl = new LocationControl();
         ActorControl actorControl = new ActorControl();
-        InventoryModel inventoryModel = new InventoryModel();
         GameModel gameModel = new GameModel();
         HelpMenuView helpMenuView = new HelpMenuView();
         RepairWagonView repairWagonView = new RepairWagonView();
@@ -178,7 +177,6 @@ public class GameMainView extends View {
 
     private void saveGame() {
         PrintWriter output = PioneerTrail.getOutFile();
-        output.println("*** GameMainView: saveGame() called ***");
         SaveGameView saveGameView = new SaveGameView();
         saveGameView.display();
 

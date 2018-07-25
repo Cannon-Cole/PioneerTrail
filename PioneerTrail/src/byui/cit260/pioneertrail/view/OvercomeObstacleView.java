@@ -10,11 +10,7 @@ import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.control.LocationControl;
 import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.exceptions.LocationControlException;
-import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
-import byui.cit260.pioneertrail.model.PlayerModel;
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
@@ -26,9 +22,7 @@ import pioneertrail.PioneerTrail;
 public class OvercomeObstacleView extends View {
 
     public OvercomeObstacleView() {
-
         super("\nIt takes more food to overcome rough terrain. You have \"" + PioneerTrail.getCurrentGame().getInventory().get(InventoryEnum.Food.ordinal()).getQuantity() + "\" food. How much will you ration for this obstacle?");
-
     }
 
     @Override
@@ -47,8 +41,6 @@ public class OvercomeObstacleView extends View {
         ArrayList<InventoryModel> inventory = PioneerTrail.getCurrentGame().getInventory();
         LocationControl locationControl = new LocationControl();
         InventoryControl inventoryControl = new InventoryControl();
-
-        InventoryControl.fillInventoryTEMP(inventory);
 
         if (PioneerTrail.getCurrentGame().getInventory().get(InventoryEnum.SpareWheels.ordinal()).getQuantity() > 0) {
             hasProperGear = true;
