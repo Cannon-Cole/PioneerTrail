@@ -72,9 +72,6 @@ public class InventoryControl {
         double totalWeight = 0.0;
         int index = 0;
         for (InventoryModel inventoryLoop : inventory) {
-            //TO INSTRUCTOR I feel like there is a better way to do this but I am not entirely sure what.
-            //Is there a way to get a value using a name? That way I could get the name from my inventory
-            //and use it to get the weight for that item.
             totalWeight += inventoryLoop.getQuantity() * InventoryWeightPerItem.values()[index].getWeight();
             index++;
         }
