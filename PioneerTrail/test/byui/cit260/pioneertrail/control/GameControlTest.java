@@ -7,7 +7,7 @@ package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
-import byui.cit260.pioneertrail.enums.InventoryEnum;
+import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,9 +50,9 @@ public class GameControlTest {
         
         game.setWagonHealth(15);
         game.setWagonStrength(10);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(12);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(12);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(0);
         int action = 2;
         int expResult = 2;
         int result = gameControl.repairWagonApply(game, inventory, action);
@@ -61,9 +61,9 @@ public class GameControlTest {
         
         game.setWagonHealth(22);
         game.setWagonStrength(10);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(10);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(10);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(0);
         action = 2;
         expResult = -1;
         result = gameControl.repairWagonApply(game, inventory, action);
@@ -72,9 +72,9 @@ public class GameControlTest {
     
         game.setWagonHealth(15);
         game.setWagonStrength(50);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(10);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(10);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(0);
         action = 2;
         expResult = -2;
         result = gameControl.repairWagonApply(game, inventory, action);
@@ -83,9 +83,9 @@ public class GameControlTest {
         
         game.setWagonHealth(15);
         game.setWagonStrength(12);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(0);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(0);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(0);
         action = 2;
         expResult = -3;
         result = gameControl.repairWagonApply(game, inventory, action);
@@ -94,9 +94,9 @@ public class GameControlTest {
         
         game.setWagonHealth(5);
         game.setWagonStrength(0);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(0);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(0);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(0);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(1);
         action = 1;
         expResult = 1;
         result = gameControl.repairWagonApply(game, inventory, action);
@@ -105,9 +105,9 @@ public class GameControlTest {
         
         game.setWagonHealth(10);
         game.setWagonStrength(19);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(1);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(1);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(0);
         action = 2;
         expResult = 3;
         result = gameControl.repairWagonApply(game, inventory, action);
@@ -116,9 +116,9 @@ public class GameControlTest {
         
         game.setWagonHealth(0);
         game.setWagonStrength(10);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(0);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(0);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(0);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(0);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(0);
         action = 4;
         expResult = 4;
         result = gameControl.repairWagonApply(game, inventory, action);

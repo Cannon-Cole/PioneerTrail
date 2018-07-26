@@ -5,6 +5,7 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
 import pioneertrail.PioneerTrail;
 import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
@@ -315,6 +316,16 @@ public class MapControl {
             
             return newLocation;
         }
+        
+        InventoryModel inventory = PioneerTrail.getCurrentGame().getInventory().get(InventoryWeightPerItem.Food.ordinal());
+        
+        //food used per turn
+        inventory.setQuantity(inventory.getQuantity() - GameModel.getFoodUsedPerTurn());
+        
+        if(inventory.getQuantity() < 0)
+            inventory.setQuantity(0);
+        
+        //obstacle encounter chance
 
         Random rand = new Random();
 

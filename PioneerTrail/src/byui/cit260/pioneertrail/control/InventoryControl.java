@@ -6,9 +6,9 @@
 package byui.cit260.pioneertrail.control;
 
 import byui.cit260.pioneertrail.exceptions.InventoryControlException;
-import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
+import byui.cit260.pioneertrail.model.GameModel;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
@@ -22,19 +22,19 @@ public class InventoryControl {
     public void removeFoodForOvercomeObstacle(ArrayList<InventoryModel> inventory, int foodEntered, boolean removeAll) {
 
         if (removeAll) {
-            inventory.get(InventoryEnum.Food.ordinal()).setQuantity((int) (inventory.get(InventoryEnum.Food.ordinal()).getQuantity() - (foodEntered * 0.65)));
+            inventory.get(InventoryWeightPerItem.Food.ordinal()).setQuantity((int) (inventory.get(InventoryWeightPerItem.Food.ordinal()).getQuantity() - (foodEntered * 0.65)));
             
-            if(inventory.get(InventoryEnum.Food.ordinal()).getQuantity() < 0)
+            if(inventory.get(InventoryWeightPerItem.Food.ordinal()).getQuantity() < 0)
             {
-                inventory.get(InventoryEnum.Food.ordinal()).setQuantity(0);
+                inventory.get(InventoryWeightPerItem.Food.ordinal()).setQuantity(0);
             }
         }
         else {
             inventory.get(0).setQuantity(inventory.get(0).getQuantity() - foodEntered);
             
-            if(inventory.get(InventoryEnum.Food.ordinal()).getQuantity() < 0)
+            if(inventory.get(InventoryWeightPerItem.Food.ordinal()).getQuantity() < 0)
             {
-                inventory.get(InventoryEnum.Food.ordinal()).setQuantity(0);
+                inventory.get(InventoryWeightPerItem.Food.ordinal()).setQuantity(0);
             }
         }
     }
@@ -60,11 +60,11 @@ public class InventoryControl {
 
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
         //fills inventory with items
-        inventory.get(InventoryEnum.Food.ordinal()).setQuantity(400);
-        inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(300);
-        inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Food.ordinal()).setQuantity(400);
+        inventory.get(InventoryWeightPerItem.Medicine.ordinal()).setQuantity(10);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(3);
+        inventory.get(InventoryWeightPerItem.Axe.ordinal()).setQuantity(1);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(1);
     }
 
     public static double getTotalWeight(ArrayList<InventoryModel> inventory) throws InventoryControlException {
@@ -76,9 +76,9 @@ public class InventoryControl {
             index++;
         }
         
-        if(InventoryModel.getMaxWeight() > 500)
+        if(totalWeight > GameModel.getMaxWeight())
         {
-             throw new InventoryControlException("Total weight can't be over " + InventoryModel.getMaxWeight());
+             throw new InventoryControlException("Total weight can't be over " + GameModel.getMaxWeight());
         }
         
         if(totalWeight < 0)

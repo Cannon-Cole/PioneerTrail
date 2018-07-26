@@ -8,7 +8,7 @@ package byui.cit260.pioneertrail.view;
 import byui.cit260.pioneertrail.control.ActorControl;
 import byui.cit260.pioneertrail.control.InventoryControl;
 import byui.cit260.pioneertrail.control.LocationControl;
-import byui.cit260.pioneertrail.enums.InventoryEnum;
+import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
 import byui.cit260.pioneertrail.exceptions.LocationControlException;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import java.io.PrintWriter;
@@ -22,7 +22,7 @@ import pioneertrail.PioneerTrail;
 public class OvercomeObstacleView extends View {
 
     public OvercomeObstacleView() {
-        super("\nIt takes more food to overcome rough terrain. You have \"" + PioneerTrail.getCurrentGame().getInventory().get(InventoryEnum.Food.ordinal()).getQuantity() + "\" food. How much will you ration for this obstacle?");
+        super("\nYou have encountered rough terrain. It takes more food to overcome rough terrain. You have \"" + PioneerTrail.getCurrentGame().getInventory().get(InventoryWeightPerItem.Food.ordinal()).getQuantity() + "\" food. How much will you ration for this obstacle?");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class OvercomeObstacleView extends View {
         LocationControl locationControl = new LocationControl();
         InventoryControl inventoryControl = new InventoryControl();
 
-        if (PioneerTrail.getCurrentGame().getInventory().get(InventoryEnum.SpareWheels.ordinal()).getQuantity() > 0) {
+        if (PioneerTrail.getCurrentGame().getInventory().get(InventoryWeightPerItem.SpareWheels.ordinal()).getQuantity() > 0) {
             hasProperGear = true;
         }
 
@@ -59,8 +59,8 @@ public class OvercomeObstacleView extends View {
         if (overcame == 1) {
             inventoryControl.removeFoodForOvercomeObstacle(inventory, inputInt, true);
             console.print("Your family has survived the obstacle successfully. You have "
-                + PioneerTrail.getCurrentGame().getInventory().get(InventoryEnum.Food.ordinal()).getQuantity()
-                + " food left.");
+                + PioneerTrail.getCurrentGame().getInventory().get(InventoryWeightPerItem.Food.ordinal()).getQuantity()
+                + " food left. ");
             return true;
         }
         else {
@@ -72,8 +72,8 @@ public class OvercomeObstacleView extends View {
              console.print(" has died.");
 
             console.print(" \nYou have "
-                + PioneerTrail.getCurrentGame().getInventory().get(InventoryEnum.Food.ordinal()).getQuantity()
-                + " food left.");
+                + PioneerTrail.getCurrentGame().getInventory().get(InventoryWeightPerItem.Food.ordinal()).getQuantity()
+                + " food left. ");
             return true;
         }
     }

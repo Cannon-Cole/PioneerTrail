@@ -5,9 +5,9 @@
  */
 package byui.cit260.pioneertrail.control;
 
-import byui.cit260.pioneertrail.enums.InventoryEnum;
+import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
 import byui.cit260.pioneertrail.exceptions.LocationControlException;
-import byui.cit260.pioneertrail.model.InventoryModel;
+import byui.cit260.pioneertrail.model.GameModel;
 import byui.cit260.pioneertrail.model.LocationModel;
 import java.io.PrintWriter;
 import pioneertrail.PioneerTrail;
@@ -20,8 +20,8 @@ public class LocationControl {
 
     public int overComeObstacle(int foodAmount, int peopleAlive, boolean hasProperGear) throws LocationControlException {
 
-        if (foodAmount < 0 || InventoryModel.getMaxWeight() > 500) {
-            throw new LocationControlException("Food amounts must be between 0-" + PioneerTrail.getCurrentGame().getInventory().get(InventoryEnum.Food.ordinal()).getQuantity() + " lbs.");
+        if (foodAmount < 0 || foodAmount > GameModel.getMaxWeight()) {
+            throw new LocationControlException("Food amounts must be between 0-" + PioneerTrail.getCurrentGame().getInventory().get(InventoryWeightPerItem.Food.ordinal()).getQuantity() + " lbs.");
         }
 
         if (peopleAlive < 2 || peopleAlive > 5) {
@@ -32,7 +32,7 @@ public class LocationControl {
 
         int overcame = (foodAmount / peopleAlive) * hasGear;
 
-        if (overcame >= 5) {
+        if (overcame >= 10) {
             return 1;
         }
         else {
@@ -45,7 +45,7 @@ public class LocationControl {
         int afterHuntWeight = (estimateResources + gatherResources - reduceFoodSupply);
 
         if (estimateResources < 0 || estimateResources > 500) {
-            throw new LocationControlException("Your food resources must be between 1 and " + InventoryModel.getMaxWeight() + " lbs.");
+            throw new LocationControlException("Your food resources must be between 1 and " + GameModel.getMaxWeight() + " lbs.");
         }
 
         if (gatherResources < 5 || gatherResources > 150) {

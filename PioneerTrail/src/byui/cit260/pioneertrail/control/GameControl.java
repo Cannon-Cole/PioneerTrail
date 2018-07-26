@@ -5,10 +5,10 @@
  */
 package byui.cit260.pioneertrail.control;
 
+import byui.cit260.pioneertrail.enums.InventoryWeightPerItem;
 import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.model.GameModel;
-import byui.cit260.pioneertrail.enums.InventoryEnum;
 import byui.cit260.pioneertrail.exceptions.GameControlException;
 import byui.cit260.pioneertrail.model.MapModel;
 import byui.cit260.pioneertrail.model.PlayerModel;
@@ -46,8 +46,8 @@ public class GameControl {
         int wagonHealth = game.getWagonHealth();
         int wagonStrength = game.getWagonStrength();
         boolean hasHammer;
-        int hammerDurability = inventory.get(InventoryEnum.Hammer.ordinal()).getQuantity();
-        int spareWheels = inventory.get(InventoryEnum.SpareWheels.ordinal()).getQuantity();
+        int hammerDurability = inventory.get(InventoryWeightPerItem.Hammer.ordinal()).getQuantity();
+        int spareWheels = inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).getQuantity();
 
         if (inventory.get(3).getQuantity() > 0) {
             hasHammer = true;
@@ -115,9 +115,9 @@ public class GameControl {
         int wagonHealth = game.getWagonHealth();
         int wagonStrength = game.getWagonStrength();
         boolean hasHammer;
-        int hammerDurability = inventory.get(InventoryEnum.Hammer.ordinal()).getDurability();
-        int hammerQuantity = inventory.get(InventoryEnum.Hammer.ordinal()).getQuantity();
-        int spareWheels = inventory.get(InventoryEnum.SpareWheels.ordinal()).getQuantity();
+        int hammerDurability = inventory.get(InventoryWeightPerItem.Hammer.ordinal()).getDurability();
+        int hammerQuantity = inventory.get(InventoryWeightPerItem.Hammer.ordinal()).getQuantity();
+        int spareWheels = inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).getQuantity();
         
         if (hammerQuantity > 0) {
             hasHammer = true;
@@ -198,9 +198,9 @@ public class GameControl {
 
         game.setWagonHealth(wagonHealth);
         game.setWagonStrength(wagonStrength);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(hammerQuantity);
-        inventory.get(InventoryEnum.Hammer.ordinal()).setDurability(hammerDurability);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(spareWheels);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(hammerQuantity);
+        inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setDurability(hammerDurability);
+        inventory.get(InventoryWeightPerItem.SpareWheels.ordinal()).setQuantity(spareWheels);
 
         //if returnVal is still zero here, something was missed
         return returnVal;

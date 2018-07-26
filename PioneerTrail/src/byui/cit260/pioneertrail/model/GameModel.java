@@ -18,6 +18,8 @@ public class GameModel implements Serializable {
     private int mortalityRate;
     private int wagonHealth;
     private int wagonStrength;
+    static private int foodUsedPerTurn = 15;
+    static private int maxWeight = 2000;
     private boolean GameOver;
     private int GameOverType; //1 = win, 2 = loss
     private PlayerModel player;
@@ -157,6 +159,21 @@ public class GameModel implements Serializable {
     public void setGameOverType(int GameOverType) {
         this.GameOverType = GameOverType;
     }
-    
-    
+
+    public static int getFoodUsedPerTurn() {
+        return foodUsedPerTurn;
+    }
+
+    public static void setFoodUsedPerTurn(int foodUsedPerTurn) {
+        GameModel.foodUsedPerTurn = foodUsedPerTurn;
+    }
+
+    public static int getMaxWeight() {
+        return maxWeight;
+    }
+
+    public static void setMaxWeight(int maxWeight) {
+        GameModel.maxWeight = maxWeight;
+    }
+      
 }
