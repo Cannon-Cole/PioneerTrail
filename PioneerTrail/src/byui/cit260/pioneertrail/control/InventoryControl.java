@@ -62,7 +62,7 @@ public class InventoryControl {
         //fills inventory with items
         inventory.get(InventoryEnum.Food.ordinal()).setQuantity(400);
         inventory.get(InventoryEnum.Medicine.ordinal()).setQuantity(10);
-        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(3);
+        inventory.get(InventoryEnum.SpareWheels.ordinal()).setQuantity(300);
         inventory.get(InventoryEnum.Axe.ordinal()).setQuantity(1);
         inventory.get(InventoryEnum.Hammer.ordinal()).setQuantity(1);
     }
@@ -76,9 +76,9 @@ public class InventoryControl {
             index++;
         }
         
-        if(totalWeight > 500)
+        if(InventoryModel.getMaxWeight() > 500)
         {
-             throw new InventoryControlException("Total weight can't be over 500");
+             throw new InventoryControlException("Total weight can't be over " + InventoryModel.getMaxWeight());
         }
         
         if(totalWeight < 0)

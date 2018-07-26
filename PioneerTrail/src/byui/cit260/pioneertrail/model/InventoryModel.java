@@ -17,6 +17,7 @@ public class InventoryModel implements Serializable {
     private String name;
     private int quantity;
     private int durability;
+    static private int maxWeight = 2000;
 
     public InventoryModel() {
     }
@@ -83,6 +84,13 @@ public class InventoryModel implements Serializable {
     public void setDurability(int durability) {
         this.durability = durability;
     }
-    
-    
+
+    public static int getMaxWeight() {
+        return maxWeight;
+    }
+
+    public static void setMaxWeight(int maxWeight) {
+        InventoryModel.maxWeight = maxWeight;
+    }
+   
 }

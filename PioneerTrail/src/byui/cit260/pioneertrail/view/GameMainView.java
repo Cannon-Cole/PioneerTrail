@@ -12,7 +12,6 @@ import byui.cit260.pioneertrail.control.LocationControl;
 import byui.cit260.pioneertrail.control.MapControl;
 import byui.cit260.pioneertrail.model.ActorModel;
 import byui.cit260.pioneertrail.model.GameModel;
-import byui.cit260.pioneertrail.model.InventoryModel;
 import byui.cit260.pioneertrail.exceptions.ActorControlException;
 import byui.cit260.pioneertrail.exceptions.MapControlException;
 import java.io.PrintWriter;

@@ -15,8 +15,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import pioneertrail.PioneerTrail;
 import java.io.FileWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
