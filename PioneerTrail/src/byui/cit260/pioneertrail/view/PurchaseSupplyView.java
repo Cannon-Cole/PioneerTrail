@@ -5,38 +5,88 @@
  */
 package byui.cit260.pioneertrail.view;
 
+import pioneertrail.PioneerTrail;
+import byui.cit260.pioneertrail.control.GameControl;
+import byui.cit260.pioneertrail.control.InventoryControl;
+import byui.cit260.pioneertrail.exceptions.GameControlException;
+import byui.cit260.pioneertrail.model.InventoryModel;
+import java.util.ArrayList;
 /**
  *
  * @author aimeejorgensen
  */
-public class PurchaseSupplyView extends View{
+public class PurchaseSupplyView extends View {
 
     public PurchaseSupplyView() {
-        
-        displayMessage = getPurchaseSuppliesString();
-        displayMessage += "r\n  Note: The journey will take 25 weeks, and your family will consume 65 lbs of food per week."
-                + "Food may be obtained along the way, but plan wisely."
-                + "1,600 lbs of food is recommended."; 
-        displayMessage += "r\n  ****Please enter a supply item and quantity. "
-                + "\r\n"
-                + "For example, to buy 200 lbs of Bacon/dried meat,you would select, Menu Item: 1, Quantity: 2"
-                + "\r\n Limits:  You may only bring 2,000 lbs of inventory with you on your wagon.";
-              
-//        displayMessage += "\r\n Q: Quit Menu";
-           String PurchaseInventory = ("\r\n****Purchase Supplies for Your Journey****");
-
-    }
-
-    private String getPurchaseSuppliesString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        super("\n*****GENERAL STORE******"
+            + "\n  FOOD"
+            + "\n       B: Bacon/dried meat 100 lbs"
+            + "\n       H: Salted Ham:  300 lbs"
+            + "\n       F: Barrel of Flour: 150 lbs"
+            + "\n       S: Barrel of Sugar:  150 lbs"
+            + "\n       L: Lard:  100 lbs"
+            + "\n       E: Salt/Pepper/Molasses/Eggs:  100 lbs"   
+            + "\n  E: Exit");
     }
     
+    @Override
+    public boolean doAction(String[] inputs) {
+
+        switch (inputs[0].toUpperCase()) {
+            case "B":
+            case "H":
+            case "F":
+            case "S":
+            case "L":
+            case "E":
+//                totalFood();
+                break;
+            case "Q":
+                return true;
+            default:
+                ErrorView.display(this.getClass().getName(),"Invalid input");
+        }
+
+        return false;
+    }
 }
+    
+        
+//        String displayMessage = getPurchaseSuppliesString();
+//        displayMessage += "r\n  Note: The journey will take 24 weeks or 12 turns. "
+//                + "Your family will consume 26 lbs of food per person per turn."
+//                + "Food may be obtained along the way, but plan wisely."
+//                + "1,600 lbs of food is recommended to start your journey."; 
+//        displayMessage += "r\n  ****Please enter a supply item and quantity. "
+//                + "\r\n"
+//                + "For example, to buy 200 lbs of Bacon/dried meat,you would select, Menu Item: 1, Quantity: 2"
+//                + "\r\n Limits:  You may only bring 2,000 lbs of total inventory with you on your wagon.";
+//        System.out.println();
+//        displayMessage += "\r\n s"
+////        displayMessage += "\r\n Q: Quit Menu";
+//           String PurchaseInventory = ("\r\n****Purchase Supplies for Your Journey****");
+//
+//    @Override
+//    public boolean doAction(String[] inputs) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    private String getPurchaseSuppliesString() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    }
+//
+//    private String getPurchaseSuppliesString() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    @Override
+//    public boolean doAction(String[] inputs) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//    
+//}
 
 //
 //“Menu Item _  	Quantity _”					TOTAL  WEIGHT ___lbs *
@@ -112,7 +162,18 @@ public class PurchaseSupplyView extends View{
 //
 //
 //FOOD: flour/grains/sugar/salt/pepper (650 lbs.), bacon/dried meat ( 500 lbs.), molasses, vinegar, eggs, (50 lbs.), lard (200 lbs.) BEDDING & TENT SUPPLIES: blankets, ground cloths, pillows, tent, poles, stakes, ropes.  (200 lbs)  TOTAL SUPPLY WEIGHT:  2,000 lbs.
+////
 //
+//    @Override
+//    public boolean doAction(String[] inputs) {
 //
-//
-
+//        switch (inputs[0].toUpperCase()) {
+//            case "N":
+//                startNewGame();
+//                break;
+//            case "L":
+//                loadGame();
+//                break;
+//            case "H":
+//                getHelp();
+//                break;/*
