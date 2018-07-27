@@ -167,7 +167,7 @@ public class GameModel implements Serializable {
     public static void setFoodUsedPerTurn(int foodUsedPerTurn) {
         GameModel.foodUsedPerTurn = foodUsedPerTurn;
     }
-
+       
     public static int getMaxWeight() {
         return maxWeight;
     }
