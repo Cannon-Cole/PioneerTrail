@@ -118,7 +118,8 @@ public class GameMainView extends View {
                 inventoryViewReport.getFilePath();
                 break;
             case "P":
-                gameControl.purchaseSupplies();
+                 PurchaseSupplyView purchaseSupplyView = new PurchaseSupplyView();
+                purchaseSupplyView.display();
                 break;
             case "L":
                 locationControl.exploreLocation();

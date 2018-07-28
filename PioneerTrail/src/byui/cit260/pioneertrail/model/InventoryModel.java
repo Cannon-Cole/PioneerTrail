@@ -57,7 +57,7 @@ public class InventoryModel implements Serializable {
 
     public InventoryModel(String name, int quantity) {
         this.name = name;
-        this.quantity = quantity;
+        this.quantity = quantity;      
     }
 
     public String getName() {

@@ -139,6 +139,8 @@ public class ActorControl {
         int runningSum = 0;
         int aliveCount = 0;
         int health = 0;
+//        int x;
+//        static int y;
 
         for (ActorModel person : family) {
 

@@ -94,6 +94,9 @@ public class MapControl {
     }
 
     public static MapModel createMap(int noOfRows, int noOfColumns, ArrayList<InventoryModel> inventory) {
+        
+        int weight = 0;
+        
 
         PrintWriter output = PioneerTrail.getOutFile();
 

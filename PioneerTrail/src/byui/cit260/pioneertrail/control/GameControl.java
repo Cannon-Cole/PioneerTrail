@@ -196,6 +196,9 @@ public class GameControl {
             wagonStrength = 0;
         }
 
+        
+        
+        
         game.setWagonHealth(wagonHealth);
         game.setWagonStrength(wagonStrength);
         inventory.get(InventoryWeightPerItem.Hammer.ordinal()).setQuantity(hammerQuantity);

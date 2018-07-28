@@ -54,8 +54,17 @@ public class InventoryControl {
         inventory.add(new InventoryModel("Spare Wheels", 0));
         inventory.add(new InventoryModel("Hammer Durability", 0));
         inventory.add(new InventoryModel("Axe Durability", 0));
+   
+        ArrayList<InventoryModel> foodArray= new ArrayList <InventoryModel>();
+        foodArray.add(new InventoryModel("Beef", 0));
+        foodArray.add(new InventoryModel("Chicken", 0));
+        foodArray.add(new InventoryModel("Flour", 0));
+        foodArray.add(new InventoryModel("Eggs", 0));
+        foodArray.add(new InventoryModel("Lard", 0));      
 
-        return inventory;
+        return foodArray;
+        
+//        return inventory;
     }
 
     public static void fillInventoryTEMP(ArrayList<InventoryModel> inventory) {
@@ -87,6 +96,37 @@ public class InventoryControl {
         }
 
         return totalWeight;
+    }
+    
+     public static void fillInventoryFood(ArrayList<InventoryModel> foodArray) {
+        //fills inventory with items
+        foodArray.get(InventoryWeightPerItem.BaconDriedBeef.ordinal()).setQuantity(300);
+        foodArray.get(InventoryWeightPerItem.Flour.ordinal()).setQuantity(200);
+        foodArray.get(InventoryWeightPerItem.Sugar.ordinal()).setQuantity(150);
+        foodArray.get(InventoryWeightPerItem.Lard.ordinal()).setQuantity(200);
+        foodArray.get(InventoryWeightPerItem.Molasses.ordinal()).setQuantity(50);
+    }
+    
+    public static double getTotalFoodWeight(ArrayList<InventoryModel> food) throws InventoryControlException {
+
+        double totalFoodWeight = 0.0;
+        int index = 0;
+        for (InventoryModel inventoryLoop : food) {
+            totalFoodWeight += inventoryLoop.getQuantity() * InventoryWeightPerItem.values()[index].getWeight();
+            index++;
+        }
+        
+        if(totalFoodWeight > GameModel.getMaxWeight())
+        {
+             throw new InventoryControlException("Total weight can't be over " + GameModel.getMaxWeight());
+        }
+        
+        if(totalFoodWeight < 0)
+        {
+            throw new InventoryControlException("Total weight can't be less than 0");
+        }
+
+        return totalFoodWeight;
     }
 
 }
