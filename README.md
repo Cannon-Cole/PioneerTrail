@@ -1,2 +1,2 @@
 <h1>What is this?</h1>
-Repository for the Development of Pioneer Trail2
+Text based game. An oregon trail knock off built using Java and OOP 
